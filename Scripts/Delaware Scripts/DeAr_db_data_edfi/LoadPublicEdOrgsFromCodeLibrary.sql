@@ -156,8 +156,10 @@ select
 from 
 	[DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
-	and building.eSchoolBuilding not in (select SchoolId from edfi.[School])	
+		and building.EschoolBuilding is not null
 go
+
+select * from  de.Schoolextension 
 
 
 insert into de.Schoolextension (SchoolId,AttendanceConfigurationCategoryDescriptorId) 
@@ -166,7 +168,7 @@ from
 	[DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 	and building.eSchoolBuilding not in (select SchoolId from de.Schoolextension)	
-
+	and building.eSchoolBuilding  in (select SchoolId from edfi.School)
 go
 
 
