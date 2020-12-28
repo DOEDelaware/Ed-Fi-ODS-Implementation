@@ -130,7 +130,8 @@ function Initialize-DevelopmentEnvironment {
         }
 
         if (-not $NoRebuild) {
-            $script:result += Invoke-RestorePackages
+			#sk  failing in teamcity
+          #  $script:result += Invoke-RestorePackages  
             $script:result += Invoke-RebuildSolution
         }
 
