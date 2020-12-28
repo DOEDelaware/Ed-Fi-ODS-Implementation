@@ -54,7 +54,8 @@ function Install-RequiredModules {
 
     if ($null -eq $msbuild) {
         Write-Host "Installing Invoke-MsBuild"
-        Install-Module -Name Invoke-MsBuild -Scope CurrentUser -MinimumVersion 2.6.0 -Force | Out-Null
+        # Install-Module -Name Invoke-MsBuild -Scope CurrentUser -MinimumVersion 2.6.0 -Force | Out-Null
+		Install-Module -Name Invoke-MsBuild -Scope CurrentUser -MinimumVersion 16.8.2 -Force | Out-Null
     }
 }
 
