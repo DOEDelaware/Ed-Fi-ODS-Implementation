@@ -70,7 +70,7 @@ function Initialize-DevelopmentEnvironment {
     .parameter UsePlugins
         Runs database scripts from downloaded plugin extensions in addition to extensions found in the Ed-Fi-Ods-Implementation
     .parameter NoDb
-        Don't build databases (means UT can't occur) -Scott Kuykendall	
+        Runs database scripts from downloaded plugin extensions in addition to extensions found in the Ed-Fi-Ods-Implementation		
     #>
     param(
         [ValidateSet('Sandbox', 'SharedInstance', 'YearSpecific', 'DistrictSpecific')]
@@ -296,7 +296,7 @@ Function Invoke-RebuildSolution {
         if (-not [string]::IsNullOrWhiteSpace($msBuildFilePath)) { $params.MsBuildFilePath = $msBuildFilePath }
 
         ($params).GetEnumerator() | Sort-Object -Property Name | Format-Table -HideTableHeaders -AutoSize -Wrap | Out-Host
-        $buildResult = Invoke-MsBuild @params
+	   $buildResult = Invoke-MsBuild @params
 
         if ($null -eq $buildResult.BuildSucceeded) { throw "Unsure if build passed or failed: $($buildResult.Message)" }
         if ($buildResult.BuildSucceeded -eq $true) { return }
