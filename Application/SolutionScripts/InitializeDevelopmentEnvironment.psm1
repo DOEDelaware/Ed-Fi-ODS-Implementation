@@ -69,6 +69,8 @@ function Initialize-DevelopmentEnvironment {
         Runs the Invoke-SmokeTests task which will run the smoke tests, against the in-memory api, in addition to the other initdev pipeline tasks.
     .parameter UsePlugins
         Runs database scripts from downloaded plugin extensions in addition to extensions found in the Ed-Fi-Ods-Implementation
+    .parameter NoDb
+        Don't build databases (means UT can't occur) -Scott Kuykendall	
     #>
     param(
         [ValidateSet('Sandbox', 'SharedInstance', 'YearSpecific', 'DistrictSpecific')]
@@ -99,7 +101,9 @@ function Initialize-DevelopmentEnvironment {
 
         [switch] $UsePlugins,
 
-        [switch] $RunDotnetTest
+        [switch] $RunDotnetTest,
+		
+		[switch] $NoDb
     )
 
     if ((-not [string]::IsNullOrWhiteSpace($OdsTokens)) -and ($InstallType -ine 'YearSpecific') -and ($InstallType -ine 'DistrictSpecific')) {
@@ -123,7 +127,9 @@ function Initialize-DevelopmentEnvironment {
 
         if (-not [string]::IsNullOrWhiteSpace((Get-DeploymentSettings).Plugin.Folder)) { $script:result += Install-Plugins }
 
-        $script:result += Install-DbDeploy
+		if (-not $NoDb) {
+         $script:result += Install-DbDeploy 
+		}
 
         if (-not $ExcludeCodeGen) {
             $script:result += Invoke-CodeGen
@@ -134,8 +140,10 @@ function Initialize-DevelopmentEnvironment {
             $script:result += Invoke-RebuildSolution
         }
 
-        $script:result += Reset-TestAdminDatabase
-        $script:result += Reset-TestSecurityDatabase
+		if (-not $NoDb)  {
+			$script:result += Reset-TestAdminDatabase 
+			$script:result += Reset-TestSecurityDatabase 
+		}
 
         if (-not ($NoDeploy)) {
             $script:result += Reset-TestPopulatedTemplateDatabase
@@ -267,7 +275,8 @@ Function Invoke-RebuildSolution {
             "`"/target:$target`"",
             "`"/verbosity:$verbosity`"",
             "`"/nr:$noReuse`"",
-            "`"/p:Platform=$platformEnvironmentVariable`""
+            "`"/p:Platform=$platformEnvironmentVariable`"",
+            "`"/p:langversion=8.0`""
         )
 
         if (-not [string]::IsNullOrWhiteSpace($maxCpuCount)) {
