@@ -3,10 +3,15 @@
 # The Ed-Fi Alliance licenses this file to you under the Apache License, Version 2.0.
 # See the LICENSE and NOTICES files in the project root for more information.
 
+# $params = @{
+    # packageName    = "EdFi.Suite3.Ods.Minimal.Template"
+    # packageVersion = "5.1.0"
+    # packageSource  = "https://www.myget.org/F/ed-fi/"
+# }
 $params = @{
     packageName    = "EdFi.Suite3.Ods.Minimal.Template"
     packageVersion = "5.1.0"
-    packageSource  = "https://www.myget.org/F/ed-fi/"
+    packageSource  = "d:\software\"
 }
 
 & "$PSScriptRoot\..\Modules\get-populated-from-nuget.ps1" @params
