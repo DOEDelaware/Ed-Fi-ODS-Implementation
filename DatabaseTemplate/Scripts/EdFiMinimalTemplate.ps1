@@ -10,7 +10,7 @@
  # }
  # We cannot reach myget from the database server.
  #The templates are in the repo, so I parsed the path to them and submitted it
-$pathTemplates = (get-item "D:\edfiupgrade\repos51\Ed-Fi-ODS-Implementation\Scripts" ).parent.FullName + "\DatabaseTemplate"
+$pathTemplates = (get-item $PSScriptRoot).parent.FullName 
  $params = @{
      packageName    = "EdFi.Suite3.Ods.Minimal.Template"
      packageVersion = "5.1.0"
