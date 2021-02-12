@@ -147,6 +147,8 @@ INSERT INTO de.DiplomaCertificateCategoryDescriptor
 SELECT Descriptorid
 FROM edfi.Descriptor
 WHERE NameSpace like '%DiplomaCertificateCategoryDescriptor'
+and DescriptorId not in (select DiplomaCertificateCategoryDescriptorId  from de.DiplomaCertificateCategoryDescriptor)
+go
 
 
 -- INSERT INTO edfi.DiplomaTypeDescriptor

@@ -622,3 +622,10 @@ go
 --New entry/exit Scott K 11/9/2020
 INSERT [edfi].[Descriptor] ( [Namespace], [CodeValue], [ShortDescription], [Description], [PriorDescriptorId], [EffectiveBeginDate], [EffectiveEndDate], [CreateDate], [LastModifiedDate]) VALUES (N'uri://doe.k12.de.us/EntryTypeDescriptor', N'9614', N'To Sussex Montessori', N'To Sussex Montessori', NULL, NULL, NULL, CAST(N'2020-11-09' AS DateTime), CAST(N'2020-11-09' AS DateTime))
 GO
+
+
+--New DiplomaCertificateCategory
+
+INSERT [edfi].[Descriptor] ( [Namespace], [CodeValue], [ShortDescription], [Description], [PriorDescriptorId], [EffectiveBeginDate], [EffectiveEndDate], [CreateDate], [LastModifiedDate]) VALUES (N'uri://doe.k12.de.us/DiplomaCertificateCategoryDescriptor', N'Diploma of Alternate Achievement Standards', N'Diploma Alt Achievement Standards', N'Diploma of Alternate Achievement Standards', NULL, NULL, NULL, CAST(N'2021-02-12' AS DateTime), CAST(N'2021-02-12' AS DateTime))
+GO
+
