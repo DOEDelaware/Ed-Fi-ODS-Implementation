@@ -77,7 +77,9 @@ $repoNuspecFiles = @(
 
     # Extension scripts
     Select-SupportingArtifactResolvedFiles -recurse -artifactType "Database" -artifactSources $enabledSources
-    Select-ExtensionAssemblyMetadataJson
+    # Select-ExtensionAssemblyMetadataJson  sk, hard coding
+	Select-CumulativeRepositoryResolvedItems -recurse "Application\EdFi.Ods.Extensions.EdFiXAssessmentRoster"
+	Select-CumulativeRepositoryResolvedItems -recurse "Application\EdFi.Ods.Extensions.De"	
 
     # Add the EdFi.Db.Deploy tool files
     Select-CumulativeRepositoryResolvedItems "tools\EdFi.Db.Deploy.exe"
