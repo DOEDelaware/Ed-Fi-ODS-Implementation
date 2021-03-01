@@ -23,8 +23,7 @@ function Use-SqlServerModule {
         }
 
         Write-Host "Installing SqlServer Module"
-		Register-PSRepository -Name 'doe' -SourceLocation 'https://nuget.doe.k12.de.us/AppDevNugetServer/nuget'
-		
+				
         Install-Module -Name SqlServer -Repository 'doe' -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber | Out-Null
         Import-Module -Force -Scope Global SqlServer
     }
