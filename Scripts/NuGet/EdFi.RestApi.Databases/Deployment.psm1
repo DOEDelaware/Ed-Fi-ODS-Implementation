@@ -121,7 +121,7 @@ function Initialize-DeploymentEnvironment {
         else {
             $script:result += Remove-SandboxDatabases
             $script:result += Reset-MinimalTemplateDatabase
-            $script:result += Reset-PopulatedTemplateDatabase
+            #$script:result += Reset-PopulatedTemplateDatabase
         }
     }
 
@@ -251,7 +251,7 @@ $deploymentTasks = @{
         }
         Initialize-EdFiDatabaseWithDbDeploy @params
     }
-    'Reset-OdsDatabase'               = {
+    ''               = {
         $settings = Get-DeploymentSettings
         $odsDatabaseType = $settings.ApiSettings.DatabaseTypes.Ods
         $odsConnectionStringKey = $settings.ApiSettings.ConnectionStringKeys[$odsDatabaseType]

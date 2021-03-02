@@ -1,3 +1,9 @@
+--Scott Kuykendall 3/2/2021
+--This script populates the Ed-Fi ODS schools and districts out of a CodeLibrary database
+--The development environment cannot connect to CodeLibrary, therefore references a local copy of CodeLibrary. 
+
+
+
  create function [dbo].[descriptor]( @ns varchar(255), @codevalue varchar(50)) returns int as
  begin
  declare @result int
@@ -25,10 +31,10 @@ go
 
  --LEA
  insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution,ShortNameOfInstitution,WebSite,OperationalStatusDescriptorId,Discriminator)
- select DistrictCode, DistrictName, DistrictShortName,WebAddress,dbo.descriptor('%OperationalStatusDescriptor%','Active'),'edfi.LocalEducationAgency'  from [doesisdb\db1s].CodeLibrary.dbo.District where schoolyear=2021 and TYPE not in ('State')
+ select DistrictCode, DistrictName, DistrictShortName,WebAddress,dbo.descriptor('%OperationalStatusDescriptor%','Active'),'edfi.LocalEducationAgency'  from [CODELIBRARYSOURCE'.CodeLibrary.dbo.District where schoolyear=2021 and TYPE not in ('State')
  go
 INSERT INTO edfi.LocalEducationAgency (LocalEducationAgencyId, LocalEducationAgencyCategoryDescriptorId) 
- select DistrictCode,dbo.descriptor('%LocalEducationAgencyCategory%',(select case rtrim(Type) when 'Regular' then 'District' else Type end)) from  [doesisdb\db1s].CodeLibrary.dbo.District where  SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1) and TYPE not in ('State')
+ select DistrictCode,dbo.descriptor('%LocalEducationAgencyCategory%',(select case rtrim(Type) when 'Regular' then 'District' else Type end)) from  [CODELIBRARYSOURCE'.CodeLibrary.dbo.District where  SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1) and TYPE not in ('State')
  go
 
  INSERT INTO [edfi].[EducationOrganizationAddress]([AddressTypeDescriptorId],[EducationOrganizationId],[StreetNumberName],[City],[StateAbbreviationDescriptorId],[PostalCode],[NameOfCounty],[DoNotPublishIndicator])
@@ -39,9 +45,9 @@ select
            ,isnull(City,'')
            ,(select DescriptorId from edfi.Descriptor where Namespace like '%StateAbbreviationDescriptor%' and CodeValue='DE')
            ,isnull(Zip,'')
-           ,(select County_Name from [DOESISDB\DB1S].codelibrary.dbo.county where County_code=County)
+           ,(select County_Name from [CODELIBRARYSOURCE'.codelibrary.dbo.county where County_code=County)
            ,case when DirectoryInclusion='Y' then 1 else 0 end
- from [DOESISDB\DB1S].codelibrary.dbo.district 
+ from [CODELIBRARYSOURCE'.codelibrary.dbo.district 
  where  SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1) and TYPE not in ('State')
  and districtCode not in (select EducationOrganizationId from edfi.[EducationOrganizationAddress]) 
 
@@ -51,7 +57,7 @@ select
 			DistrictCode,
            (select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Fax'),
            Fax
- from [DOESISDB\DB1S].codelibrary.dbo.district 
+ from [CODELIBRARYSOURCE'.codelibrary.dbo.district 
  where  SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1) and TYPE not in ('State')  and ACT='A'
  and districtCode not in (select EducationOrganizationId from edfi.EducationOrganizationInstitutionTelephone where InstitutionTelephoneNumberTypeDescriptorId=(select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Fax'))
   and Fax is not null
@@ -62,7 +68,7 @@ select
 			DistrictCode,
            (select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Main'),
            Phone
- from [DOESISDB\DB1S].codelibrary.dbo.district 
+ from [CODELIBRARYSOURCE'.codelibrary.dbo.district 
  where  SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1) and TYPE not in ('State')  and ACT='A'
  and districtCode not in (select EducationOrganizationId from edfi.EducationOrganizationInstitutionTelephone where InstitutionTelephoneNumberTypeDescriptorId=(select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Main'))
  and Phone is not null
@@ -73,7 +79,7 @@ insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDes
 select 
 	(select DescriptorId from edfi.Descriptor where Namespace like '%EducationOrganizationCategoryDescriptor%' and CodeValue='Local Education Agency')
 	,districtcode
- from [DOESISDB\DB1S].codelibrary.dbo.district 
+ from [CODELIBRARYSOURCE'.codelibrary.dbo.district 
  where  SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1) and TYPE not in ('State')
  and districtCode not in (select EducationOrganizationId from edfi.EducationOrganizationCategory) 
 
@@ -93,7 +99,7 @@ select distinct
 	(select DescriptorId from edfi.Descriptor where Namespace like '%OperationalStatusDescriptor%' and CodeValue='Active'),
 	'edfi.School'
 from 
-	[DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
+	[CODELIBRARYSOURCE'.codelibrary.dbo.School school join [CODELIBRARYSOURCE'.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 	and building.eSchoolBuilding not in (select EducationOrganizationId from edfi.EducationOrganization)	
 go
@@ -104,7 +110,7 @@ select
 	,(select DescriptorId from edfi.Descriptor where namespace='uri://doe.k12.de.us/EducationOrganizationIdentificationSystemDescriptor' and CodeValue='ShortSchoolCode')
 	,building.SchoolCode
 from 
-	[DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
+	[CODELIBRARYSOURCE'.codelibrary.dbo.School school join [CODELIBRARYSOURCE'.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 	and building.eSchoolBuilding not in (select EducationOrganizationId from edfi.EducationOrganizationIdentificationCode)	
 go
@@ -115,7 +121,7 @@ select
 	(select DescriptorId from edfi.Descriptor where Namespace like '%EducationOrganizationCategoryDescriptor%' and CodeValue='School')
 	,building.eSchoolBuilding
 from 
-	[DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
+	[CODELIBRARYSOURCE'.codelibrary.dbo.School school join [CODELIBRARYSOURCE'.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 	and building.eSchoolBuilding not in (select EducationOrganizationId from edfi.EducationOrganizationCategory)	
 go
@@ -127,7 +133,7 @@ select
 			building.eSchoolBuilding,
            (select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Main'),
            building.Phone
-from [DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
+from [CODELIBRARYSOURCE'.codelibrary.dbo.School school join [CODELIBRARYSOURCE'.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
  and building.Phone is not null and building.phone <>''
 and building.eSchoolBuilding not in (select EducationOrganizationId from edfi.EducationOrganizationInstitutionTelephone where InstitutionTelephoneNumberTypeDescriptorId=(select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Main'))	
@@ -139,7 +145,7 @@ select
 			building.eSchoolBuilding,
            (select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Fax'),
            school.Fax
-from [DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
+from [CODELIBRARYSOURCE'.codelibrary.dbo.School school join [CODELIBRARYSOURCE'.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 and school.Fax is not null and school.Fax<>''
 and building.eSchoolBuilding not in (select EducationOrganizationId from edfi.EducationOrganizationInstitutionTelephone where InstitutionTelephoneNumberTypeDescriptorId=(select DescriptorId from edfi.Descriptor where Namespace like '%InstitutionTelephoneNumberType%' and CodeValue='Fax'))	
@@ -154,7 +160,7 @@ select
 				and CodeValue=(Case school.Charter when 'Y' then 'School Charter' else 'Not a Charter School' end))
            ,building.DistrictCode
 from 
-	[DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
+	[CODELIBRARYSOURCE'.codelibrary.dbo.School school join [CODELIBRARYSOURCE'.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 		and building.EschoolBuilding is not null
 go
@@ -165,7 +171,7 @@ select * from  de.Schoolextension
 insert into de.Schoolextension (SchoolId,AttendanceConfigurationCategoryDescriptorId) 
 select building.eschoolbuilding, (select DescriptorId from edfi.Descriptor where Namespace like '%AttendanceConfigurationCategory%' and CodeValue=AttendanceConfigurationType)
 from 
-	[DOESISDB\DB1S].codelibrary.dbo.School school join [DOESISDB\DB1S].codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
+	[CODELIBRARYSOURCE'.codelibrary.dbo.School school join [CODELIBRARYSOURCE'.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 	and building.eSchoolBuilding not in (select SchoolId from de.Schoolextension)	
 	and building.eSchoolBuilding  in (select SchoolId from edfi.School)
