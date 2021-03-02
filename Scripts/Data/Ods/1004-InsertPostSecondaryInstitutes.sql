@@ -6712,6 +6712,6 @@ INSERT [dbo].[PostSecondaryInstitutes] ([SchoolCode], [SchoolName], [Address], [
  SELECT 2000000000+ row_number() over (order by schoolcode) from [PostSecondaryInstitutes]
 
  Drop Table [dbo].[PostSecondaryInstitutes]
-
+ 
 
  
