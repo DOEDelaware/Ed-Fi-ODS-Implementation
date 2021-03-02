@@ -251,7 +251,7 @@ $deploymentTasks = @{
         }
         Initialize-EdFiDatabaseWithDbDeploy @params
     }
-    ''               = {
+    'Reset-OdsDatabase'               = {
         $settings = Get-DeploymentSettings
         $odsDatabaseType = $settings.ApiSettings.DatabaseTypes.Ods
         $odsConnectionStringKey = $settings.ApiSettings.ConnectionStringKeys[$odsDatabaseType]
