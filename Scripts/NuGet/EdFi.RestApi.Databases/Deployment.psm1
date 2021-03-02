@@ -121,7 +121,7 @@ function Initialize-DeploymentEnvironment {
         else {
             $script:result += Remove-SandboxDatabases
             $script:result += Reset-MinimalTemplateDatabase
-            #$script:result += Reset-PopulatedTemplateDatabase
+            $script:result += Reset-PopulatedTemplateDatabase
         }
     }
 
