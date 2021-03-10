@@ -1,0 +1,2 @@
+delete edfi.descriptor
+go
