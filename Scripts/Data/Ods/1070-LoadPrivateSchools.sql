@@ -31,7 +31,19 @@
 --	,(select DescriptorId from edfi.Descriptor where Namespace like '%CharterStatusDescriptor%' and CodeValue='Not a Charter School')
 --from #private
 
+declare @bPopTemplate varchar(100)
+set @bPopTemplate=0
+select @bPopTemplate=1 where DB_NAME() like '%Populated%'
 
+select @bPopTemplate
+
+if (@bPopTemplate=1)
+begin
+	print 'Not populating private schools- Populated template'
+	return
+end
+else
+begin
 declare  @OperationStatusDescriptorId int
 select @OperationStatusDescriptorId=DescriptorId from edfi.Descriptor where Namespace like '%OperationalStatus%' and CodeValue='Active'
 declare  @SchoolType int
@@ -232,7 +244,7 @@ insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstituti
 insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (365964, 'Jefferson School', 'Jefferson School', @OperationStatusDescriptorId, 'edfi.School')
 insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (950998, 'Devereux', 'Devereux', @OperationStatusDescriptorId, 'edfi.School')
 insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (950999, 'Other', 'Other', @OperationStatusDescriptorId, 'edfi.School')
-insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (970551, 'Silver Lake Treatment Center', 'Silver Lake Treatment Center', @OperationStatusDescriptorId, 'edfi.School')
+-- insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (970551, 'Silver Lake Treatment Center', 'Silver Lake Treatment Center', @OperationStatusDescriptorId, 'edfi.School')
 insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (990994, 'CertSpecEd Placement', 'CertSpecEd Placement', @OperationStatusDescriptorId, 'edfi.School')
 insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (990998, 'Out of State Placement', 'Out of State Placement', @OperationStatusDescriptorId, 'edfi.School')
 insert into edfi.EducationOrganization (EducationOrganizationId, NameOfInstitution, ShortNameOfInstitution,  OperationalStatusDescriptorId, Discriminator) values (3205544, 'Urban Promise School (KN-07)', 'Urban Promise School (KN-07)', @OperationStatusDescriptorId, 'edfi.School')
@@ -420,7 +432,7 @@ insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDes
 insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 365964)
 insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 950998)
 insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 950999)
-insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 970551)
+-- insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 970551)
 insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 990994)
 insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 990998)
 insert into edfi.EducationOrganizationCategory (EducationOrganizationCategoryDescriptorId,EducationOrganizationId)   values (@EdOrgCategory, 3205544)
@@ -612,10 +624,10 @@ INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatus
 INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (365964, @SchoolType, @CharterStatus)
 INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (950998, @SchoolType, @CharterStatus)
 INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (950999, @SchoolType, @CharterStatus)
-INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (970551, @SchoolType, @CharterStatus)
+-- INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (970551, @SchoolType, @CharterStatus)
 INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (990994, @SchoolType, @CharterStatus)
 INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (990998, @SchoolType, @CharterStatus)
 INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (3205544, @SchoolType, @CharterStatus)
 INSERT INTO [edfi].[School]  ([SchoolId],[SchoolTypeDescriptorId],[CharterStatusDescriptorId]) values (3206009, @SchoolType, @CharterStatus)
-go
+end
 

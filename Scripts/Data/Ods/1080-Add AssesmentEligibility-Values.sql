@@ -2,11 +2,22 @@
 
 Scott Kuykendall 	4/21/20
 */
+declare @bPopTemplate varchar(100)
+set @bPopTemplate=0
+select @bPopTemplate=1 where DB_NAME() like '%Populated%'
 
-delete edfixassessmentroster.assessmentAdministration 
-go
-delete edfi.Assessment
-go
+select @bPopTemplate
+
+if (@bPopTemplate=1)
+begin
+	print 'Not populating assessment roster- Populated template'
+	return
+end
+else
+begin
+delete edfixassessmentroster.assessmentAdministration where namespace='uri://doe.k12.de.us/AsessmentRoster'
+
+delete edfi.Assessment where namespace='uri://doe.k12.de.us/AsessmentRoster'
 
 insert into edfi.Assessment (AssessmentIdentifier, [Namespace],AssessmentTitle,CreateDate,LastModifiedDate)
 values
@@ -28,7 +39,7 @@ values
   ('170','uri://doe.k12.de.us/AsessmentRoster','HSBioCourseNCEScode',getdate(),getdate()),
   ('180','uri://doe.k12.de.us/AsessmentRoster','Use Alternate SAT score',getdate(),getdate()),
   ('190','uri://doe.k12.de.us/AsessmentRoster','DeSSA Alt DCPS Assessment',getdate(),getdate())
-go
+
 
 
 --8/20/2020 additions
@@ -39,7 +50,7 @@ values
 	('82','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03062',getdate(),getdate()),
 	('83','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03239',getdate(),getdate())
 
-go
+
 
 
 
@@ -47,4 +58,4 @@ insert into edfixassessmentroster.assessmentAdministration
 (AdministrationIdentifier,AssessmentIdentifier,AssigningEducationOrganizationId, Namespace,CreateDate,LastModifiedDate)
 select AssessmentIdentifier,AssessmentIdentifier,95,'uri://doe.k12.de.us/AsessmentRoster',getdate(),getdate() from edfi.Assessment where Namespace='uri://doe.k12.de.us/AsessmentRoster' 
 and AssessmentIdentifier not in (select AssessmentIdentifier from edfixassessmentroster.assessmentAdministration )
-go
+end
