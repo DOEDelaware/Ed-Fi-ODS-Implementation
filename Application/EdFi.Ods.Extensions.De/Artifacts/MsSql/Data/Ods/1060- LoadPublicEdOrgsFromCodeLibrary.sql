@@ -5,7 +5,7 @@
 --The script to create this is \Ed-Fi-ODS-Implementation\Scripts\Delaware Scripts\Utilities\CreateCodeLibrarySourcelinkedServer.sql
 declare @bPopTemplate varchar(100)
 set @bPopTemplate=0
-select @bPopTemplate=1 where DB_NAME() like '%Populated%'
+select @bPopTemplate=1 where DB_NAME() like '%Populated%' or DB_NAME() like '%Minimal%' 
 
 select @bPopTemplate
 
