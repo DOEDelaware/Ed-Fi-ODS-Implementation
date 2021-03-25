@@ -4,7 +4,8 @@ Scott Kuykendall 	4/21/20
 */
 declare @bPopTemplate varchar(100)
 set @bPopTemplate=0
-select @bPopTemplate=1 where DB_NAME() like '%Populated%'
+select @bPopTemplate=1 where DB_NAME() like '%Populated%' or DB_NAME() like '%Minimal%' 
+
 
 select @bPopTemplate
 
@@ -43,12 +44,12 @@ values
 
 
 --8/20/2020 additions
-insert into edfi.Assessment (AssessmentIdentifier, [Namespace],AssessmentTitle,CreateDate,LastModifiedDate)
-values
+-- insert into edfi.Assessment (AssessmentIdentifier, [Namespace],AssessmentTitle,CreateDate,LastModifiedDate)
+-- values
 
-	('81','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03051',getdate(),getdate()),
-	('82','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03062',getdate(),getdate()),
-	('83','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03239',getdate(),getdate())
+	-- ('81','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03051',getdate(),getdate()),
+	-- ('82','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03062',getdate(),getdate()),
+	-- ('83','uri://doe.k12.de.us/AsessmentRoster','DeSSA Science 03239',getdate(),getdate())
 
 
 
