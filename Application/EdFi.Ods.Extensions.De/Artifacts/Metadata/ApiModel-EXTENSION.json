@@ -313,6 +313,42 @@
     {
       "aggregateRootEntityName": {
         "schema": "de",
+        "name": "LocationDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "de",
+          "name": "LocationDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "de",
+        "name": "MedicalAlert"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "de",
+          "name": "MedicalAlert"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "de",
+        "name": "MedicalAlertCategoryDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "de",
+          "name": "MedicalAlertCategoryDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "de",
         "name": "MedicalDispositionDescriptor"
       },
       "aggregateEntityNames": [
@@ -539,6 +575,18 @@
         {
           "schema": "de",
           "name": "PersonImmunization"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "de",
+        "name": "PersonMedicalAlert"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "de",
+          "name": "PersonMedicalAlert"
         }
       ]
     },
@@ -2914,6 +2962,162 @@
     },
     {
       "schema": "de",
+      "name": "LocationDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "LocationDescriptor_PK",
+          "identifyingPropertyNames": [
+            "LocationDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "LocationDescriptor_PK",
+            "postgreSql": "LocationDescriptor_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "Gives the description of event Location.",
+      "tableNames": {
+        "sqlServer": "LocationDescriptor",
+        "postgreSql": "LocationDescriptor"
+      }
+    },
+    {
+      "schema": "de",
+      "name": "MedicalAlert",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
+        },
+        {
+          "propertyName": "Sensitive",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Indicates if the code represents a sensitive medical alert and should only be displayed for users with the proper security.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Sensitive",
+            "postgreSql": "Sensitive"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "MedicalAlert_PK",
+          "identifyingPropertyNames": [
+            "MedicalAlertCategoryDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "MedicalAlert_PK",
+            "postgreSql": "MedicalAlert_PK"
+          }
+        },
+        {
+          "identifierName": "UX_MedicalAlert_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_MedicalAlert_Id",
+            "postgreSql": "UX_54dd73_Id"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "Defines the codes that describe a person's known medical conditions.",
+      "tableNames": {
+        "sqlServer": "MedicalAlert",
+        "postgreSql": "MedicalAlert"
+      }
+    },
+    {
+      "schema": "de",
+      "name": "MedicalAlertCategoryDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "MedicalAlertCategoryDescriptor_PK",
+          "identifyingPropertyNames": [
+            "MedicalAlertCategoryDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "MedicalAlertCategoryDescriptor_PK",
+            "postgreSql": "MedicalAlertCategoryDescriptor_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "Defines the codes that describe a person's known medical conditions.",
+      "tableNames": {
+        "sqlServer": "MedicalAlertCategoryDescriptor",
+        "postgreSql": "MedicalAlertCategoryDescriptor"
+      }
+    },
+    {
+      "schema": "de",
       "name": "MedicalDispositionDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
@@ -5027,6 +5231,147 @@
       "tableNames": {
         "sqlServer": "PersonImmunization",
         "postgreSql": "PersonImmunization"
+      }
+    },
+    {
+      "schema": "de",
+      "name": "PersonMedicalAlert",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        },
+        {
+          "propertyName": "EndDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Identifies the end date for a medical alert.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EndDate",
+            "postgreSql": "EndDate"
+          }
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
+        },
+        {
+          "propertyName": "Sequence",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The sequence number for prioritizing medical alerts.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Sequence",
+            "postgreSql": "Sequence"
+          }
+        },
+        {
+          "propertyName": "StartDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Identifies the start date of a medical alert.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StartDate",
+            "postgreSql": "StartDate"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "PersonMedicalAlert_PK",
+          "identifyingPropertyNames": [
+            "MedicalAlertCategoryDescriptorId",
+            "StartDate"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "PersonMedicalAlert_PK",
+            "postgreSql": "PersonMedicalAlert_PK"
+          }
+        },
+        {
+          "identifierName": "UX_PersonMedicalAlert_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_PersonMedicalAlert_Id",
+            "postgreSql": "UX_02d654_Id"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "Defines the codes that describe a person's known medical conditions.",
+      "tableNames": {
+        "sqlServer": "PersonMedicalAlert",
+        "postgreSql": "PersonMedicalAlert"
       }
     },
     {
@@ -11572,6 +11917,183 @@
     {
       "fullName": {
         "schema": "de",
+        "name": "FK_LocationDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "de",
+        "name": "LocationDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "LocationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "LocationDescriptorId",
+            "postgreSql": "LocationDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_LocationDescriptor_Descriptor",
+        "postgreSql": "FK_343830_Descriptor"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "de",
+        "name": "FK_MedicalAlert_MedicalAlertCategoryDescriptor"
+      },
+      "cardinality": "OneToOne",
+      "primaryEntityFullName": {
+        "schema": "de",
+        "name": "MedicalAlertCategoryDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "MedicalAlertCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MedicalAlertCategoryDescriptorId",
+            "postgreSql": "MedicalAlertCategoryDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "de",
+        "name": "MedicalAlert"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "MedicalAlertCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Identifies the medical alert code.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MedicalAlertCategoryDescriptorId",
+            "postgreSql": "MedicalAlertCategoryDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_MedicalAlert_MedicalAlertCategoryDescriptor",
+        "postgreSql": "FK_54dd73_MedicalAlertCategoryDescriptor"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "de",
+        "name": "FK_MedicalAlertCategoryDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "de",
+        "name": "MedicalAlertCategoryDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "MedicalAlertCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "MedicalAlertCategoryDescriptorId",
+            "postgreSql": "MedicalAlertCategoryDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_MedicalAlertCategoryDescriptor_Descriptor",
+        "postgreSql": "FK_9f66fc_Descriptor"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "de",
         "name": "FK_MedicalDispositionDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
@@ -12738,6 +13260,65 @@
     {
       "fullName": {
         "schema": "de",
+        "name": "FK_MedicalScreening_EducationOrganization"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "EducationOrganization"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "de",
+        "name": "MedicalScreening"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ScreeningEducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ScreeningEducationOrganizationId",
+            "postgreSql": "ScreeningEducationOrganizationId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_MedicalScreening_EducationOrganization",
+        "postgreSql": "FK_afc675_EducationOrganization"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "de",
         "name": "FK_MedicalScreening_GradeLevelDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
@@ -12792,6 +13373,65 @@
       "constraintNames": {
         "sqlServer": "FK_MedicalScreening_GradeLevelDescriptor",
         "postgreSql": "FK_afc675_GradeLevelDescriptor"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "de",
+        "name": "FK_MedicalScreening_LocationDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "de",
+        "name": "LocationDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "LocationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocationDescriptorId",
+            "postgreSql": "LocationDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "de",
+        "name": "MedicalScreening"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ScreeningLocationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Screening location where screening occured.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ScreeningLocationDescriptorId",
+            "postgreSql": "ScreeningLocationDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_MedicalScreening_LocationDescriptor",
+        "postgreSql": "FK_afc675_LocationDescriptor"
       }
     },
     {
@@ -16544,6 +17184,65 @@
       "constraintNames": {
         "sqlServer": "FK_PersonImmunization_Person",
         "postgreSql": "FK_f28934_Person"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "de",
+        "name": "FK_PersonMedicalAlert_MedicalAlert"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "de",
+        "name": "MedicalAlert"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "MedicalAlertCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Identifies the medical alert code.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MedicalAlertCategoryDescriptorId",
+            "postgreSql": "MedicalAlertCategoryDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "de",
+        "name": "PersonMedicalAlert"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "MedicalAlertCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Identifies the medical alert code.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MedicalAlertCategoryDescriptorId",
+            "postgreSql": "MedicalAlertCategoryDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_PersonMedicalAlert_MedicalAlert",
+        "postgreSql": "FK_02d654_MedicalAlert"
       }
     },
     {

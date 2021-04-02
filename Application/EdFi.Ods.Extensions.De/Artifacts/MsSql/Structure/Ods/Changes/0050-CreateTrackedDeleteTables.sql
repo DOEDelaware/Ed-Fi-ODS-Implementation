@@ -204,6 +204,30 @@ CREATE TABLE [tracked_deletes_de].[LevelDetail]
        CONSTRAINT PK_LevelDetail PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
+CREATE TABLE [tracked_deletes_de].[LocationDescriptor]
+(
+       LocationDescriptorId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_LocationDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+
+CREATE TABLE [tracked_deletes_de].[MedicalAlert]
+(
+       MedicalAlertCategoryDescriptorId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_MedicalAlert PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+
+CREATE TABLE [tracked_deletes_de].[MedicalAlertCategoryDescriptor]
+(
+       MedicalAlertCategoryDescriptorId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_MedicalAlertCategoryDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+
 CREATE TABLE [tracked_deletes_de].[MedicalDispositionDescriptor]
 (
        MedicalDispositionDescriptorId [INT] NOT NULL,
@@ -354,6 +378,15 @@ CREATE TABLE [tracked_deletes_de].[PersonImmunization]
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
        CONSTRAINT PK_PersonImmunization PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+
+CREATE TABLE [tracked_deletes_de].[PersonMedicalAlert]
+(
+       MedicalAlertCategoryDescriptorId [INT] NOT NULL,
+       StartDate [DATE] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_PersonMedicalAlert PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
 CREATE TABLE [tracked_deletes_de].[PersonMedicationBoxAssociation]

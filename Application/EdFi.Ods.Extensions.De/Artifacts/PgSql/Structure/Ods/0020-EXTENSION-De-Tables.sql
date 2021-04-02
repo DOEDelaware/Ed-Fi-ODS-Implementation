@@ -327,6 +327,32 @@ ALTER TABLE de.LevelDetail ALTER COLUMN CreateDate SET DEFAULT current_timestamp
 ALTER TABLE de.LevelDetail ALTER COLUMN Id SET DEFAULT gen_random_uuid();
 ALTER TABLE de.LevelDetail ALTER COLUMN LastModifiedDate SET DEFAULT current_timestamp;
 
+-- Table de.LocationDescriptor --
+CREATE TABLE de.LocationDescriptor (
+    LocationDescriptorId INT NOT NULL,
+    CONSTRAINT LocationDescriptor_PK PRIMARY KEY (LocationDescriptorId)
+); 
+
+-- Table de.MedicalAlert --
+CREATE TABLE de.MedicalAlert (
+    MedicalAlertCategoryDescriptorId INT NOT NULL,
+    Sensitive BOOLEAN NULL,
+    Discriminator VARCHAR(128) NULL,
+    CreateDate TIMESTAMP NOT NULL,
+    LastModifiedDate TIMESTAMP NOT NULL,
+    Id UUID NOT NULL,
+    CONSTRAINT MedicalAlert_PK PRIMARY KEY (MedicalAlertCategoryDescriptorId)
+); 
+ALTER TABLE de.MedicalAlert ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
+ALTER TABLE de.MedicalAlert ALTER COLUMN Id SET DEFAULT gen_random_uuid();
+ALTER TABLE de.MedicalAlert ALTER COLUMN LastModifiedDate SET DEFAULT current_timestamp;
+
+-- Table de.MedicalAlertCategoryDescriptor --
+CREATE TABLE de.MedicalAlertCategoryDescriptor (
+    MedicalAlertCategoryDescriptorId INT NOT NULL,
+    CONSTRAINT MedicalAlertCategoryDescriptor_PK PRIMARY KEY (MedicalAlertCategoryDescriptorId)
+); 
+
 -- Table de.MedicalDispositionDescriptor --
 CREATE TABLE de.MedicalDispositionDescriptor (
     MedicalDispositionDescriptorId INT NOT NULL,
@@ -420,6 +446,8 @@ CREATE TABLE de.MedicalScreening (
     AthleticStatus BOOLEAN NULL,
     GradeLevelDescriptorId INT NULL,
     SchoolOfServiceSchoolId INT NULL,
+    ScreeningEducationOrganizationId INT NULL,
+    ScreeningLocationDescriptorId INT NULL,
     Discriminator VARCHAR(128) NULL,
     CreateDate TIMESTAMP NOT NULL,
     LastModifiedDate TIMESTAMP NOT NULL,
@@ -680,6 +708,22 @@ CREATE TABLE de.PersonImmunization (
 ALTER TABLE de.PersonImmunization ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 ALTER TABLE de.PersonImmunization ALTER COLUMN Id SET DEFAULT gen_random_uuid();
 ALTER TABLE de.PersonImmunization ALTER COLUMN LastModifiedDate SET DEFAULT current_timestamp;
+
+-- Table de.PersonMedicalAlert --
+CREATE TABLE de.PersonMedicalAlert (
+    MedicalAlertCategoryDescriptorId INT NOT NULL,
+    StartDate DATE NOT NULL,
+    EndDate DATE NULL,
+    Sequence INT NULL,
+    Discriminator VARCHAR(128) NULL,
+    CreateDate TIMESTAMP NOT NULL,
+    LastModifiedDate TIMESTAMP NOT NULL,
+    Id UUID NOT NULL,
+    CONSTRAINT PersonMedicalAlert_PK PRIMARY KEY (MedicalAlertCategoryDescriptorId, StartDate)
+); 
+ALTER TABLE de.PersonMedicalAlert ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
+ALTER TABLE de.PersonMedicalAlert ALTER COLUMN Id SET DEFAULT gen_random_uuid();
+ALTER TABLE de.PersonMedicalAlert ALTER COLUMN LastModifiedDate SET DEFAULT current_timestamp;
 
 -- Table de.PersonMedicationBoxAssociation --
 CREATE TABLE de.PersonMedicationBoxAssociation (

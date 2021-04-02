@@ -29,6 +29,12 @@ BEGIN TRANSACTION
 COMMIT
 
 BEGIN TRANSACTION
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.MedicalAlert') AND name = N'UX_MedicalAlert_ChangeVersion')
+    CREATE INDEX [UX_MedicalAlert_ChangeVersion] ON [de].[MedicalAlert] ([ChangeVersion] ASC)
+    GO
+COMMIT
+
+BEGIN TRANSACTION
     IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.MedicalOfficeVisit') AND name = N'UX_MedicalOfficeVisit_ChangeVersion')
     CREATE INDEX [UX_MedicalOfficeVisit_ChangeVersion] ON [de].[MedicalOfficeVisit] ([ChangeVersion] ASC)
     GO
@@ -73,6 +79,12 @@ COMMIT
 BEGIN TRANSACTION
     IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.PersonImmunization') AND name = N'UX_PersonImmunization_ChangeVersion')
     CREATE INDEX [UX_PersonImmunization_ChangeVersion] ON [de].[PersonImmunization] ([ChangeVersion] ASC)
+    GO
+COMMIT
+
+BEGIN TRANSACTION
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.PersonMedicalAlert') AND name = N'UX_PersonMedicalAlert_ChangeVersion')
+    CREATE INDEX [UX_PersonMedicalAlert_ChangeVersion] ON [de].[PersonMedicalAlert] ([ChangeVersion] ASC)
     GO
 COMMIT
 
