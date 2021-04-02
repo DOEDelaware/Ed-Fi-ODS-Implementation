@@ -443,6 +443,59 @@ ALTER TABLE [de].[LevelDetail] ENABLE TRIGGER [de_LevelDetail_TR_DeleteTracking]
 GO
 
 
+CREATE TRIGGER [de].[de_LocationDescriptor_TR_DeleteTracking] ON [de].[LocationDescriptor] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_deletes_de].[LocationDescriptor](LocationDescriptorId, Id, ChangeVersion)
+    SELECT  d.LocationDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+            INNER JOIN edfi.Descriptor b ON d.LocationDescriptorId = b.DescriptorId
+END
+GO
+
+ALTER TABLE [de].[LocationDescriptor] ENABLE TRIGGER [de_LocationDescriptor_TR_DeleteTracking]
+GO
+
+
+CREATE TRIGGER [de].[de_MedicalAlertCategoryDescriptor_TR_DeleteTracking] ON [de].[MedicalAlertCategoryDescriptor] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_deletes_de].[MedicalAlertCategoryDescriptor](MedicalAlertCategoryDescriptorId, Id, ChangeVersion)
+    SELECT  d.MedicalAlertCategoryDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+            INNER JOIN edfi.Descriptor b ON d.MedicalAlertCategoryDescriptorId = b.DescriptorId
+END
+GO
+
+ALTER TABLE [de].[MedicalAlertCategoryDescriptor] ENABLE TRIGGER [de_MedicalAlertCategoryDescriptor_TR_DeleteTracking]
+GO
+
+
+CREATE TRIGGER [de].[de_MedicalAlert_TR_DeleteTracking] ON [de].[MedicalAlert] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_deletes_de].[MedicalAlert](MedicalAlertCategoryDescriptorId, Id, ChangeVersion)
+    SELECT  MedicalAlertCategoryDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+END
+GO
+
+ALTER TABLE [de].[MedicalAlert] ENABLE TRIGGER [de_MedicalAlert_TR_DeleteTracking]
+GO
+
+
 CREATE TRIGGER [de].[de_MedicalDispositionDescriptor_TR_DeleteTracking] ON [de].[MedicalDispositionDescriptor] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 
@@ -720,6 +773,23 @@ END
 GO
 
 ALTER TABLE [de].[PersonImmunization] ENABLE TRIGGER [de_PersonImmunization_TR_DeleteTracking]
+GO
+
+
+CREATE TRIGGER [de].[de_PersonMedicalAlert_TR_DeleteTracking] ON [de].[PersonMedicalAlert] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_deletes_de].[PersonMedicalAlert](MedicalAlertCategoryDescriptorId, StartDate, Id, ChangeVersion)
+    SELECT  MedicalAlertCategoryDescriptorId, StartDate, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+END
+GO
+
+ALTER TABLE [de].[PersonMedicalAlert] ENABLE TRIGGER [de_PersonMedicalAlert_TR_DeleteTracking]
 GO
 
 

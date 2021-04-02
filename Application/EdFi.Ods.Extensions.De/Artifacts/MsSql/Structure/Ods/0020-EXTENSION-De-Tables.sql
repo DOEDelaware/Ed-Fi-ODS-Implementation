@@ -478,6 +478,44 @@ GO
 ALTER TABLE [de].[LevelDetail] ADD CONSTRAINT [LevelDetail_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
+-- Table [de].[LocationDescriptor] --
+CREATE TABLE [de].[LocationDescriptor] (
+    [LocationDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [LocationDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [LocationDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [de].[MedicalAlert] --
+CREATE TABLE [de].[MedicalAlert] (
+    [MedicalAlertCategoryDescriptorId] [INT] NOT NULL,
+    [Sensitive] [BIT] NULL,
+    [Discriminator] [NVARCHAR](128) NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
+    [Id] [UNIQUEIDENTIFIER] NOT NULL,
+    CONSTRAINT [MedicalAlert_PK] PRIMARY KEY CLUSTERED (
+        [MedicalAlertCategoryDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [de].[MedicalAlert] ADD CONSTRAINT [MedicalAlert_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+ALTER TABLE [de].[MedicalAlert] ADD CONSTRAINT [MedicalAlert_DF_Id] DEFAULT (newid()) FOR [Id]
+GO
+ALTER TABLE [de].[MedicalAlert] ADD CONSTRAINT [MedicalAlert_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [de].[MedicalAlertCategoryDescriptor] --
+CREATE TABLE [de].[MedicalAlertCategoryDescriptor] (
+    [MedicalAlertCategoryDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [MedicalAlertCategoryDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [MedicalAlertCategoryDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Table [de].[MedicalDispositionDescriptor] --
 CREATE TABLE [de].[MedicalDispositionDescriptor] (
     [MedicalDispositionDescriptorId] [INT] NOT NULL,
@@ -620,6 +658,8 @@ CREATE TABLE [de].[MedicalScreening] (
     [AthleticStatus] [BIT] NULL,
     [GradeLevelDescriptorId] [INT] NULL,
     [SchoolOfServiceSchoolId] [INT] NULL,
+    [ScreeningEducationOrganizationId] [INT] NULL,
+    [ScreeningLocationDescriptorId] [INT] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     [LastModifiedDate] [DATETIME2] NOT NULL,
@@ -1015,6 +1055,29 @@ GO
 ALTER TABLE [de].[PersonImmunization] ADD CONSTRAINT [PersonImmunization_DF_Id] DEFAULT (newid()) FOR [Id]
 GO
 ALTER TABLE [de].[PersonImmunization] ADD CONSTRAINT [PersonImmunization_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [de].[PersonMedicalAlert] --
+CREATE TABLE [de].[PersonMedicalAlert] (
+    [MedicalAlertCategoryDescriptorId] [INT] NOT NULL,
+    [StartDate] [DATE] NOT NULL,
+    [EndDate] [DATE] NULL,
+    [Sequence] [INT] NULL,
+    [Discriminator] [NVARCHAR](128) NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
+    [Id] [UNIQUEIDENTIFIER] NOT NULL,
+    CONSTRAINT [PersonMedicalAlert_PK] PRIMARY KEY CLUSTERED (
+        [MedicalAlertCategoryDescriptorId] ASC,
+        [StartDate] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [de].[PersonMedicalAlert] ADD CONSTRAINT [PersonMedicalAlert_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+ALTER TABLE [de].[PersonMedicalAlert] ADD CONSTRAINT [PersonMedicalAlert_DF_Id] DEFAULT (newid()) FOR [Id]
+GO
+ALTER TABLE [de].[PersonMedicalAlert] ADD CONSTRAINT [PersonMedicalAlert_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
 -- Table [de].[PersonMedicationBoxAssociation] --

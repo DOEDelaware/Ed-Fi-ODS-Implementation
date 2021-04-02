@@ -48,6 +48,16 @@ BEGIN
 END	
 GO
 
+CREATE TRIGGER [de].[de_MedicalAlert_TR_UpdateChangeVersion] ON [de].[MedicalAlert] AFTER UPDATE AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE [de].[MedicalAlert]
+    SET ChangeVersion = (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM [de].[MedicalAlert] u
+    WHERE EXISTS (SELECT 1 FROM inserted i WHERE i.id = u.id);
+END	
+GO
+
 CREATE TRIGGER [de].[de_MedicalOfficeVisit_TR_UpdateChangeVersion] ON [de].[MedicalOfficeVisit] AFTER UPDATE AS
 BEGIN
     SET NOCOUNT ON;
@@ -124,6 +134,16 @@ BEGIN
     UPDATE [de].[PersonImmunization]
     SET ChangeVersion = (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM [de].[PersonImmunization] u
+    WHERE EXISTS (SELECT 1 FROM inserted i WHERE i.id = u.id);
+END	
+GO
+
+CREATE TRIGGER [de].[de_PersonMedicalAlert_TR_UpdateChangeVersion] ON [de].[PersonMedicalAlert] AFTER UPDATE AS
+BEGIN
+    SET NOCOUNT ON;
+    UPDATE [de].[PersonMedicalAlert]
+    SET ChangeVersion = (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM [de].[PersonMedicalAlert] u
     WHERE EXISTS (SELECT 1 FROM inserted i WHERE i.id = u.id);
 END	
 GO

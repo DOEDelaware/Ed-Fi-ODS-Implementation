@@ -13,6 +13,9 @@ CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.GradeTypeDetail
 CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.LevelDetail
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
 
+CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.MedicalAlert
+    FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
+
 CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.MedicalOfficeVisit
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
 
@@ -35,6 +38,9 @@ CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.PersonDisciplineIncidentA
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
 
 CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.PersonImmunization
+    FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
+
+CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.PersonMedicalAlert
     FOR EACH ROW EXECUTE PROCEDURE changes.UpdateChangeVersion();
 
 CREATE TRIGGER UpdateChangeVersion BEFORE UPDATE ON de.PersonMedicationBoxAssociation

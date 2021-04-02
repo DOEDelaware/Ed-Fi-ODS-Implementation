@@ -343,6 +343,47 @@ $BODY$ LANGUAGE plpgsql;
 CREATE TRIGGER TrackDeletes AFTER DELETE ON de.LevelDetail 
     FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_de.LevelDetail_TR_DelTrkg();
 
+CREATE FUNCTION tracked_deletes_de.LocationDescriptor_TR_DelTrkg()
+    RETURNS trigger AS
+$BODY$
+BEGIN
+    INSERT INTO tracked_deletes_de.LocationDescriptor(LocationDescriptorId, Id, ChangeVersion)
+    SELECT OLD.LocationDescriptorId, Id, nextval('changes.ChangeVersionSequence')
+    FROM edfi.Descriptor WHERE DescriptorId = OLD.LocationDescriptorId;
+    RETURN NULL;
+END;
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TrackDeletes AFTER DELETE ON de.LocationDescriptor 
+    FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_de.LocationDescriptor_TR_DelTrkg();
+
+CREATE FUNCTION tracked_deletes_de.MedicalAlertCategoryDescriptor_TR_DelTrkg()
+    RETURNS trigger AS
+$BODY$
+BEGIN
+    INSERT INTO tracked_deletes_de.MedicalAlertCategoryDescriptor(MedicalAlertCategoryDescriptorId, Id, ChangeVersion)
+    SELECT OLD.MedicalAlertCategoryDescriptorId, Id, nextval('changes.ChangeVersionSequence')
+    FROM edfi.Descriptor WHERE DescriptorId = OLD.MedicalAlertCategoryDescriptorId;
+    RETURN NULL;
+END;
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TrackDeletes AFTER DELETE ON de.MedicalAlertCategoryDescriptor 
+    FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_de.MedicalAlertCategoryDescriptor_TR_DelTrkg();
+
+CREATE FUNCTION tracked_deletes_de.MedicalAlert_TR_DelTrkg()
+    RETURNS trigger AS
+$BODY$
+BEGIN
+    INSERT INTO tracked_deletes_de.MedicalAlert(MedicalAlertCategoryDescriptorId, Id, ChangeVersion)
+    VALUES (OLD.MedicalAlertCategoryDescriptorId, OLD.Id, nextval('changes.ChangeVersionSequence'));
+    RETURN NULL;
+END;
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TrackDeletes AFTER DELETE ON de.MedicalAlert 
+    FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_de.MedicalAlert_TR_DelTrkg();
+
 CREATE FUNCTION tracked_deletes_de.MedicalDispositionDescriptor_TR_DelTrkg()
     RETURNS trigger AS
 $BODY$
@@ -558,6 +599,19 @@ $BODY$ LANGUAGE plpgsql;
 
 CREATE TRIGGER TrackDeletes AFTER DELETE ON de.PersonImmunization 
     FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_de.PersonImmunization_TR_DelTrkg();
+
+CREATE FUNCTION tracked_deletes_de.PersonMedicalAlert_TR_DelTrkg()
+    RETURNS trigger AS
+$BODY$
+BEGIN
+    INSERT INTO tracked_deletes_de.PersonMedicalAlert(MedicalAlertCategoryDescriptorId, StartDate, Id, ChangeVersion)
+    VALUES (OLD.MedicalAlertCategoryDescriptorId, OLD.StartDate, OLD.Id, nextval('changes.ChangeVersionSequence'));
+    RETURN NULL;
+END;
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TrackDeletes AFTER DELETE ON de.PersonMedicalAlert 
+    FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_de.PersonMedicalAlert_TR_DelTrkg();
 
 CREATE FUNCTION tracked_deletes_de.PersonMedicationBoxAssociation_TR_DelTrkg()
     RETURNS trigger AS

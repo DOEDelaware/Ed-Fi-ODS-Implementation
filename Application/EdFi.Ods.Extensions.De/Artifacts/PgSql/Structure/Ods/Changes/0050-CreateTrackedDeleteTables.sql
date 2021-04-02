@@ -204,6 +204,30 @@ CREATE TABLE tracked_deletes_de.LevelDetail
        CONSTRAINT LevelDetail_PK PRIMARY KEY (ChangeVersion)
 );
 
+CREATE TABLE tracked_deletes_de.LocationDescriptor
+(
+       LocationDescriptorId INT NOT NULL,
+       Id UUID NOT NULL,
+       ChangeVersion BIGINT NOT NULL,
+       CONSTRAINT LocationDescriptor_PK PRIMARY KEY (ChangeVersion)
+);
+
+CREATE TABLE tracked_deletes_de.MedicalAlert
+(
+       MedicalAlertCategoryDescriptorId INT NOT NULL,
+       Id UUID NOT NULL,
+       ChangeVersion BIGINT NOT NULL,
+       CONSTRAINT MedicalAlert_PK PRIMARY KEY (ChangeVersion)
+);
+
+CREATE TABLE tracked_deletes_de.MedicalAlertCategoryDescriptor
+(
+       MedicalAlertCategoryDescriptorId INT NOT NULL,
+       Id UUID NOT NULL,
+       ChangeVersion BIGINT NOT NULL,
+       CONSTRAINT MedicalAlertCategoryDescriptor_PK PRIMARY KEY (ChangeVersion)
+);
+
 CREATE TABLE tracked_deletes_de.MedicalDispositionDescriptor
 (
        MedicalDispositionDescriptorId INT NOT NULL,
@@ -354,6 +378,15 @@ CREATE TABLE tracked_deletes_de.PersonImmunization
        Id UUID NOT NULL,
        ChangeVersion BIGINT NOT NULL,
        CONSTRAINT PersonImmunization_PK PRIMARY KEY (ChangeVersion)
+);
+
+CREATE TABLE tracked_deletes_de.PersonMedicalAlert
+(
+       MedicalAlertCategoryDescriptorId INT NOT NULL,
+       StartDate DATE NOT NULL,
+       Id UUID NOT NULL,
+       ChangeVersion BIGINT NOT NULL,
+       CONSTRAINT PersonMedicalAlert_PK PRIMARY KEY (ChangeVersion)
 );
 
 CREATE TABLE tracked_deletes_de.PersonMedicationBoxAssociation

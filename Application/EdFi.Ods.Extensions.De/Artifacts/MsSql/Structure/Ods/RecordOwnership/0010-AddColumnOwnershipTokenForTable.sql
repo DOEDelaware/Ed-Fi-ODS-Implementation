@@ -12,6 +12,8 @@ ALTER TABLE [de].[GradeTypeDetail] ADD [CreatedByOwnershipTokenId] SMALLINT NULL
 
 ALTER TABLE [de].[LevelDetail] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
+ALTER TABLE [de].[MedicalAlert] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
+
 ALTER TABLE [de].[MedicalOfficeVisit] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
 ALTER TABLE [de].[MedicalReferralFollowUp] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
@@ -25,6 +27,8 @@ ALTER TABLE [de].[NonStudent] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 ALTER TABLE [de].[PersonDisciplineAction] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
 ALTER TABLE [de].[PersonImmunization] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
+
+ALTER TABLE [de].[PersonMedicalAlert] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 
 ALTER TABLE [de].[PostSecondaryDetail] ADD [CreatedByOwnershipTokenId] SMALLINT NULL;
 

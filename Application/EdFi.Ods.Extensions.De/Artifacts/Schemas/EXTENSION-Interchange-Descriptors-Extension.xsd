@@ -207,6 +207,8 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="ImmunizationCodeDescriptor" type="EXTENSION-ImmunizationCodeDescriptor" />
         <xs:element name="IncidentRelatedToDescriptor" type="EXTENSION-IncidentRelatedToDescriptor" />
         <xs:element name="InjuryDescriptor" type="EXTENSION-InjuryDescriptor" />
+        <xs:element name="LocationDescriptor" type="EXTENSION-LocationDescriptor" />
+        <xs:element name="MedicalAlertCategoryDescriptor" type="EXTENSION-MedicalAlertCategoryDescriptor" />
         <xs:element name="MedicalDispositionDescriptor" type="EXTENSION-MedicalDispositionDescriptor" />
         <xs:element name="MedicalTestCategoryDescriptor" type="EXTENSION-MedicalTestCategoryDescriptor" />
         <xs:element name="MedicalTreatmentCodeDescriptor" type="EXTENSION-MedicalTreatmentCodeDescriptor" />

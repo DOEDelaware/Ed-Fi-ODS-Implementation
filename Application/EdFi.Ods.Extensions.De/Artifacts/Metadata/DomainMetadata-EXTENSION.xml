@@ -76,6 +76,15 @@
   <Aggregate root="LevelDetail">
     <Entity table="LevelDetail" schema="de"/>
   </Aggregate>
+  <Aggregate root="LocationDescriptor">
+    <Entity table="LocationDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalAlert">
+    <Entity table="MedicalAlert" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalAlertCategoryDescriptor">
+    <Entity table="MedicalAlertCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
   <Aggregate root="MedicalDispositionDescriptor">
     <Entity table="MedicalDispositionDescriptor" isA="Descriptor" schema="de"/>
   </Aggregate>
@@ -133,6 +142,9 @@
   </Aggregate>
   <Aggregate root="PersonImmunization">
     <Entity table="PersonImmunization" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PersonMedicalAlert">
+    <Entity table="PersonMedicalAlert" schema="de"/>
   </Aggregate>
   <Aggregate root="PersonMedicationBoxAssociation">
     <Entity table="PersonMedicationBoxAssociation" schema="de"/>
