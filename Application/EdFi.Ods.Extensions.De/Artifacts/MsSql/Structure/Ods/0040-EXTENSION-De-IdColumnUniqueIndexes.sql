@@ -34,6 +34,13 @@ BEGIN TRANSACTION
 COMMIT
 
 BEGIN TRANSACTION
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.MedicalAlert') AND name = N'UX_MedicalAlert_Id')
+    CREATE UNIQUE NONCLUSTERED INDEX UX_MedicalAlert_Id ON [de].[MedicalAlert]
+    (Id) WITH (PAD_INDEX = ON, FILLFACTOR = 75, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
+    GO
+COMMIT
+
+BEGIN TRANSACTION
     IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.MedicalOfficeVisit') AND name = N'UX_MedicalOfficeVisit_Id')
     CREATE UNIQUE NONCLUSTERED INDEX UX_MedicalOfficeVisit_Id ON [de].[MedicalOfficeVisit]
     (Id) WITH (PAD_INDEX = ON, FILLFACTOR = 75, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
@@ -85,6 +92,13 @@ COMMIT
 BEGIN TRANSACTION
     IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.PersonImmunization') AND name = N'UX_PersonImmunization_Id')
     CREATE UNIQUE NONCLUSTERED INDEX UX_PersonImmunization_Id ON [de].[PersonImmunization]
+    (Id) WITH (PAD_INDEX = ON, FILLFACTOR = 75, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
+    GO
+COMMIT
+
+BEGIN TRANSACTION
+    IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'de.PersonMedicalAlert') AND name = N'UX_PersonMedicalAlert_Id')
+    CREATE UNIQUE NONCLUSTERED INDEX UX_PersonMedicalAlert_Id ON [de].[PersonMedicalAlert]
     (Id) WITH (PAD_INDEX = ON, FILLFACTOR = 75, STATISTICS_NORECOMPUTE = OFF) ON [PRIMARY]
     GO
 COMMIT

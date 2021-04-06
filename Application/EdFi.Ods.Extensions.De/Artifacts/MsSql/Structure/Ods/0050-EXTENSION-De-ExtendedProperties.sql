@@ -346,6 +346,26 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicates the value printed on the transcript for the mark assocaited with a level number.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'LevelDetail', @level2type=N'COLUMN', @level2name=N'TranscriptPrintValue'
 GO
 
+-- Extended Properties [de].[LocationDescriptor] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Gives the description of event Location.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'LocationDescriptor'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'LocationDescriptor', @level2type=N'COLUMN', @level2name=N'LocationDescriptorId'
+GO
+
+-- Extended Properties [de].[MedicalAlert] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Defines the codes that describe a person''s known medical conditions.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalAlert'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the medical alert code.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalAlert', @level2type=N'COLUMN', @level2name=N'MedicalAlertCategoryDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicates if the code represents a sensitive medical alert and should only be displayed for users with the proper security.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalAlert', @level2type=N'COLUMN', @level2name=N'Sensitive'
+GO
+
+-- Extended Properties [de].[MedicalAlertCategoryDescriptor] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Defines the codes that describe a person''s known medical conditions.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalAlertCategoryDescriptor'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalAlertCategoryDescriptor', @level2type=N'COLUMN', @level2name=N'MedicalAlertCategoryDescriptorId'
+GO
+
 -- Extended Properties [de].[MedicalDispositionDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Defines the codes for the medical disposition.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalDispositionDescriptor'
 GO
@@ -444,6 +464,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Grade level if person is student.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalScreening', @level2type=N'COLUMN', @level2name=N'GradeLevelDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalScreening', @level2type=N'COLUMN', @level2name=N'SchoolOfServiceSchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalScreening', @level2type=N'COLUMN', @level2name=N'ScreeningEducationOrganizationId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Screening location where screening occured.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'MedicalScreening', @level2type=N'COLUMN', @level2name=N'ScreeningLocationDescriptorId'
 GO
 
 -- Extended Properties [de].[MedicalTestCategoryDescriptor] --
@@ -734,6 +758,18 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a person.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonImmunization', @level2type=N'COLUMN', @level2name=N'PersonId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines the originating record source system for the person.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonImmunization', @level2type=N'COLUMN', @level2name=N'SourceSystemDescriptorId'
+GO
+
+-- Extended Properties [de].[PersonMedicalAlert] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Defines the codes that describe a person''s known medical conditions.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the medical alert code.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'MedicalAlertCategoryDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the start date of a medical alert.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'StartDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the end date for a medical alert.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'EndDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The sequence number for prioritizing medical alerts.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'Sequence'
 GO
 
 -- Extended Properties [de].[PersonMedicationBoxAssociation] --

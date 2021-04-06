@@ -206,6 +206,19 @@ COMMENT ON COLUMN de.LevelDetail.PointValue IS 'Indicates the point value for th
 COMMENT ON COLUMN de.LevelDetail.ReportCardPrintValue IS 'Indicates the value printed on the report card for the mark assocaited with a level number.';
 COMMENT ON COLUMN de.LevelDetail.TranscriptPrintValue IS 'Indicates the value printed on the transcript for the mark assocaited with a level number.';
 
+-- Extended Properties [de].[LocationDescriptor] --
+COMMENT ON TABLE de.LocationDescriptor IS 'Gives the description of event Location.';
+COMMENT ON COLUMN de.LocationDescriptor.LocationDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
+-- Extended Properties [de].[MedicalAlert] --
+COMMENT ON TABLE de.MedicalAlert IS 'Defines the codes that describe a person''s known medical conditions.';
+COMMENT ON COLUMN de.MedicalAlert.MedicalAlertCategoryDescriptorId IS 'Identifies the medical alert code.';
+COMMENT ON COLUMN de.MedicalAlert.Sensitive IS 'Indicates if the code represents a sensitive medical alert and should only be displayed for users with the proper security.';
+
+-- Extended Properties [de].[MedicalAlertCategoryDescriptor] --
+COMMENT ON TABLE de.MedicalAlertCategoryDescriptor IS 'Defines the codes that describe a person''s known medical conditions.';
+COMMENT ON COLUMN de.MedicalAlertCategoryDescriptor.MedicalAlertCategoryDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+
 -- Extended Properties [de].[MedicalDispositionDescriptor] --
 COMMENT ON TABLE de.MedicalDispositionDescriptor IS 'Defines the codes for the medical disposition.';
 COMMENT ON COLUMN de.MedicalDispositionDescriptor.MedicalDispositionDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
@@ -263,6 +276,8 @@ COMMENT ON COLUMN de.MedicalScreening.TestDate IS 'Date screening occurred.';
 COMMENT ON COLUMN de.MedicalScreening.AthleticStatus IS 'If true, then indicates this screening is for the athletic exam.';
 COMMENT ON COLUMN de.MedicalScreening.GradeLevelDescriptorId IS 'Grade level if person is student.';
 COMMENT ON COLUMN de.MedicalScreening.SchoolOfServiceSchoolId IS 'The identifier assigned to a school.';
+COMMENT ON COLUMN de.MedicalScreening.ScreeningEducationOrganizationId IS 'The identifier assigned to an education organization.';
+COMMENT ON COLUMN de.MedicalScreening.ScreeningLocationDescriptorId IS 'Screening location where screening occured.';
 
 -- Extended Properties [de].[MedicalTestCategoryDescriptor] --
 COMMENT ON TABLE de.MedicalTestCategoryDescriptor IS 'Indicates the type of medical test or exam.';
@@ -427,6 +442,13 @@ COMMENT ON COLUMN de.PersonImmunization.ImmunizationCodeDescriptorId IS 'Defines
 COMMENT ON COLUMN de.PersonImmunization.ImmunizationDate IS 'Indicates the date of the immunziation.';
 COMMENT ON COLUMN de.PersonImmunization.PersonId IS 'A unique alphanumeric code assigned to a person.';
 COMMENT ON COLUMN de.PersonImmunization.SourceSystemDescriptorId IS 'This descriptor defines the originating record source system for the person.';
+
+-- Extended Properties [de].[PersonMedicalAlert] --
+COMMENT ON TABLE de.PersonMedicalAlert IS 'Defines the codes that describe a person''s known medical conditions.';
+COMMENT ON COLUMN de.PersonMedicalAlert.MedicalAlertCategoryDescriptorId IS 'Identifies the medical alert code.';
+COMMENT ON COLUMN de.PersonMedicalAlert.StartDate IS 'Identifies the start date of a medical alert.';
+COMMENT ON COLUMN de.PersonMedicalAlert.EndDate IS 'Identifies the end date for a medical alert.';
+COMMENT ON COLUMN de.PersonMedicalAlert.Sequence IS 'The sequence number for prioritizing medical alerts.';
 
 -- Extended Properties [de].[PersonMedicationBoxAssociation] --
 COMMENT ON TABLE de.PersonMedicationBoxAssociation IS 'This association indicates a medication from a box issued to a person.';

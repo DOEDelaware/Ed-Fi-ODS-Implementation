@@ -308,6 +308,20 @@ REFERENCES edfi.School (SchoolId)
 CREATE INDEX FK_cf3970_School
 ON de.LevelDetail (SchoolId ASC);
 
+ALTER TABLE de.LocationDescriptor ADD CONSTRAINT FK_343830_Descriptor FOREIGN KEY (LocationDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE de.MedicalAlert ADD CONSTRAINT FK_54dd73_MedicalAlertCategoryDescriptor FOREIGN KEY (MedicalAlertCategoryDescriptorId)
+REFERENCES de.MedicalAlertCategoryDescriptor (MedicalAlertCategoryDescriptorId)
+;
+
+ALTER TABLE de.MedicalAlertCategoryDescriptor ADD CONSTRAINT FK_9f66fc_Descriptor FOREIGN KEY (MedicalAlertCategoryDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
 ALTER TABLE de.MedicalDispositionDescriptor ADD CONSTRAINT FK_b95a0e_Descriptor FOREIGN KEY (MedicalDispositionDescriptorId)
 REFERENCES edfi.Descriptor (DescriptorId)
 ON DELETE CASCADE
@@ -408,12 +422,26 @@ REFERENCES edfi.Person (PersonId, SourceSystemDescriptorId)
 CREATE INDEX FK_d22e7d_Person
 ON de.MedicalReferralFollowUp (PersonId ASC, SourceSystemDescriptorId ASC);
 
+ALTER TABLE de.MedicalScreening ADD CONSTRAINT FK_afc675_EducationOrganization FOREIGN KEY (ScreeningEducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_afc675_EducationOrganization
+ON de.MedicalScreening (ScreeningEducationOrganizationId ASC);
+
 ALTER TABLE de.MedicalScreening ADD CONSTRAINT FK_afc675_GradeLevelDescriptor FOREIGN KEY (GradeLevelDescriptorId)
 REFERENCES edfi.GradeLevelDescriptor (GradeLevelDescriptorId)
 ;
 
 CREATE INDEX FK_afc675_GradeLevelDescriptor
 ON de.MedicalScreening (GradeLevelDescriptorId ASC);
+
+ALTER TABLE de.MedicalScreening ADD CONSTRAINT FK_afc675_LocationDescriptor FOREIGN KEY (ScreeningLocationDescriptorId)
+REFERENCES de.LocationDescriptor (LocationDescriptorId)
+;
+
+CREATE INDEX FK_afc675_LocationDescriptor
+ON de.MedicalScreening (ScreeningLocationDescriptorId ASC);
 
 ALTER TABLE de.MedicalScreening ADD CONSTRAINT FK_afc675_MedicalTestCategoryDescriptor FOREIGN KEY (MedicalTestCategoryDescriptorId)
 REFERENCES de.MedicalTestCategoryDescriptor (MedicalTestCategoryDescriptorId)
@@ -709,6 +737,13 @@ REFERENCES edfi.Person (PersonId, SourceSystemDescriptorId)
 
 CREATE INDEX FK_f28934_Person
 ON de.PersonImmunization (PersonId ASC, SourceSystemDescriptorId ASC);
+
+ALTER TABLE de.PersonMedicalAlert ADD CONSTRAINT FK_02d654_MedicalAlert FOREIGN KEY (MedicalAlertCategoryDescriptorId)
+REFERENCES de.MedicalAlert (MedicalAlertCategoryDescriptorId)
+;
+
+CREATE INDEX FK_02d654_MedicalAlert
+ON de.PersonMedicalAlert (MedicalAlertCategoryDescriptorId ASC);
 
 ALTER TABLE de.PersonMedicationBoxAssociation ADD CONSTRAINT FK_4ee256_MedicationBox FOREIGN KEY (LocalEducationAgencyId, MedicationBoxId)
 REFERENCES de.MedicationBox (LocalEducationAgencyId, MedicationBoxId)

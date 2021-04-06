@@ -333,6 +333,20 @@ CREATE NONCLUSTERED INDEX [FK_LevelDetail_School]
 ON [de].[LevelDetail] ([SchoolId] ASC)
 GO
 
+ALTER TABLE [de].[LocationDescriptor] WITH CHECK ADD CONSTRAINT [FK_LocationDescriptor_Descriptor] FOREIGN KEY ([LocationDescriptorId])
+REFERENCES [edfi].[Descriptor] ([DescriptorId])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [de].[MedicalAlert] WITH CHECK ADD CONSTRAINT [FK_MedicalAlert_MedicalAlertCategoryDescriptor] FOREIGN KEY ([MedicalAlertCategoryDescriptorId])
+REFERENCES [de].[MedicalAlertCategoryDescriptor] ([MedicalAlertCategoryDescriptorId])
+GO
+
+ALTER TABLE [de].[MedicalAlertCategoryDescriptor] WITH CHECK ADD CONSTRAINT [FK_MedicalAlertCategoryDescriptor_Descriptor] FOREIGN KEY ([MedicalAlertCategoryDescriptorId])
+REFERENCES [edfi].[Descriptor] ([DescriptorId])
+ON DELETE CASCADE
+GO
+
 ALTER TABLE [de].[MedicalDispositionDescriptor] WITH CHECK ADD CONSTRAINT [FK_MedicalDispositionDescriptor_Descriptor] FOREIGN KEY ([MedicalDispositionDescriptorId])
 REFERENCES [edfi].[Descriptor] ([DescriptorId])
 ON DELETE CASCADE
@@ -446,12 +460,28 @@ CREATE NONCLUSTERED INDEX [FK_MedicalReferralFollowUp_Person]
 ON [de].[MedicalReferralFollowUp] ([PersonId] ASC, [SourceSystemDescriptorId] ASC)
 GO
 
+ALTER TABLE [de].[MedicalScreening] WITH CHECK ADD CONSTRAINT [FK_MedicalScreening_EducationOrganization] FOREIGN KEY ([ScreeningEducationOrganizationId])
+REFERENCES [edfi].[EducationOrganization] ([EducationOrganizationId])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_MedicalScreening_EducationOrganization]
+ON [de].[MedicalScreening] ([ScreeningEducationOrganizationId] ASC)
+GO
+
 ALTER TABLE [de].[MedicalScreening] WITH CHECK ADD CONSTRAINT [FK_MedicalScreening_GradeLevelDescriptor] FOREIGN KEY ([GradeLevelDescriptorId])
 REFERENCES [edfi].[GradeLevelDescriptor] ([GradeLevelDescriptorId])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_MedicalScreening_GradeLevelDescriptor]
 ON [de].[MedicalScreening] ([GradeLevelDescriptorId] ASC)
+GO
+
+ALTER TABLE [de].[MedicalScreening] WITH CHECK ADD CONSTRAINT [FK_MedicalScreening_LocationDescriptor] FOREIGN KEY ([ScreeningLocationDescriptorId])
+REFERENCES [de].[LocationDescriptor] ([LocationDescriptorId])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_MedicalScreening_LocationDescriptor]
+ON [de].[MedicalScreening] ([ScreeningLocationDescriptorId] ASC)
 GO
 
 ALTER TABLE [de].[MedicalScreening] WITH CHECK ADD CONSTRAINT [FK_MedicalScreening_MedicalTestCategoryDescriptor] FOREIGN KEY ([MedicalTestCategoryDescriptorId])
@@ -782,6 +812,14 @@ GO
 
 CREATE NONCLUSTERED INDEX [FK_PersonImmunization_Person]
 ON [de].[PersonImmunization] ([PersonId] ASC, [SourceSystemDescriptorId] ASC)
+GO
+
+ALTER TABLE [de].[PersonMedicalAlert] WITH CHECK ADD CONSTRAINT [FK_PersonMedicalAlert_MedicalAlert] FOREIGN KEY ([MedicalAlertCategoryDescriptorId])
+REFERENCES [de].[MedicalAlert] ([MedicalAlertCategoryDescriptorId])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_PersonMedicalAlert_MedicalAlert]
+ON [de].[PersonMedicalAlert] ([MedicalAlertCategoryDescriptorId] ASC)
 GO
 
 ALTER TABLE [de].[PersonMedicationBoxAssociation] WITH CHECK ADD CONSTRAINT [FK_PersonMedicationBoxAssociation_MedicationBox] FOREIGN KEY ([LocalEducationAgencyId], [MedicationBoxId])

@@ -15,7 +15,15 @@ Domain Entity MedicalScreening
     descriptor EdFi.GradeLevel
       documentation "Grade level if person is student."
       is optional
-      domain entity EdFi.School
-        documentation "School where screening occured."
-        is optional
-        role name SchoolOfService
+    domain entity EdFi.School
+      documentation "School where screening occured."
+      is optional
+      role name SchoolOfService
+    domain entity EdFi.EducationOrganization
+      documentation "EducationOrganization where screening occured."
+      is optional
+      role name Screening
+    descriptor Location
+      documentation "Screening location where screening occured."
+      is optional
+      role name Screening

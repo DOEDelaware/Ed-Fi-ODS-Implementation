@@ -17,6 +17,7 @@
   <Interchange name="Descriptors" order="20">
     <Element name="StaffRoleDescriptor" />
     <Element name="PersonCategoryDescriptor" />
+    <Element name="MedicalAlertCategoryDescriptor" />
     <Element name="GradeTypeWhenTakenDescriptor" />
     <Element name="FerpaOptOutDescriptor" />
     <Element name="EnrollmentTypeDescriptor" />
@@ -221,6 +222,7 @@
     <Element name="ImmunizationCodeDescriptor" />
     <Element name="GradeLevelDescriptor" />
     <Element name="GradingPeriodDescriptor" />
+    <Element name="LocationDescriptor" />
     <Element name="MedicalTestCategoryDescriptor" />
     <Element name="FollowupCategoryDescriptor" />
     <Element name="MedicalVisitReasonDescriptor" />
@@ -239,11 +241,11 @@
     <Element name="EducationOrganizationNetwork" />
     <Element name="EducationOrganizationNetworkAssociation" />
     <Element name="EducationOrganizationPeerAssociation" />
+    <Element name="AccountabilityRating" />
     <Element name="Program" />
     <Element name="StateEducationAgency" />
     <Element name="EducationServiceCenter" />
     <Element name="LocalEducationAgency" />
-    <Element name="AccountabilityRating" />
     <Element name="School" />
     <Element name="Course" />
     <Element name="ClassPeriod" />
@@ -340,8 +342,8 @@
     <Element name="StudentTransportation" />
   </Interchange>
   <Interchange name="Medical" order="130">
-    <Element name="MedicationBox" />
     <Element name="PersonImmunization" />
+    <Element name="MedicationBox" />
     <Element name="PersonMedicationBoxAssociation" />
     <Element name="MedicalScreening" />
     <Element name="MedicalReferralFollowUp" />

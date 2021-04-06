@@ -8,6 +8,8 @@ CREATE UNIQUE INDEX IF NOT EXISTS UX_948884_Id ON de.GradeTypeDetail(Id);
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_cf3970_Id ON de.LevelDetail(Id);
 
+CREATE UNIQUE INDEX IF NOT EXISTS UX_54dd73_Id ON de.MedicalAlert(Id);
+
 CREATE UNIQUE INDEX IF NOT EXISTS UX_7bbd92_Id ON de.MedicalOfficeVisit(Id);
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_d22e7d_Id ON de.MedicalReferralFollowUp(Id);
@@ -23,6 +25,8 @@ CREATE UNIQUE INDEX IF NOT EXISTS UX_073b20_Id ON de.PersonDisciplineAction(Id);
 CREATE UNIQUE INDEX IF NOT EXISTS UX_fcc994_Id ON de.PersonDisciplineIncidentAssociation(Id);
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_f28934_Id ON de.PersonImmunization(Id);
+
+CREATE UNIQUE INDEX IF NOT EXISTS UX_02d654_Id ON de.PersonMedicalAlert(Id);
 
 CREATE UNIQUE INDEX IF NOT EXISTS UX_4ee256_Id ON de.PersonMedicationBoxAssociation(Id);
 

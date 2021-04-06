@@ -489,6 +489,33 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-MedicalAlert">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describe a person's known medical conditions.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="MedicalAlertCategory" type="EXTENSION-MedicalAlertCategoryDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>Identifies the medical alert code.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-MedicalAlertCategoryDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sensitive" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if the code represents a sensitive medical alert and should only be displayed for users with the proper security.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-MedicalOfficeVisit">
     <xs:annotation>
       <xs:documentation>Holds information on a person's visit to the medical office.</xs:documentation>
@@ -639,6 +666,19 @@
           <xs:element name="SchoolOfServiceSchoolReference" type="SchoolReferenceType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>School where screening occured.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ScreeningEducationOrganizationReference" type="EducationOrganizationReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>EducationOrganization where screening occured.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ScreeningLocation" type="EXTENSION-LocationDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Screening location where screening occured.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-LocationDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -928,6 +968,40 @@
           <xs:element name="ImmunizationDate" type="xs:date">
             <xs:annotation>
               <xs:documentation>Indicates the date of the immunziation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PersonMedicalAlert">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describe a person's known medical conditions.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="MedicalAlertReference" type="EXTENSION-MedicalAlertReferenceType">
+            <xs:annotation>
+              <xs:documentation>Reference the MedicalAlert associated with a student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StartDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Identifies the start date of a medical alert.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the end date for a medical alert.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sequence" type="EXTENSION-Sequence" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The sequence number for prioritizing medical alerts.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1594,6 +1668,28 @@
   <xs:complexType name="EXTENSION-InjuryDescriptor">
     <xs:annotation>
       <xs:documentation>Defines the codes for the injuries during an incident.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-LocationDescriptor">
+    <xs:annotation>
+      <xs:documentation>Gives the description of event Location.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-MedicalAlertCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describe a person's known medical conditions.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -2724,6 +2820,43 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-MedicalAlertIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a MedicalAlert.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MedicalAlertCategory" type="EXTENSION-MedicalAlertCategoryDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Identifies the medical alert code.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-MedicalAlertCategoryDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-MedicalAlertReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a MedicalAlert. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="MedicalAlertIdentity" type="EXTENSION-MedicalAlertIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a MedicalAlert.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-MedicalOfficeVisitIdentityType">
     <xs:annotation>
       <xs:documentation>Identity of a MedicalOfficeVisit.</xs:documentation>
@@ -3090,6 +3223,45 @@
           <xs:element name="PersonImmunizationIdentity" type="EXTENSION-PersonImmunizationIdentityType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Identity of a PersonImmunization.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PersonMedicalAlertIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a PersonMedicalAlert.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MedicalAlertReference" type="EXTENSION-MedicalAlertReferenceType">
+        <xs:annotation>
+          <xs:documentation>Reference the MedicalAlert associated with a student.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Identifies the start date of a medical alert.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-PersonMedicalAlertReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a PersonMedicalAlert. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="PersonMedicalAlertIdentity" type="EXTENSION-PersonMedicalAlertIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a PersonMedicalAlert.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -3653,6 +3825,24 @@
   <xs:simpleType name="EXTENSION-InjuryDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Defines the codes for the injuries during an incident.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-LocationDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Gives the description of event Location.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-MedicalAlertCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describe a person's known medical conditions.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
