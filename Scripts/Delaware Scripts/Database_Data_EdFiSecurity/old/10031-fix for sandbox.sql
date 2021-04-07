@@ -1,3 +1,6 @@
+  use EdFi_Delaware_Security
+
+  
   INSERT INTO [dbo].[ClaimSetResourceClaims]
              ([Action_ActionId]
              ,[ClaimSet_ClaimSetId]
