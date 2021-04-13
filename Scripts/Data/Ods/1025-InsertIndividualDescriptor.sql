@@ -128,7 +128,8 @@ INSERT INTO edfi.MonitoredDescriptor SELECT Descriptorid FROM edfi.Descriptor  W
 INSERT INTO edfi.NeglectedOrDelinquentProgramDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%NeglectedOrDelinquentProgramDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.NeglectedOrDelinquentProgramDescriptor x on d.DescriptorId=x.NeglectedOrDelinquentProgramDescriptorId)
 INSERT INTO edfi.NeglectedOrDelinquentProgramServiceDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%NeglectedOrDelinquentProgramServiceDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.NeglectedOrDelinquentProgramServiceDescriptor x on d.DescriptorId=x.NeglectedOrDelinquentProgramServiceDescriptorId)
 INSERT INTO edfi.NetworkPurposeDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%NetworkPurposeDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.NetworkPurposeDescriptor x on d.DescriptorId=x.NetworkPurposeDescriptorId)
-INSERT INTO de.NonViolentTechniqueDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%NonViolentTechniqueDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join de.NonViolentTechniqueDescriptor x on d.DescriptorId=x.NonViolentTechniqueDescriptorId)
+INSERT INTO de.NonViolentTechniqueDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%NonViolentTechnique%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join de.NonViolentTechniqueDescriptor x on d.DescriptorId=x.NonViolentTechniqueDescriptorId)
+
 INSERT INTO de.NotificationMethodDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%NotificationMethodDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join de.NotificationMethodDescriptor x on d.DescriptorId=x.NotificationMethodDescriptorId)
 INSERT INTO edfi.OldEthnicityDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%OldEthnicityDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.OldEthnicityDescriptor x on d.DescriptorId=x.OldEthnicityDescriptorId)
 INSERT INTO edfi.OperationalStatusDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%OperationalStatusDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.OperationalStatusDescriptor x on d.DescriptorId=x.OperationalStatusDescriptorId)
@@ -213,3 +214,8 @@ INSERT INTO edfi.TribalAffiliationDescriptor SELECT Descriptorid FROM edfi.Descr
 INSERT INTO de.VictimCategoryDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%VictimCategoryDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join de.VictimCategoryDescriptor x on d.DescriptorId=x.VictimCategoryDescriptorId)
 INSERT INTO edfi.VisaDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%VisaDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.VisaDescriptor x on d.DescriptorId=x.VisaDescriptorId)
 INSERT INTO edfi.WeaponDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%WeaponDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.WeaponDescriptor x on d.DescriptorId=x.WeaponDescriptorId)
+
+INSERT INTO edfi.SourceSystemDescriptor SELECT Descriptorid FROM edfi.Descriptor  WHERE NameSpace like '%SourceSystemDescriptor%'  and CodeValue not in (select CodeValue from edfi.Descriptor d join edfi.SourceSystemDescriptor x on d.DescriptorId=x.SourceSystemDescriptorId)
+
+
+

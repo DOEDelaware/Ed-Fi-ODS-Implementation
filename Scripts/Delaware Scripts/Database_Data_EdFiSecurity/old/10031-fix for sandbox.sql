@@ -71,3 +71,9 @@
  --clear out parent permission:
  update ResourceClaims set ParentResourceClaimId =null where ResourceName='studentEducationOrganizationResponsibilityAssociation'
  go
+
+ use EdFi_Delaware_Admin
+ go
+ insert into ApplicationEducationOrganizations (EducationOrganizationId, Application_ApplicationId)
+select distinct EducationOrganizationId, ApplicationId from EdFi_Delaware_Admin_Prod.dbo.ApplicationEducationOrganizations cross join Applications
+go
