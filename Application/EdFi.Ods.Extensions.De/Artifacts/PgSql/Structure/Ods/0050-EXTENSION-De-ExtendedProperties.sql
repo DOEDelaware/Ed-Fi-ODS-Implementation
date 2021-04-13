@@ -446,6 +446,8 @@ COMMENT ON COLUMN de.PersonImmunization.SourceSystemDescriptorId IS 'This descri
 -- Extended Properties [de].[PersonMedicalAlert] --
 COMMENT ON TABLE de.PersonMedicalAlert IS 'Defines the codes that describe a person''s known medical conditions.';
 COMMENT ON COLUMN de.PersonMedicalAlert.MedicalAlertCategoryDescriptorId IS 'Identifies the medical alert code.';
+COMMENT ON COLUMN de.PersonMedicalAlert.PersonId IS 'A unique alphanumeric code assigned to a person.';
+COMMENT ON COLUMN de.PersonMedicalAlert.SourceSystemDescriptorId IS 'This descriptor defines the originating record source system for the person.';
 COMMENT ON COLUMN de.PersonMedicalAlert.StartDate IS 'Identifies the start date of a medical alert.';
 COMMENT ON COLUMN de.PersonMedicalAlert.EndDate IS 'Identifies the end date for a medical alert.';
 COMMENT ON COLUMN de.PersonMedicalAlert.Sequence IS 'The sequence number for prioritizing medical alerts.';

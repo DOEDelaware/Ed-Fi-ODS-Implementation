@@ -822,6 +822,14 @@ CREATE NONCLUSTERED INDEX [FK_PersonMedicalAlert_MedicalAlert]
 ON [de].[PersonMedicalAlert] ([MedicalAlertCategoryDescriptorId] ASC)
 GO
 
+ALTER TABLE [de].[PersonMedicalAlert] WITH CHECK ADD CONSTRAINT [FK_PersonMedicalAlert_Person] FOREIGN KEY ([PersonId], [SourceSystemDescriptorId])
+REFERENCES [edfi].[Person] ([PersonId], [SourceSystemDescriptorId])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_PersonMedicalAlert_Person]
+ON [de].[PersonMedicalAlert] ([PersonId] ASC, [SourceSystemDescriptorId] ASC)
+GO
+
 ALTER TABLE [de].[PersonMedicationBoxAssociation] WITH CHECK ADD CONSTRAINT [FK_PersonMedicationBoxAssociation_MedicationBox] FOREIGN KEY ([LocalEducationAgencyId], [MedicationBoxId])
 REFERENCES [de].[MedicationBox] ([LocalEducationAgencyId], [MedicationBoxId])
 GO

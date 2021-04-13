@@ -712,6 +712,8 @@ ALTER TABLE de.PersonImmunization ALTER COLUMN LastModifiedDate SET DEFAULT curr
 -- Table de.PersonMedicalAlert --
 CREATE TABLE de.PersonMedicalAlert (
     MedicalAlertCategoryDescriptorId INT NOT NULL,
+    PersonId VARCHAR(32) NOT NULL,
+    SourceSystemDescriptorId INT NOT NULL,
     StartDate DATE NOT NULL,
     EndDate DATE NULL,
     Sequence INT NULL,
@@ -719,7 +721,7 @@ CREATE TABLE de.PersonMedicalAlert (
     CreateDate TIMESTAMP NOT NULL,
     LastModifiedDate TIMESTAMP NOT NULL,
     Id UUID NOT NULL,
-    CONSTRAINT PersonMedicalAlert_PK PRIMARY KEY (MedicalAlertCategoryDescriptorId, StartDate)
+    CONSTRAINT PersonMedicalAlert_PK PRIMARY KEY (MedicalAlertCategoryDescriptorId, PersonId, SourceSystemDescriptorId, StartDate)
 ); 
 ALTER TABLE de.PersonMedicalAlert ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 ALTER TABLE de.PersonMedicalAlert ALTER COLUMN Id SET DEFAULT gen_random_uuid();

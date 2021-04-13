@@ -604,8 +604,8 @@ CREATE FUNCTION tracked_deletes_de.PersonMedicalAlert_TR_DelTrkg()
     RETURNS trigger AS
 $BODY$
 BEGIN
-    INSERT INTO tracked_deletes_de.PersonMedicalAlert(MedicalAlertCategoryDescriptorId, StartDate, Id, ChangeVersion)
-    VALUES (OLD.MedicalAlertCategoryDescriptorId, OLD.StartDate, OLD.Id, nextval('changes.ChangeVersionSequence'));
+    INSERT INTO tracked_deletes_de.PersonMedicalAlert(MedicalAlertCategoryDescriptorId, PersonId, SourceSystemDescriptorId, StartDate, Id, ChangeVersion)
+    VALUES (OLD.MedicalAlertCategoryDescriptorId, OLD.PersonId, OLD.SourceSystemDescriptorId, OLD.StartDate, OLD.Id, nextval('changes.ChangeVersionSequence'));
     RETURN NULL;
 END;
 $BODY$ LANGUAGE plpgsql;

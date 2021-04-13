@@ -783,8 +783,8 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [tracked_deletes_de].[PersonMedicalAlert](MedicalAlertCategoryDescriptorId, StartDate, Id, ChangeVersion)
-    SELECT  MedicalAlertCategoryDescriptorId, StartDate, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    INSERT INTO [tracked_deletes_de].[PersonMedicalAlert](MedicalAlertCategoryDescriptorId, PersonId, SourceSystemDescriptorId, StartDate, Id, ChangeVersion)
+    SELECT  MedicalAlertCategoryDescriptorId, PersonId, SourceSystemDescriptorId, StartDate, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
 GO

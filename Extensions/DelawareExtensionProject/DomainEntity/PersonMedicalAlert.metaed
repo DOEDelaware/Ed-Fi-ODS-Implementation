@@ -1,5 +1,8 @@
 Domain Entity PersonMedicalAlert
     documentation "Defines the codes that describe a person's known medical conditions."
+    domain entity EdFi.Person
+        documentation "The person receiving the medical screening."
+        is part of identity
     domain entity MedicalAlert
         documentation "Reference the MedicalAlert associated with a student."
         is part of identity

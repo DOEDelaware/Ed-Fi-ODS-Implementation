@@ -1060,6 +1060,8 @@ GO
 -- Table [de].[PersonMedicalAlert] --
 CREATE TABLE [de].[PersonMedicalAlert] (
     [MedicalAlertCategoryDescriptorId] [INT] NOT NULL,
+    [PersonId] [NVARCHAR](32) NOT NULL,
+    [SourceSystemDescriptorId] [INT] NOT NULL,
     [StartDate] [DATE] NOT NULL,
     [EndDate] [DATE] NULL,
     [Sequence] [INT] NULL,
@@ -1069,6 +1071,8 @@ CREATE TABLE [de].[PersonMedicalAlert] (
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [PersonMedicalAlert_PK] PRIMARY KEY CLUSTERED (
         [MedicalAlertCategoryDescriptorId] ASC,
+        [PersonId] ASC,
+        [SourceSystemDescriptorId] ASC,
         [StartDate] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]

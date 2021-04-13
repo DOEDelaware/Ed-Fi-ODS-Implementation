@@ -765,6 +765,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Defines the co
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the medical alert code.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'MedicalAlertCategoryDescriptorId'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a person.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'PersonId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines the originating record source system for the person.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'SourceSystemDescriptorId'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the start date of a medical alert.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'StartDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the end date for a medical alert.', @level0type=N'SCHEMA', @level0name=N'de', @level1type=N'TABLE', @level1name=N'PersonMedicalAlert', @level2type=N'COLUMN', @level2name=N'EndDate'

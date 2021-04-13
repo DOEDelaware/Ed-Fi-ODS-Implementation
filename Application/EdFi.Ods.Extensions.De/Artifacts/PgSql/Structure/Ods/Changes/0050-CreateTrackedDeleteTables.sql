@@ -383,6 +383,8 @@ CREATE TABLE tracked_deletes_de.PersonImmunization
 CREATE TABLE tracked_deletes_de.PersonMedicalAlert
 (
        MedicalAlertCategoryDescriptorId INT NOT NULL,
+       PersonId VARCHAR(32) NOT NULL,
+       SourceSystemDescriptorId INT NOT NULL,
        StartDate DATE NOT NULL,
        Id UUID NOT NULL,
        ChangeVersion BIGINT NOT NULL,

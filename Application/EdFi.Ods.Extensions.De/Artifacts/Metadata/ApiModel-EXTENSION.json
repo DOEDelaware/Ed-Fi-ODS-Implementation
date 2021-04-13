@@ -5345,6 +5345,8 @@
           "identifierName": "PersonMedicalAlert_PK",
           "identifyingPropertyNames": [
             "MedicalAlertCategoryDescriptorId",
+            "PersonId",
+            "SourceSystemDescriptorId",
             "StartDate"
           ],
           "isPrimary": true,
@@ -17243,6 +17245,99 @@
       "constraintNames": {
         "sqlServer": "FK_PersonMedicalAlert_MedicalAlert",
         "postgreSql": "FK_02d654_MedicalAlert"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "de",
+        "name": "FK_PersonMedicalAlert_Person"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Person"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "PersonId",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 32,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a person.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PersonId",
+            "postgreSql": "PersonId"
+          }
+        },
+        {
+          "propertyName": "SourceSystemDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "This descriptor defines the originating record source system for the person.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SourceSystemDescriptorId",
+            "postgreSql": "SourceSystemDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "de",
+        "name": "PersonMedicalAlert"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "PersonId",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 32,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a person.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PersonId",
+            "postgreSql": "PersonId"
+          }
+        },
+        {
+          "propertyName": "SourceSystemDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "This descriptor defines the originating record source system for the person.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SourceSystemDescriptorId",
+            "postgreSql": "SourceSystemDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_PersonMedicalAlert_Person",
+        "postgreSql": "FK_02d654_Person"
       }
     },
     {

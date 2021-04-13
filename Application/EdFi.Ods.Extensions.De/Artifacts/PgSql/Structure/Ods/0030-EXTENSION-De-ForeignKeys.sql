@@ -745,6 +745,13 @@ REFERENCES de.MedicalAlert (MedicalAlertCategoryDescriptorId)
 CREATE INDEX FK_02d654_MedicalAlert
 ON de.PersonMedicalAlert (MedicalAlertCategoryDescriptorId ASC);
 
+ALTER TABLE de.PersonMedicalAlert ADD CONSTRAINT FK_02d654_Person FOREIGN KEY (PersonId, SourceSystemDescriptorId)
+REFERENCES edfi.Person (PersonId, SourceSystemDescriptorId)
+;
+
+CREATE INDEX FK_02d654_Person
+ON de.PersonMedicalAlert (PersonId ASC, SourceSystemDescriptorId ASC);
+
 ALTER TABLE de.PersonMedicationBoxAssociation ADD CONSTRAINT FK_4ee256_MedicationBox FOREIGN KEY (LocalEducationAgencyId, MedicationBoxId)
 REFERENCES de.MedicationBox (LocalEducationAgencyId, MedicationBoxId)
 ;

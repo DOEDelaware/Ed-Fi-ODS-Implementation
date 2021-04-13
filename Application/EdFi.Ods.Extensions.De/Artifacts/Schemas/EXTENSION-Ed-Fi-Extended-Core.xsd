@@ -984,6 +984,11 @@
     <xs:complexContent>
       <xs:extension base="ComplexObjectType">
         <xs:sequence>
+          <xs:element name="PersonReference" type="PersonReferenceType">
+            <xs:annotation>
+              <xs:documentation>The person receiving the medical screening.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="MedicalAlertReference" type="EXTENSION-MedicalAlertReferenceType">
             <xs:annotation>
               <xs:documentation>Reference the MedicalAlert associated with a student.</xs:documentation>
@@ -3237,6 +3242,11 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="PersonReference" type="PersonReferenceType">
+        <xs:annotation>
+          <xs:documentation>The person receiving the medical screening.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="MedicalAlertReference" type="EXTENSION-MedicalAlertReferenceType">
         <xs:annotation>
           <xs:documentation>Reference the MedicalAlert associated with a student.</xs:documentation>
