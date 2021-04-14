@@ -4,7 +4,7 @@ Scott Kuykendall 	4/21/20
 */
 declare @bPopTemplate varchar(100)
 set @bPopTemplate=0
-select @bPopTemplate=1 where DB_NAME() like '%Populated%' or DB_NAME() like '%Minimal%' 
+select @bPopTemplate=1 where DB_NAME() like '%Populated%' 
 
 
 select @bPopTemplate
