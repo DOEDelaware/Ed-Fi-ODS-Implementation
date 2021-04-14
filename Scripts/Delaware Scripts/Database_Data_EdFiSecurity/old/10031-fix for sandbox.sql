@@ -42,38 +42,27 @@
   [AuthorizationStrategyName]= 'NoFurtherAuthorizationRequired'
  
  
- 
+
  --Set studentEducationOrganizationResponcibilityAssocation to 'Relationships with Students only' so districts can write other district feeders from eSchoolPlus
- INSERT INTO [dbo].[ClaimSetResourceClaims] ([Action_ActionId] ,[ClaimSet_ClaimSetId] ,[ResourceClaim_ResourceClaimId] , AuthorizationStrategyOverride_AuthorizationStrategyId) 
- select 1, 10, ResourceClaimId, 6 from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
+ DELETE [dbo].[ClaimSetResourceClaims]  where ResourceClaim_ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation')
  go
- INSERT INTO [dbo].[ClaimSetResourceClaims] ([Action_ActionId] ,[ClaimSet_ClaimSetId] ,[ResourceClaim_ResourceClaimId] , AuthorizationStrategyOverride_AuthorizationStrategyId) 
- select 2, 10, ResourceClaimId, 6 from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
- go
- INSERT INTO [dbo].[ClaimSetResourceClaims] ([Action_ActionId] ,[ClaimSet_ClaimSetId] ,[ResourceClaim_ResourceClaimId] , AuthorizationStrategyOverride_AuthorizationStrategyId) 
- select 3, 10, ResourceClaimId, 6 from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
- go
- INSERT INTO [dbo].[ClaimSetResourceClaims] ([Action_ActionId] ,[ClaimSet_ClaimSetId] ,[ResourceClaim_ResourceClaimId] , AuthorizationStrategyOverride_AuthorizationStrategyId) 
- select 4, 10, ResourceClaimId, 6 from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
- go
- insert into [dbo].[ResourceClaimAuthorizationMetadatas] (Action_ActionId, AuthorizationStrategy_AuthorizationStrategyId, ResourceClaim_ResourceClaimId)
- select 1, 6,ResourceClaimId from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
- go
- insert into [dbo].[ResourceClaimAuthorizationMetadatas] (Action_ActionId, AuthorizationStrategy_AuthorizationStrategyId, ResourceClaim_ResourceClaimId)
- select 2, 6,ResourceClaimId from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
- go
- insert into [dbo].[ResourceClaimAuthorizationMetadatas] (Action_ActionId, AuthorizationStrategy_AuthorizationStrategyId, ResourceClaim_ResourceClaimId)
- select 3, 6,ResourceClaimId from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
- go
- insert into [dbo].[ResourceClaimAuthorizationMetadatas] (Action_ActionId, AuthorizationStrategy_AuthorizationStrategyId, ResourceClaim_ResourceClaimId)
- select 4, 6,ResourceClaimId from ResourceClaims where ResourceName='studentEducationOrganizationResponsibilityAssociation'
- go
+  INSERT INTO [dbo].[ClaimSetResourceClaims] ([Action_ActionId] ,[ClaimSet_ClaimSetId] ,[ResourceClaim_ResourceClaimId] , AuthorizationStrategyOverride_AuthorizationStrategyId) 
+   SELECT [ActionId], [ClaimSetId], [ResourceClaimId] , (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='RelationshipsWithStudentsOnly' and Application_ApplicationId=1)
+  FROM [dbo].[ClaimSets] 
+  CROSS JOIN [dbo].[Actions]
+  CROSS JOIN [dbo].[ResourceClaims] 
+  WHERE [ClaimName] = 'http://ed-fi.org/ods/identity/claims/domains/claimOnly'
+  AND [ClaimSetName] IN ('Delaware', 'SIS Vendor', 'Ed-Fi Sandbox','eSchoolPlus')
+ 
+ 
+
  --clear out parent permission:
  update ResourceClaims set ParentResourceClaimId =null where ResourceName='studentEducationOrganizationResponsibilityAssociation'
  go
 
- use EdFi_Delaware_Admin
- go
- insert into ApplicationEducationOrganizations (EducationOrganizationId, Application_ApplicationId)
-select distinct EducationOrganizationId, ApplicationId from EdFi_Delaware_Admin_Prod.dbo.ApplicationEducationOrganizations cross join Applications
-go
+
+ -- use EdFi_Delaware_Admin
+ -- go
+ -- insert into ApplicationEducationOrganizations (EducationOrganizationId, Application_ApplicationId)
+-- select distinct EducationOrganizationId, ApplicationId from EdFi_Delaware_Admin_Prod.dbo.ApplicationEducationOrganizations cross join Applications
+-- go
