@@ -1,6 +1,6 @@
 --dev 
 
---use [EdFi_Delaware_Security_Template]
+--use [Template_EdFi_Delaware_Security]
 --go
 --delete Claimsets where ClaimsetId=12
 --go
@@ -19,7 +19,7 @@
 
 
 
---select * from [EdFi_Delaware_Security_Template].dbo.ClaimSets 
+--select * from [Template_EdFi_Delaware_Security].dbo.ClaimSets 
 
 --select * from ClaimSets 
 
@@ -46,7 +46,7 @@ delete ResourceClaims --298
 SET IDENTITY_INSERT dbo.ResourceClaims ON
 GO  
 insert into ResourceClaims        (ResourceClaimId,[DisplayName],[ResourceName],[ClaimName],[ParentResourceClaimId],[Application_ApplicationId])
- select distinct ResourceClaimId, [DisplayName],[ResourceName],[ClaimName],[ParentResourceClaimId],[Application_ApplicationId] from [EdFi_Delaware_Security_Template].dbo.ResourceClaims
+ select distinct ResourceClaimId, [DisplayName],[ResourceName],[ClaimName],[ParentResourceClaimId],[Application_ApplicationId] from [Template_EdFi_Delaware_Security].dbo.ResourceClaims
 GO
 SET IDENTITY_INSERT dbo.ResourceClaims OFF
 GO  
@@ -59,7 +59,7 @@ GO
 SET IDENTITY_INSERT dbo.ClaimSetResourceClaims ON
 GO  
 insert into ClaimSetResourceClaims ([ClaimSetResourceClaimId],[Action_ActionId],[ClaimSet_ClaimSetId],[ResourceClaim_ResourceClaimId],[AuthorizationStrategyOverride_AuthorizationStrategyId],[ValidationRuleSetNameOverride])
- select distinct [ClaimSetResourceClaimId],[Action_ActionId],[ClaimSet_ClaimSetId],[ResourceClaim_ResourceClaimId],[AuthorizationStrategyOverride_AuthorizationStrategyId],[ValidationRuleSetNameOverride] from [EdFi_Delaware_Security_Template].dbo.ClaimSetResourceClaims
+ select distinct [ClaimSetResourceClaimId],[Action_ActionId],[ClaimSet_ClaimSetId],[ResourceClaim_ResourceClaimId],[AuthorizationStrategyOverride_AuthorizationStrategyId],[ValidationRuleSetNameOverride] from [Template_EdFi_Delaware_Security].dbo.ClaimSetResourceClaims
 GO
 SET IDENTITY_INSERT dbo.ClaimSetResourceClaims OFF
 GO  
@@ -67,7 +67,7 @@ GO
 SET IDENTITY_INSERT dbo.ResourceClaimAuthorizationMetadatas ON
 GO  
 insert into ResourceClaimAuthorizationMetadatas ([ResourceClaimAuthorizationStrategyId],[Action_ActionId],[AuthorizationStrategy_AuthorizationStrategyId],[ResourceClaim_ResourceClaimId],[ValidationRuleSetName])
- select distinct [ResourceClaimAuthorizationStrategyId],[Action_ActionId],[AuthorizationStrategy_AuthorizationStrategyId],[ResourceClaim_ResourceClaimId],[ValidationRuleSetName] from [EdFi_Delaware_Security_Template].dbo.ResourceClaimAuthorizationMetadatas
+ select distinct [ResourceClaimAuthorizationStrategyId],[Action_ActionId],[AuthorizationStrategy_AuthorizationStrategyId],[ResourceClaim_ResourceClaimId],[ValidationRuleSetName] from [Template_EdFi_Delaware_Security].dbo.ResourceClaimAuthorizationMetadatas
 GO
 SET IDENTITY_INSERT dbo.ResourceClaimAuthorizationMetadatas OFF
 GO  
