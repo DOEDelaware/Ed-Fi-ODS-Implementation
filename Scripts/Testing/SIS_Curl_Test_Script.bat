@@ -77,9 +77,9 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/D
 
 echo " calendar dates"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/ed-fi/calendarDates" -H "accept: application/json" -H "authorization: Bearer 6e3e885b2fa84dcd89c5c86323cadc8e" -H "Content-Type: application/json" -d "{  \"calendarEvents\": [ { \"calendarEventDescriptor\": \"uri://doe.k12.de.us/CalendarEventDescriptor#I\" } ], \"date\": \"01-JAN-2019\", \"calendarReference\": { \"calendarCode\": \"14\", \"schoolId\": 330330, \"schoolYear\": 2019 }, \"_ext\": { \"De\": { \"cycleDescriptor\": \"uri://doe.k12.de.us/CycleDescriptor#STD\", \"membershipDayValue\": 0 } }}"
+curl.exe -X POST curl -X POST "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/ed-fi/calendarDates" -H "accept: application/json" -H "authorization: Bearer c023c1bf1a14417892a7a30b60e3afc3" -H "Content-Type: application/json" -d "{ \"calendarReference\": { \"calendarCode\": \"A\", \"schoolId\": \"330330\", \"schoolYear\": 2022 }, \"date\": \"2022-04-14\", \"calendarEvents\": [ { \"calendarEventDescriptor\": \"uri://doe.k12.de.us/CalendarEventDescriptor#Take Attendance\" } ], \"_ext\": {\t\"de\": { \"membershipDayValue\" : \"1\"\t }, \"EdFiXLearningModality\": {\t\"programLearningModalityTypes\": [ { \t\t\"ProgramReference\": {\t\t\t\"programName\": \"Mon/Tues In Person\",\t\t\t\"programTypeDescriptor\": \"uri://doe.k12.de.us/ProgramTypeDescriptor#HYB\",\t\t\t\"educationOrganizationId\": \"33\"\t\t\t\t\t\t},\t\t\t\"learningModalities\": [\t\t\t{\t\t\t\"modalityTypeDescriptor\": \"uri://doe.k12.de.us/modalityTypeDescriptor#I\",\t\t\t\"modalityTimeTypeDescriptor\": \"uri://doe.k12.de.us/ModalityTimeTypeDescriptor#Percentage\",\t\t\t\"modalityTime\": \"100\" \t\t\t}\t\t]\t}\t]\t}}}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/ed-fi/calendarDates?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 6e3e885b2fa84dcd89c5c86323cadc8e"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/ed-fi/calendarDates?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer c023c1bf1a14417892a7a30b60e3afc3"
 
 
 
@@ -238,6 +238,15 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/D
 
 
 echo "***********   Programs & Cohort Groups  *********************"
+echo " Program"
+
+curl.exe -X POST 
+"https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/ed-fi/programs" -H "accept: application/json" -H "authorization: Bearer 3292a61e95814560899423e7b7e41885" -H "Content-Type: application/json" -d "{ \"programName\": \"Mon/Tues In Person\", \"programTypeDescriptor\": \"uri://doe.k12.de.us/ProgramTypeDescriptor#HYB\", \"educationOrganizationReference\": { \"educationOrganizationId\": \"33\"\t}, \"programId\": \"X\", \"_ext\": { \"EdFiXLearningModality\": {\t\"learningModalities\": [ { \"modalityTypeDescriptor\": \"uri://doe.k12.de.us/modalityTypeDescriptor#I\", \"modalityTimeTypeDescriptor\": \"uri://doe.k12.de.us/ModalityTimeTypeDescriptor#Percentage\", \"modalityTime\": \"100\" } ] }}}"
+
+curl.exe -X GET 
+curl -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/ed-fi/programs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 3292a61e95814560899423e7b7e41885"
+
+
 
 echo " studentTransportation"
 
@@ -424,6 +433,19 @@ curl.exe -X POST "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/
 
 curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/allegedBullyingVictims?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 6e3e885b2fa84dcd89c5c86323cadc8e"
 
+echo " medicationAlerts"
+
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/medicalAlerts" -H "accept: application/json" -H "authorization: Bearer 3292a61e95814560899423e7b7e41885" -H "Content-Type: application/json" -d "{ \"medicalAlertCategoryDescriptor\": \"uri://doe.k12.de.us/MedicalAlertCategoryDescriptor#ALL\", \"sensitive\": true}"
+
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/medicalAlerts?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 3292a61e95814560899423e7b7e41885"
+
+echo " PersonmedicationAlerts"
+
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/personMedicalAlerts" -H "accept: application/json" -H "authorization: Bearer 6167b3080eb74bd391a87ad04041d1d0" -H "Content-Type: application/json" -d "{ \"startDate\": \"2021-04-13\", \"medicalAlertReference\": { \"medicalAlertCategoryDescriptor\": \"uri://doe.k12.de.us/MedicalAlertCategoryDescriptor#ALL\" }, \"personReference\": { \"personId\": \"123\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Student\" }, \"endDate\": \"2022-04-13\"}"
+
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/personMedicalAlerts?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 6167b3080eb74bd391a87ad04041d1d0"
+
+
 
 echo " medicationBoxes"
 
@@ -443,7 +465,7 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/D
 
 echo " medicalScreenings"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/medicalScreenings" -H "accept: application/json" -H "authorization: Bearer 6e3e885b2fa84dcd89c5c86323cadc8e" -H "Content-Type: application/json" -d "{  \"medicalTestCategoryDescriptor\": \"uri://doe.k12.de.us/MedicalTestCategoryDescriptor#SPI_GROWTH\", \"testDate\": \"2019-04-09\", \"personReference\": { \"personId\": \"123\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Student\" } }, \"schoolOfServiceSchoolReference\": { \"schoolId\": 100610 }, \"athleticStatus\": true, \"gradeLevelDescriptor\": \"uri://doe.k12.de.us/GradeLevelDescriptor#04\"}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/medicalScreenings" -H "accept: application/json" -H "authorization: Bearer 3a9a47a3e1e04f38a2954cb0b1f1b1b6" -H "Content-Type: application/json" -d "{ \"medicalTestCategoryDescriptor\": \"uri://doe.k12.de.us/MedicalTestCategoryDescriptor#SCREENBP\", \"testDate\": \"2021-04-14\", \"personReference\": { \"personId\": \"123\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Student\" }, \"schoolOfServiceSchoolReference\": { \"schoolId\": 100610 }, \"screeningEducationOrganizationReference\": { \"educationOrganizationId\": 33 }, \"athleticStatus\": true, \"screeningLocationDescriptor\": \"uri://doe.k12.de.us/LocationDescriptor#N\"}"
 
 curl.exe -X GET "https://doesisedfiint.doe.k12.de.us:443/v510_EDFI_Integration/Delaware_api/data/v3/de/medicalScreenings?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 6e3e885b2fa84dcd89c5c86323cadc8e"
 
