@@ -1,3 +1,11 @@
+-- Extended Properties [edfixlearningmodality].[CalendarDateExtension] --
+COMMENT ON TABLE edfixlearningmodality.CalendarDateExtension IS '';
+COMMENT ON COLUMN edfixlearningmodality.CalendarDateExtension.CalendarCode IS 'The identifier for the Calendar.';
+COMMENT ON COLUMN edfixlearningmodality.CalendarDateExtension.Date IS 'The month, day, and year of the CalendarEvent.';
+COMMENT ON COLUMN edfixlearningmodality.CalendarDateExtension.SchoolId IS 'The identifier assigned to a school.';
+COMMENT ON COLUMN edfixlearningmodality.CalendarDateExtension.SchoolYear IS 'The identifier for the school year associated with the Calendar.';
+COMMENT ON COLUMN edfixlearningmodality.CalendarDateExtension.PlaceHolderProp IS 'Dummy Prop to overcome a bug';
+
 -- Extended Properties [edfixlearningmodality].[CalendarDateProgramLearningModalityType] --
 COMMENT ON TABLE edfixlearningmodality.CalendarDateProgramLearningModalityType IS 'The learning modalities associated with the CalendarDate.';
 COMMENT ON COLUMN edfixlearningmodality.CalendarDateProgramLearningModalityType.CalendarCode IS 'The identifier for the Calendar.';

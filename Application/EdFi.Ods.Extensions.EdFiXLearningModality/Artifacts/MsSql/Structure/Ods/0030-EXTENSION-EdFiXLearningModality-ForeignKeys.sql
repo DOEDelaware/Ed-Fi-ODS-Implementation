@@ -1,3 +1,8 @@
+ALTER TABLE [edfixlearningmodality].[CalendarDateExtension] WITH CHECK ADD CONSTRAINT [FK_CalendarDateExtension_CalendarDate] FOREIGN KEY ([CalendarCode], [Date], [SchoolId], [SchoolYear])
+REFERENCES [edfi].[CalendarDate] ([CalendarCode], [Date], [SchoolId], [SchoolYear])
+ON DELETE CASCADE
+GO
+
 ALTER TABLE [edfixlearningmodality].[CalendarDateProgramLearningModalityType] WITH CHECK ADD CONSTRAINT [FK_CalendarDateProgramLearningModalityType_CalendarDate] FOREIGN KEY ([CalendarCode], [Date], [SchoolId], [SchoolYear])
 REFERENCES [edfi].[CalendarDate] ([CalendarCode], [Date], [SchoolId], [SchoolYear])
 ON DELETE CASCADE

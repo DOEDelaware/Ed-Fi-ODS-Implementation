@@ -1,3 +1,17 @@
+-- Extended Properties [edfixlearningmodality].[CalendarDateExtension] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'edfixlearningmodality', @level1type=N'TABLE', @level1name=N'CalendarDateExtension'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the Calendar.', @level0type=N'SCHEMA', @level0name=N'edfixlearningmodality', @level1type=N'TABLE', @level1name=N'CalendarDateExtension', @level2type=N'COLUMN', @level2name=N'CalendarCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year of the CalendarEvent.', @level0type=N'SCHEMA', @level0name=N'edfixlearningmodality', @level1type=N'TABLE', @level1name=N'CalendarDateExtension', @level2type=N'COLUMN', @level2name=N'Date'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfixlearningmodality', @level1type=N'TABLE', @level1name=N'CalendarDateExtension', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year associated with the Calendar.', @level0type=N'SCHEMA', @level0name=N'edfixlearningmodality', @level1type=N'TABLE', @level1name=N'CalendarDateExtension', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Dummy Prop to overcome a bug', @level0type=N'SCHEMA', @level0name=N'edfixlearningmodality', @level1type=N'TABLE', @level1name=N'CalendarDateExtension', @level2type=N'COLUMN', @level2name=N'PlaceHolderProp'
+GO
+
 -- Extended Properties [edfixlearningmodality].[CalendarDateProgramLearningModalityType] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The learning modalities associated with the CalendarDate.', @level0type=N'SCHEMA', @level0name=N'edfixlearningmodality', @level1type=N'TABLE', @level1name=N'CalendarDateProgramLearningModalityType'
 GO

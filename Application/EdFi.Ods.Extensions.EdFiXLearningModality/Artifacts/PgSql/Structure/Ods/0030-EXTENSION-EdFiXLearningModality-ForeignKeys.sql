@@ -1,3 +1,8 @@
+ALTER TABLE edfixlearningmodality.CalendarDateExtension ADD CONSTRAINT FK_1a442d_CalendarDate FOREIGN KEY (CalendarCode, Date, SchoolId, SchoolYear)
+REFERENCES edfi.CalendarDate (CalendarCode, Date, SchoolId, SchoolYear)
+ON DELETE CASCADE
+;
+
 ALTER TABLE edfixlearningmodality.CalendarDateProgramLearningModalityType ADD CONSTRAINT FK_b86383_CalendarDate FOREIGN KEY (CalendarCode, Date, SchoolId, SchoolYear)
 REFERENCES edfi.CalendarDate (CalendarCode, Date, SchoolId, SchoolYear)
 ON DELETE CASCADE

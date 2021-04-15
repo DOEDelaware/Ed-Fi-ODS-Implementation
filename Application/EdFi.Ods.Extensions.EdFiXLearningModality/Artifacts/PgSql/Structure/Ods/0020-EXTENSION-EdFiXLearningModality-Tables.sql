@@ -1,3 +1,15 @@
+-- Table edfixlearningmodality.CalendarDateExtension --
+CREATE TABLE edfixlearningmodality.CalendarDateExtension (
+    CalendarCode VARCHAR(60) NOT NULL,
+    Date DATE NOT NULL,
+    SchoolId INT NOT NULL,
+    SchoolYear SMALLINT NOT NULL,
+    PlaceHolderProp BOOLEAN NULL,
+    CreateDate TIMESTAMP NOT NULL,
+    CONSTRAINT CalendarDateExtension_PK PRIMARY KEY (CalendarCode, Date, SchoolId, SchoolYear)
+); 
+ALTER TABLE edfixlearningmodality.CalendarDateExtension ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
+
 -- Table edfixlearningmodality.CalendarDateProgramLearningModalityType --
 CREATE TABLE edfixlearningmodality.CalendarDateProgramLearningModalityType (
     CalendarCode VARCHAR(60) NOT NULL,
