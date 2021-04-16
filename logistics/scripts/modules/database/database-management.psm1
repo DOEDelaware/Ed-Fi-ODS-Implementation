@@ -24,7 +24,8 @@ function Use-SqlServerModule {
 
         Write-Host "Installing SqlServer Module"
 				
-        Install-Module -Name SqlServer -Repository 'doe' -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber | Out-Null
+        #Install-Module -Name SqlServer -Repository 'doe' -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber | Out-Null
+		Install-Module -Name SqlServer  -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber | Out-Null
         Import-Module -Force -Scope Global SqlServer
     }
 }
