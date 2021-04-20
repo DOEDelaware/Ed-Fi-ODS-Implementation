@@ -1,4 +1,6 @@
-set bearertoken="559fb9869f4c44f3b396991d03ebba5f"
+
+
+set bearertoken="5dcd2ca4105040b29500ad78ef3029b1"
 
 
 echo"****************   Categories and Resources  *********************"
@@ -22,10 +24,6 @@ echo " Program Catalog"
 
 
 curl.exe -X GET "https://doesisedfisb.doe.k12.de.us:443/v510_EDFI_Sandbox/Delaware_api/data/v3/ed-fi/programs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer %bearertoken%"
-
-
-
-
 
 
 
