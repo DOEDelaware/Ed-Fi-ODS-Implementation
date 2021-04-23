@@ -1,6 +1,6 @@
 
 
-set bearertoken="5dcd2ca4105040b29500ad78ef3029b1"
+set bearertoken="f249673eb1664ce88ef503c5a7e08233"
 
 
 echo"****************   Categories and Resources  *********************"
