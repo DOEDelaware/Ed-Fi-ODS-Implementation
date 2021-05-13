@@ -2466,3 +2466,4 @@ insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description,
 
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','Refused Treatment','Refused Treatment','Refused Treatment','May 13 2021','May 13 2021')
 
+insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','Immediate Referral to EMS','Immediate Referral to EMS','Immediate Referral to EMS','May 13 2021','May 13 2021')
