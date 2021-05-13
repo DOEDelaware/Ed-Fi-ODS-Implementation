@@ -2426,7 +2426,6 @@ insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description,
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TravelDayOfWeekDescriptor','SATURDAY','SATURDAY','SATURDAY','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TravelDirectionDescriptor','T','To school','To school','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TravelDirectionDescriptor','F','From School','From School','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
-insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','Nurse Assessment - No Treatment','Nurse Assessment - No Treatment','Nurse Assessment - No Treatment','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/VictimCategoryDescriptor','1','Student','Student','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/VictimCategoryDescriptor','2','Parent / Guardian','Parent / Guardian','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/VictimCategoryDescriptor','3','Teacher','Teacher','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
@@ -2453,6 +2452,17 @@ insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description,
 
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/SourceSystemDescriptor','NonStudent','NonStudent','NonStudent','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
 
-Staff
-Student
-NonStudent
+
+
+
+
+insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','Nurse Assessment - No Treatment','Nurse Assessment - No Treatment','Nurse Assessment - No Treatment','Sep 16 2019  2:13PM','Sep 16 2019  2:13PM')
+
+insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','None','None','None','May 13 2021','May 13 2021')
+
+insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','Nurse First Aid','Nurse First Aid','Nurse First Aid','May 13 2021','May 13 2021')
+
+insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','Nurse First Aid and Medical Referral','Nurse First Aid and Medical Referral','Nurse First Aid and Medical Referral','May 13 2021','May 13 2021')
+
+insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate) values ('uri://doe.k12.de.us/TreatmentDescriptor','Refused Treatment','Refused Treatment','Refused Treatment','May 13 2021','May 13 2021')
+
