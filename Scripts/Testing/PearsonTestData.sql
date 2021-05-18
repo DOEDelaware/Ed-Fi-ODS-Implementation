@@ -23,6 +23,23 @@ insert into edfi.Location (schoolid, ClassroomIdentificationCode,MaximumNumberOf
 go
 
 --Sessions
+delete edfi.StaffSectionAssociation
+delete edfi.StaffSchoolAssociation
+delete edfi.StaffEducationOrganizationAssignmentAssociation
+delete edfi.staff
+delete edfi.studentsectionassociation
+delete edfi.StudentSchoolAssociation
+delete de.StudentEducationOrganizationAssociationExtension
+delete edfi.StudentEducationOrganizationAssociation
+delete de.StudentSchoolAssociationExtension
+delete edfi.StudentSchoolAssociation
+delete edfi.student
+delete edfi.section
+delete edfi.CourseOffering
+delete de.CourseExtension
+delete edfi.CourseIdentificationCode
+delete edfi.Course
+go
 delete edfi.Session
 go
 insert into edfi.Session (schoolid, SchoolYear,SessionName,TermDescriptorId,BeginDate,enddate,	TotalInstructionalDays)
@@ -37,12 +54,6 @@ go
 
 
 
-delete edfi.section
-delete edfi.CourseOffering
-delete de.CourseExtension
-delete edfi.CourseIdentificationCode
-delete edfi.Course
-go
 drop procedure CreateCoureSection
 go
 create procedure CreateCoureSection (@edorgid int, @coursecode varchar(255), @coursetitle varchar(255), @coursedescr varchar(255),
@@ -63,10 +74,7 @@ exec CreateCoureSection 34,'course3', 'course num 1', 'course 3 desc',340412, 'l
 exec CreateCoureSection 29,'course4', 'course num 1', 'course 4 desc',290011, 'localcourse4','local c4 title', 'room1','course4-section1'
 go
 
-delete edfi.StaffSectionAssociation
-delete edfi.StaffSchoolAssociation
-delete edfi.StaffEducationOrganizationAssignmentAssociation
-delete edfi.staff
+
 
 drop procedure CreateStaff
 go
@@ -108,13 +116,7 @@ go
 
 
 --student
-delete edfi.studentsectionassociation
-delete edfi.StudentSchoolAssociation
-delete de.StudentEducationOrganizationAssociationExtension
-delete edfi.StudentEducationOrganizationAssociation
-delete de.StudentSchoolAssociationExtension
-delete edfi.StudentSchoolAssociation
-delete edfi.student
+
 go
 drop procedure CreateStudent
 go
