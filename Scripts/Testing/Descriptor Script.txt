@@ -1,0 +1,230 @@
+
+
+echo "academicSubjectDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/academicSubjectDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "addressTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/addressTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "apExamCodeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/apExamCodeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "attemptStatusDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/attemptStatusDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "attendanceConfigurationCategoryDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/attendanceConfigurationCategoryDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "attendanceEventCategoryDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/attendanceEventCategoryDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "behaviorDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/behaviorDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "calendarEventDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendarEventDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "calendarTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendarTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "careerPathwayDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/careerPathwayDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "citizenshipStatusDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/citizenshipStatusDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "classroomPositionDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/classroomPositionDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "cohortTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/cohortTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "contactTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/contactTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "coreSubjectDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/coreSubjectDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "countryDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/countryDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "courseAttemptResultDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseAttemptResultDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "courseDefinedByDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseDefinedByDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "courseIdentificationSystemDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseIdentificationSystemDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "courseLevelCharacteristicDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseLevelCharacteristicDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "credentialFieldDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/credentialFieldDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "creditTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/creditTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "deescalationTechniqueDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/deescalationTechniqueDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "diplomaTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/diplomaTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "disabilityDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/disabilityDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "disciplineActionLengthDifferenceReasonDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/disciplineActionLengthDifferenceReasonDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "disciplineDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/disciplineDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "disciplineDispositionDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/disciplineDispositionDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "electronicMailTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/electronicMailTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "employmentStatusDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/employmentStatusDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "entryTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/entryTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "exitWithdrawTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/exitWithdrawTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "gradeLevelDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/gradeLevelDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "gradeTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/gradeTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "gradingPeriodDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/gradingPeriodDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "graduationPlanTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/graduationPlanTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "incidentLocationDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/incidentLocationDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "incidentRelatedToDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/incidentRelatedToDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "injuryDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/deinjuryDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "institutionTelephoneNumberTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/institutionTelephoneNumberTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "languageDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/languageDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "languageInstructionProgramServiceDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/languageInstructionProgramServiceDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "languageUseDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/languageUseDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "localEducationAgencyCategoryDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/localEducationAgencyCategoryDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "medicalAlertCategoryDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/medicalAlertCategoryDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "medicalDispositionDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/medicalDispositionDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "modalityTimeTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi-xlearning-modality/modalityTimeTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "modalityTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi-xlearning-modality/modalityTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "nonViolentTechniqueDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/nonViolentTechniqueDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "participationCodeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/participationCodeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "programAssignmentDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programAssignmentDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "programCharacteristicDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programCharacteristicDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "programTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "raceDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/raceDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "reasonExitedDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/reasonExitedDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "reasonForLateIEPDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/reasonForLateIEPDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "referralDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/referralDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "relationDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/relationDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "reporterDescriptionDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/reporterDescriptionDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "responsibilityDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/responsibilityDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "schoolFoodServiceProgramServiceDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/schoolFoodServiceProgramServiceDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "ScreeningLocationDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/ScreeningLocationDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "sectionCharacteristicDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sectionCharacteristicDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "sexDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sexDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "sourceSystemDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sourceSystemDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "specialEducationProgramServiceDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/specialEducationProgramServiceDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "specialEducationSettingDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/specialEducationSettingDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "staffClassificationDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffClassificationDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "staffIdentificationSystemDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffIdentificationSystemDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "staffRoleDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/staffRoleDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "stateAbbreviationDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/stateAbbreviationDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "studentCharacteristicDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCharacteristicDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "studentIdentificationSystemDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentIdentificationSystemDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "telephoneNumberTypeDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/telephoneNumberTypeDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "termDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/termDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
+echo "victimCategoryDescriptors" 
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/victimCategoryDescriptors?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 7bd18d2dc33742f19326bc202ad190d5"
+
