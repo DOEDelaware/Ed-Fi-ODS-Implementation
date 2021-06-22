@@ -23,7 +23,7 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 echo " Program Catalog"
 
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -31,54 +31,54 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 echo "*************   Categories and Resources  *********************"
 echo " cipCourses"  todo claims
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/cipCourses" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"cipCode\": \"string\", \"localEducationAgencyReference\": { \"localEducationAgencyId\": 33 } }, \"cluster\": 0, \"courseName\": \"string\", \"fundingLevel\": 0, \"pathway\": 0}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/cipCourses" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"cipCode\": \"string\", \"localEducationAgencyReference\": { \"localEducationAgencyId\": 33 } }, \"cluster\": 0, \"courseName\": \"string\", \"fundingLevel\": 0, \"pathway\": 0}"
 
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/cipCourses?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/cipCourses?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 echo " Courses"  
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courses" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"courseCode\": \"cousecode 1\", \"educationOrganizationReference\": { \"educationOrganizationId\": \"230759\", }, \"identificationCodes\": [ { \"courseIdentificationSystemDescriptor\": \"uri://ed-fi.org/CourseIdentificationSystemDescriptor#School course code\", \"assigningOrganizationIdentificationCode\": \"230759\", \"identificationCode\": \"scourscode 1\" } ], \"courseTitle\": \"My Course 1\", \"numberOfParts\": 1, \"offeredGradeLevels\": [ { \"gradeLevelDescriptor\": \"uri://doe.k12.de.us/GradeLevelDescriptor#01\" } ], \"_ext\": { \"De\": { \"levelNumber\": 1, \"unitCountExceptionSchoolReference\": { \"schoolId\": 230759, } } }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courses" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"courseCode\": \"cousecode 1\", \"educationOrganizationReference\": { \"educationOrganizationId\": \"230759\", }, \"identificationCodes\": [ { \"courseIdentificationSystemDescriptor\": \"uri://ed-fi.org/CourseIdentificationSystemDescriptor#School course code\", \"assigningOrganizationIdentificationCode\": \"230759\", \"identificationCode\": \"scourscode 1\" } ], \"courseTitle\": \"My Course 1\", \"numberOfParts\": 1, \"offeredGradeLevels\": [ { \"gradeLevelDescriptor\": \"uri://doe.k12.de.us/GradeLevelDescriptor#01\" } ], \"_ext\": { \"De\": { \"levelNumber\": 1, \"unitCountExceptionSchoolReference\": { \"schoolId\": 230759, } } }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courses?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courses?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " locations"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/locations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"classroomIdentificationCode\": \"string\", \"schoolReference\": { \"schoolId\": 230760 }, \"maximumNumberOfSeats\": 10, \"optimalNumberOfSeats\": 5}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/locations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"classroomIdentificationCode\": \"string\", \"schoolReference\": { \"schoolId\": 230760 }, \"maximumNumberOfSeats\": 10, \"optimalNumberOfSeats\": 5}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/locations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/locations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " class periods
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/classPeriods" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"classPeriodName\": \"period 1\", \"schoolReference\": { \"schoolId\": 230759 }, \"_ext\": { \"De\": { \"attendancePeriodOrder\": 1, \"description\": \"string\", \"cycles\": [ { \"cycleDescriptor\": \"uri://doe.k12.de.us/CycleDescriptor#STD\", \"timeslot\": 1 } ] } } }"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/classPeriods" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"classPeriodName\": \"period 1\", \"schoolReference\": { \"schoolId\": 230759 }, \"_ext\": { \"De\": { \"attendancePeriodOrder\": 1, \"description\": \"string\", \"cycles\": [ { \"cycleDescriptor\": \"uri://doe.k12.de.us/CycleDescriptor#STD\", \"timeslot\": 1 } ] } } }"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/classPeriods?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/classPeriods?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " graduation plans"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/graduationPlans" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"graduationPlanTypeDescriptor\": \"uri://doe.k12.de.us/GraduationPlanTypeDescriptor#MS\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"graduationSchoolYearTypeReference\": { \"schoolYear\": 2019 }, \"individualPlan\": true, \"totalRequiredCreditConversion\": 100, \"totalRequiredCredits\": 45}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/graduationPlans" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"graduationPlanTypeDescriptor\": \"uri://doe.k12.de.us/GraduationPlanTypeDescriptor#MS\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"graduationSchoolYearTypeReference\": { \"schoolYear\": 2019 }, \"individualPlan\": true, \"totalRequiredCreditConversion\": 100, \"totalRequiredCredits\": 45}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/graduationPlans?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/graduationPlans?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " calendars"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendars" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"calendarCode\": \"14\", \"schoolReference\": { \"schoolId\": 230760 }, \"schoolYearTypeReference\": { \"schoolYear\": 2022 }, \"calendarTypeDescriptor\": \"uri://doe.k12.de.us/CalendarTypeDescriptor#Z\",}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendars" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"calendarCode\": \"14\", \"schoolReference\": { \"schoolId\": 230760 }, \"schoolYearTypeReference\": { \"schoolYear\": 2022 }, \"calendarTypeDescriptor\": \"uri://doe.k12.de.us/CalendarTypeDescriptor#Z\",}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendars?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendars?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " calendar dates"
 
-curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendarDates" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"calendarEvents\": [ { \"calendarEventDescriptor\": \"uri://doe.k12.de.us/CalendarEventDescriptor#Take Attendance\" } ], \"date\": \"2021-04-14\", \"calendarReference\": { \"calendarCode\": \"14\", \"schoolId\": 230760, \"schoolYear\": 2022 }}"
+curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendarDates" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"calendarEvents\": [ { \"calendarEventDescriptor\": \"uri://doe.k12.de.us/CalendarEventDescriptor#Take Attendance\" } ], \"date\": \"2021-04-14\", \"calendarReference\": { \"calendarCode\": \"14\", \"schoolId\": 230760, \"schoolYear\": 2022 }}"
 
 curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/calendarDates?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer c023c1bf1a14417892a7a30b60e3afc3"
 
@@ -87,9 +87,9 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " grading periods"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/gradingPeriods" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"gradingPeriodDescriptor\": \"uri://doe.k12.de.us/GradingPeriodDescriptor#E2\", \"periodSequence\": 1, \"schoolReference\": { \"schoolId\": 230759 }, \"schoolYearTypeReference\": { \"schoolYear\": 2019 }, \"beginDate\": \"01-JAN-2019\", \"endDate\": \"02-FEB-2019\", \"totalInstructionalDays\": 15, \"_ext\": { \"De\": { \"endWeek\": 1, \"startWeek\": 4 } }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/gradingPeriods" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"gradingPeriodDescriptor\": \"uri://doe.k12.de.us/GradingPeriodDescriptor#E2\", \"periodSequence\": 1, \"schoolReference\": { \"schoolId\": 230759 }, \"schoolYearTypeReference\": { \"schoolYear\": 2019 }, \"beginDate\": \"01-JAN-2019\", \"endDate\": \"02-FEB-2019\", \"totalInstructionalDays\": 15, \"_ext\": { \"De\": { \"endWeek\": 1, \"startWeek\": 4 } }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/gradingPeriods?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/gradingPeriods?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -97,18 +97,18 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " sessions"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sessions" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"sessionName\": \"Fall\", \"schoolReference\": { \"schoolId\": 230759, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"schoolYearTypeReference\": { \"schoolYear\": 2019, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"beginDate\": \"2019-02-24\", \"endDate\": \"2019-02-25\", \"termDescriptor\": \"uri://ed-fi.org/TermDescriptor#Fall Semester\",}{ \"sessionName\": \"Fall\", \"schoolReference\": { \"schoolId\": 230760, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"schoolYearTypeReference\": { \"schoolYear\": 2019, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"beginDate\": \"2019-02-24\", \"endDate\": \"2019-02-25\", \"termDescriptor\": \"uri://ed-fi.org/TermDescriptor#Fall Semester\",}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sessions" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"sessionName\": \"Fall\", \"schoolReference\": { \"schoolId\": 230759, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"schoolYearTypeReference\": { \"schoolYear\": 2019, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"beginDate\": \"2019-02-24\", \"endDate\": \"2019-02-25\", \"termDescriptor\": \"uri://ed-fi.org/TermDescriptor#Fall Semester\",}{ \"sessionName\": \"Fall\", \"schoolReference\": { \"schoolId\": 230760, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"schoolYearTypeReference\": { \"schoolYear\": 2019, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"beginDate\": \"2019-02-24\", \"endDate\": \"2019-02-25\", \"termDescriptor\": \"uri://ed-fi.org/TermDescriptor#Fall Semester\",}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sessions?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sessions?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 
 echo " Course Offerings  "
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseOfferings" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"localCourseCode\": \"local course code 1\", \"courseReference\": { \"courseCode\": \"cousecode 1\", \"educationOrganizationId\": \"230759\", }, \"schoolReference\": { \"schoolId\": 230759 }, \"sessionReference\": { \"schoolId\": 230759, \"schoolYear\": 2019, \"sessionName\": \"Fall\" }, \"localCourseTitle\": \"local course 1\"}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseOfferings" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"localCourseCode\": \"local course code 1\", \"courseReference\": { \"courseCode\": \"cousecode 1\", \"educationOrganizationId\": \"230759\", }, \"schoolReference\": { \"schoolId\": 230759 }, \"sessionReference\": { \"schoolId\": 230759, \"schoolYear\": 2019, \"sessionName\": \"Fall\" }, \"localCourseTitle\": \"local course 1\"}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseOfferings?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/courseOfferings?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -116,9 +116,9 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " sections"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sections" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"sectionIdentifier\": \"section 1\", \"courseOfferingReference\": { \"localCourseCode\": \"local course code 1\", \"schoolId\": 230759, \"schoolYear\": 2019, \"sessionName\": \"Fall\" }, \"_ext\": { \"De\": { \"levelDetail\": 1, \"subjectAreas\": [ { \"academicSubjectDescriptor\": \"uri://doe.k12.de.us/AcademicSubjectDescriptor#3\", \"subjectAreaLastModifiedDate\": \"2019-02-25\", \"subjectOrder\": 0 } ] } } }"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sections" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"sectionIdentifier\": \"section 1\", \"courseOfferingReference\": { \"localCourseCode\": \"local course code 1\", \"schoolId\": 230759, \"schoolYear\": 2019, \"sessionName\": \"Fall\" }, \"_ext\": { \"De\": { \"levelDetail\": 1, \"subjectAreas\": [ { \"academicSubjectDescriptor\": \"uri://doe.k12.de.us/AcademicSubjectDescriptor#3\", \"subjectAreaLastModifiedDate\": \"2019-02-25\", \"subjectOrder\": 0 } ] } } }"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sections?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/sections?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -129,25 +129,25 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 echo "**********   Students  *********************"
 
 echo people
-curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/people" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"personId\": \"123\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Student\"}"
+curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/people" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"personId\": \"123\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Student\"}"
 
 
 echo " students"
 
-curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/students" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d " { \"personReference\": { \"personId\": \"123\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Student\" }, \"studentUniqueId\": \"123\", \"birthCity\": \"string\", \"birthDate\": \"2010-02-25\", \"birthInternationalProvince\": \"string\", \"dateEnteredUS\": \"2011-02-25\", \"firstName\": \"Mary\", \"generationCodeSuffix\": \"string\", \"lastSurname\": \"smith\", \"maidenName\": \"string\", \"middleName\": \"string\", \"multipleBirthStatus\": true }"
+curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/students" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d " { \"personReference\": { \"personId\": \"123\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Student\" }, \"studentUniqueId\": \"123\", \"birthCity\": \"string\", \"birthDate\": \"2010-02-25\", \"birthInternationalProvince\": \"string\", \"dateEnteredUS\": \"2011-02-25\", \"firstName\": \"Mary\", \"generationCodeSuffix\": \"string\", \"lastSurname\": \"smith\", \"maidenName\": \"string\", \"middleName\": \"string\", \"multipleBirthStatus\": true }"
 
 
 
 
 echo " studentSchoolAssociation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSchoolAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"entryDate\": \"2019-02-25\", \"schoolReference\": { \"schoolId\": \"230759\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"entryGradeLevelDescriptor\": \"uri://doe.k12.de.us/GradeLevelDescriptor#01\", \"_ext\": { \"De\": { \"enrollmentTypeDescriptor\": \"uri://doe.k12.de.us/EnrollmentTypeDescriptor#C\" }}}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSchoolAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"entryDate\": \"2019-02-25\", \"schoolReference\": { \"schoolId\": \"230759\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"entryGradeLevelDescriptor\": \"uri://doe.k12.de.us/GradeLevelDescriptor#01\", \"_ext\": { \"De\": { \"enrollmentTypeDescriptor\": \"uri://doe.k12.de.us/EnrollmentTypeDescriptor#C\" }}}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSchoolAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSchoolAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/students?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/students?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -155,9 +155,9 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " studentEducationOrganizationAssociations"
 
- curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentEducationOrganizationAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"sexDescriptor\": \"uri://doe.k12.de.us/SexDescriptor#F\", \"_ext\": { \"De\": { \"ferpaAddress\": true, \"ferpaName\": true, \"ferpaPhone\": true, \"ferpaPhoto\": true } }}" 
+ curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentEducationOrganizationAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"sexDescriptor\": \"uri://doe.k12.de.us/SexDescriptor#F\", \"_ext\": { \"De\": { \"ferpaAddress\": true, \"ferpaName\": true, \"ferpaPhone\": true, \"ferpaPhoto\": true } }}" 
  
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentEducationOrganizationAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentEducationOrganizationAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -167,112 +167,112 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " parents"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/parents" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"parentUniqueId\": \"456\", \"addresses\": [ { \"addressTypeDescriptor\": \"uri://ed-fi.org/AddressTypeDescriptor#M\", \"stateAbbreviationDescriptor\": \"uri://ed-fi.org/StateAbbreviationDescriptor#DE\", \"apartmentRoomSuiteNumber\": \"string\", \"buildingSiteNumber\": \"string\", \"city\": \"string\", \"congressionalDistrict\": \"string\", \"doNotPublishIndicator\": true, \"latitude\": \"string\", \"longitude\": \"string\", \"nameOfCounty\": \"string\", \"postalCode\": \"string\", \"streetNumberName\": \"string\", \"periods\": [ { \"beginDate\": \"01-JAN-2019\", \"endDate\": \"01-JAN-2020\" } ], \"_ext\": { \"De\": { \"complex\": \"string\", \"development\": \"string\" } } } ], \"firstName\": \"string\", \"generationCodeSuffix\": \"string\", \"lastSurname\": \"string\", \"loginId\": \"string\", \"maidenName\": \"string\", \"middleName\": \"string\", \"personalTitlePrefix\": \"string\"}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/parents" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"parentUniqueId\": \"456\", \"addresses\": [ { \"addressTypeDescriptor\": \"uri://ed-fi.org/AddressTypeDescriptor#M\", \"stateAbbreviationDescriptor\": \"uri://ed-fi.org/StateAbbreviationDescriptor#DE\", \"apartmentRoomSuiteNumber\": \"string\", \"buildingSiteNumber\": \"string\", \"city\": \"string\", \"congressionalDistrict\": \"string\", \"doNotPublishIndicator\": true, \"latitude\": \"string\", \"longitude\": \"string\", \"nameOfCounty\": \"string\", \"postalCode\": \"string\", \"streetNumberName\": \"string\", \"periods\": [ { \"beginDate\": \"01-JAN-2019\", \"endDate\": \"01-JAN-2020\" } ], \"_ext\": { \"De\": { \"complex\": \"string\", \"development\": \"string\" } } } ], \"firstName\": \"string\", \"generationCodeSuffix\": \"string\", \"lastSurname\": \"string\", \"loginId\": \"string\", \"maidenName\": \"string\", \"middleName\": \"string\", \"personalTitlePrefix\": \"string\"}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/parents?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/parents?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " studentParentAssociation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentParentAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"parentReference\": { \"parentUniqueId\": \"456\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"contactPriority\": 1, \"emergencyContactStatus\": true, \"livesWith\": true, \"primaryContactStatus\": true, \"relationDescriptor\": \"uri://doe.k12.de.us/RelationDescriptor#A\", \"_ext\": { \"De\": { \"contactTypeDescriptor\": \"uri://doe.k12.de.us/ContactTypeDescriptor#C\" }}}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentParentAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"parentReference\": { \"parentUniqueId\": \"456\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"contactPriority\": 1, \"emergencyContactStatus\": true, \"livesWith\": true, \"primaryContactStatus\": true, \"relationDescriptor\": \"uri://doe.k12.de.us/RelationDescriptor#A\", \"_ext\": { \"De\": { \"contactTypeDescriptor\": \"uri://doe.k12.de.us/ContactTypeDescriptor#C\" }}}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentParentAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentParentAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/parents?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/parents?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 echo " studentSectionAssociations"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSectionAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"sectionReference\": { \"localCourseCode\": \"local course code 1\", \"schoolId\": 230759, \"schoolYear\": 2019, \"sectionIdentifier\": \"section 1\", \"sessionName\": \"Fall\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"attemptStatusDescriptor\": \"uri://doe.k12.de.us/AttemptStatusDescriptor#A\", \"homeroomIndicator\": false}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSectionAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"sectionReference\": { \"localCourseCode\": \"local course code 1\", \"schoolId\": 230759, \"schoolYear\": 2019, \"sectionIdentifier\": \"section 1\", \"sessionName\": \"Fall\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"attemptStatusDescriptor\": \"uri://doe.k12.de.us/AttemptStatusDescriptor#A\", \"homeroomIndicator\": false}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSectionAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSectionAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 echo "************   Staff  *********************"
 
 echo people
-curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/people" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"personId\": \"111\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Staff\"}"
+curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/people" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"personId\": \"111\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Staff\"}"
 
 
 echo " staff "
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffs" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"staffUniqueId\": \"111\", \"firstName\": \"string\", \"generationCodeSuffix\": \"string\", \"lastSurname\": \"string\", \"yearsOfPriorProfessionalExperience\": 1, \"yearsOfPriorTeachingExperience\": 2, \"personReference\": { \"personId\": \"111\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Staff\" }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffs" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"staffUniqueId\": \"111\", \"firstName\": \"string\", \"generationCodeSuffix\": \"string\", \"lastSurname\": \"string\", \"yearsOfPriorProfessionalExperience\": 1, \"yearsOfPriorTeachingExperience\": 2, \"personReference\": { \"personId\": \"111\", \"sourceSystemDescriptor\": \"uri://doe.k12.de.us/SourceSystemDescriptor#eSchoolPlus.Staff\" }}"
 
 
 
 echo " staffEducationOrganizationAssignmentAssociations"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffEducationOrganizationAssignmentAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"beginDate\": \"01-JAN-2019\", \"staffClassificationDescriptor\": \"uri://ed-fi.org/StaffClassificationDescriptor#Assistant Principal\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"staffReference\": { \"staffUniqueId\": \"111\" }, \"_ext\": { \"De\": { \"active\": true } }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffEducationOrganizationAssignmentAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"beginDate\": \"01-JAN-2019\", \"staffClassificationDescriptor\": \"uri://ed-fi.org/StaffClassificationDescriptor#Assistant Principal\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"staffReference\": { \"staffUniqueId\": \"111\" }, \"_ext\": { \"De\": { \"active\": true } }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffEducationOrganizationAssignmentAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffEducationOrganizationAssignmentAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 
 echo " staffSchoolAssignment"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSchoolAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"programAssignmentDescriptor\": \"uri://ed-fi.org/ProgramAssignmentDescriptor#Regular Education\", \"calendarReference\": { \"calendarCode\": \"14\", \"schoolId\": 230759 }, \"schoolReference\": { \"schoolId\": 230759 }, \"schoolYearTypeReference\": { \"schoolYear\": 2019 }, \"staffReference\": { \"staffUniqueId\": \"111\" }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSchoolAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"programAssignmentDescriptor\": \"uri://ed-fi.org/ProgramAssignmentDescriptor#Regular Education\", \"calendarReference\": { \"calendarCode\": \"14\", \"schoolId\": 230759 }, \"schoolReference\": { \"schoolId\": 230759 }, \"schoolYearTypeReference\": { \"schoolYear\": 2019 }, \"staffReference\": { \"staffUniqueId\": \"111\" }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSchoolAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSchoolAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " staffProgramAssociations"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffProgramAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"beginDate\": \"01-JAN-2019\", \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"CTE\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education\" }, \"staffReference\": { \"staffUniqueId\": \"111\" }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffProgramAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"beginDate\": \"01-JAN-2019\", \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"CTE\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education\" }, \"staffReference\": { \"staffUniqueId\": \"111\" }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 
 echo " staffSectionAssociations"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSectionAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"sectionReference\": { \"localCourseCode\": \"local course code 1\", \"schoolId\": 230759, \"schoolYear\": 2019, \"sectionIdentifier\": \"section 1\", \"sessionName\": \"Fall\" }, \"staffReference\": { \"staffUniqueId\": \"111\" }, \"beginDate\": \"01-JAN-2019\", \"classroomPositionDescriptor\": \"uri://ed-fi.org/ClassroomPositionDescriptor#Teacher of Record\", \"highlyQualifiedTeacher\": true}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSectionAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"sectionReference\": { \"localCourseCode\": \"local course code 1\", \"schoolId\": 230759, \"schoolYear\": 2019, \"sectionIdentifier\": \"section 1\", \"sessionName\": \"Fall\" }, \"staffReference\": { \"staffUniqueId\": \"111\" }, \"beginDate\": \"01-JAN-2019\", \"classroomPositionDescriptor\": \"uri://ed-fi.org/ClassroomPositionDescriptor#Teacher of Record\", \"highlyQualifiedTeacher\": true}"
 
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSectionAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffSectionAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 echo "***********   Programs & Cohort Groups  *********************"
 echo " Program"
 
-curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programs" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{ \"programName\": \"Mon Tues In Person\", \"programTypeDescriptor\": \"uri://doe.k12.de.us/ProgramTypeDescriptor#HYB\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"programId\": \"string\", \"_ext\": { \"EdFiXLearningModality\": { \"learningModalities\": [ { \"modalityTypeDescriptor\": \"uri://doe.k12.de.us/modalityTypeDescriptor#I\", \"modalityTimeTypeDescriptor\": \"uri://doe.k12.de.us/ModalityTimeTypeDescriptor#Percentage\", \"modalityTime\": 98 } ] } }}"
+curl -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programs" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{ \"programName\": \"Mon Tues In Person\", \"programTypeDescriptor\": \"uri://doe.k12.de.us/ProgramTypeDescriptor#HYB\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"programId\": \"string\", \"_ext\": { \"EdFiXLearningModality\": { \"learningModalities\": [ { \"modalityTypeDescriptor\": \"uri://doe.k12.de.us/modalityTypeDescriptor#I\", \"modalityTimeTypeDescriptor\": \"uri://doe.k12.de.us/ModalityTimeTypeDescriptor#Percentage\", \"modalityTime\": 98 } ] } }}"
 
 
 
 
-curl -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/programs?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 check 
 
 
 echo " studentTransportation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/studentTransportations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"travelDayOfWeekDescriptor\": \"uri://doe.k12.de.us/TravelDayOfWeekDescriptor#FRIDAY\", \"travelDirectionDescriptor\": \"uri://doe.k12.de.us/TravelDirectionDescriptor#T\", \"travelSegment\": 1, \"travelTrip\": 2, \"localEducationAgencyReference\": { \"localEducationAgencyId\": 10 }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/studentTransportations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"travelDayOfWeekDescriptor\": \"uri://doe.k12.de.us/TravelDayOfWeekDescriptor#FRIDAY\", \"travelDirectionDescriptor\": \"uri://doe.k12.de.us/TravelDirectionDescriptor#T\", \"travelSegment\": 1, \"travelTrip\": 2, \"localEducationAgencyReference\": { \"localEducationAgencyId\": 10 }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/studentTransportations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/studentTransportations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 echo " student504ProgramAssociation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/student504ProgramAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759 }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"504 Plan\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Section 504 Placement\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/student504ProgramAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759 }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"504 Plan\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Section 504 Placement\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/student504ProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/de/student504ProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 
 echo " studentCTEProgramAssociation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCTEProgramAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759 }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"CTE\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCTEProgramAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759 }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"CTE\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCTEProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCTEProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -280,9 +280,9 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " studentLanguageInstructionProgramAssociations"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentLanguageInstructionProgramAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759 }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"Language Immersion\", \"programTypeDescriptor\": \"uri://doe.k12.de.us/ProgramTypeDescriptor#Language Immersion\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"_ext\": { \"De\": { \"languageImmersions\": [ { \"immersionLanguageDescriptor\": \"uri://ed-fi.org/LanguageDescriptor#aar\", \"gradeLevelDescriptor\": \"uri://doe.k12.de.us/GradeLevelDescriptor#01\", \"comment\": \"string\", \"schoolYearTypeReference\": { \"schoolYear\": 2019 } } ] } }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentLanguageInstructionProgramAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759 }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"Language Immersion\", \"programTypeDescriptor\": \"uri://doe.k12.de.us/ProgramTypeDescriptor#Language Immersion\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"_ext\": { \"De\": { \"languageImmersions\": [ { \"immersionLanguageDescriptor\": \"uri://ed-fi.org/LanguageDescriptor#aar\", \"gradeLevelDescriptor\": \"uri://doe.k12.de.us/GradeLevelDescriptor#01\", \"comment\": \"string\", \"schoolYearTypeReference\": { \"schoolYear\": 2019 } } ] } }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentLanguageInstructionProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentLanguageInstructionProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -290,9 +290,9 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " studentSpecialEduicationProgramAssociation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSpecialEducationProgramAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"Special Education\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"specialEducationHoursPerWeek\": 1, \"_etag\": \"string\", \"_ext\": { \"De\": { \"diplomaCertificateCategoryDescriptor\": \"uri://doe.k12.de.us/DiplomaCertificateCategoryDescriptor#Certificate\", } }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSpecialEducationProgramAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"educationOrganizationReference\": { \"educationOrganizationId\": 230759, \"link\": { \"rel\": \"string\", \"href\": \"string\" } }, \"programReference\": { \"educationOrganizationId\": 23, \"programName\": \"Special Education\", \"programTypeDescriptor\": \"uri://ed-fi.org/ProgramTypeDescriptor#Special Education\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"specialEducationHoursPerWeek\": 1, \"_etag\": \"string\", \"_ext\": { \"De\": { \"diplomaCertificateCategoryDescriptor\": \"uri://doe.k12.de.us/DiplomaCertificateCategoryDescriptor#Certificate\", } }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSpecialEducationProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentSpecialEducationProgramAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -300,9 +300,9 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " cohorts"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/cohorts" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"cohortIdentifier\": \"test\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"academicSubjectDescriptor\": \"uri://doe.k12.de.us/AcademicSubjectDescriptor#CST\", \"cohortTypeDescriptor\": \"uri://doe.k12.de.us/CohortTypeDescriptor#ACT\"}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/cohorts" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"cohortIdentifier\": \"test\", \"educationOrganizationReference\": { \"educationOrganizationId\": 23 }, \"academicSubjectDescriptor\": \"uri://doe.k12.de.us/AcademicSubjectDescriptor#CST\", \"cohortTypeDescriptor\": \"uri://doe.k12.de.us/CohortTypeDescriptor#ACT\"}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/cohorts?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/cohorts?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
@@ -310,18 +310,18 @@ curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/e
 
 echo " studentCohortAssociation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCohortAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"cohortReference\": { \"cohortIdentifier\": \"test\", \"educationOrganizationId\": 23 }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCohortAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"cohortReference\": { \"cohortIdentifier\": \"test\", \"educationOrganizationId\": 23 }, \"studentReference\": { \"studentUniqueId\": \"123\" }}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCohortAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/studentCohortAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
 
 echo " staffCohortAssociation"
 
-curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffCohortAssociations" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"cohortReference\": { \"cohortIdentifier\": \"test\", \"educationOrganizationId\": 23 }, \"staffReference\": { \"staffUniqueId\": \"111\" }, \"studentRecordAccess\": true}"
+curl.exe -X POST "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffCohortAssociations" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48" -H "Content-Type: application/json" -d "{  \"beginDate\": \"01-JAN-2019\", \"cohortReference\": { \"cohortIdentifier\": \"test\", \"educationOrganizationId\": 23 }, \"staffReference\": { \"staffUniqueId\": \"111\" }, \"studentRecordAccess\": true}"
 
-curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffCohortAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer f6d50f5e834548b28aaa712c0aa25374"
+curl.exe -X GET "https://doesisedfiint.doe.k12.de.us/Delaware-api/data/v3/2022/ed-fi/staffCohortAssociations?offset=0&limit=25&totalCount=false" -H "accept: application/json" -H "authorization: Bearer 1520522da6af400f9c8343fa47012c48"
 
 
 
