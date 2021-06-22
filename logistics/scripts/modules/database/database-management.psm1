@@ -24,11 +24,12 @@ function Use-SqlServerModule {
 
         Write-Host "Installing SqlServer Module"
 				
-		#currently have to run this on db server (once), because they cannot pull from the web:
+		#currently have to run this on db server (once) as the octopus user, because the servers cannot pull from the web:
 		Register-PSRepository -Name 'localinstall' -SourceLocation 'D:\Software' -InstallationPolicy 'Trusted'
 		
-        #Install-Module -Name SqlServer -Repository 'doe' -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber | Out-Null
+		#We then have to locate the files (2 blank edfi dbs, sqlserver ps library) in the path
 		Install-Module -Name SqlServer -Repository 'localinstall'  -MinimumVersion "21.1.18068" -Scope CurrentUser -Force -AllowClobber | Out-Null
+		
         Import-Module -Force -Scope Global SqlServer
     }
 }
