@@ -165,6 +165,7 @@ from
 	CODELIBRARYSOURCE.codelibrary.dbo.School school join CODELIBRARYSOURCE.codelibrary.dbo.Building building on school.schoolyear=building.schoolyear and school.districtcode=building.districtCode and school.schoolcode=building.schoolcode 
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 		and building.EschoolBuilding is not null
+and building.eSchoolBuilding not in (select SchoolId from edfi.SChool)
 --go
 
 select * from  de.Schoolextension 
@@ -177,6 +178,7 @@ from
 where building.SchoolYear in (select schoolyear from edfi.schoolYeartype where CurrentSchoolYear=1)
 	and building.eSchoolBuilding not in (select SchoolId from de.Schoolextension)	
 	and building.eSchoolBuilding  in (select SchoolId from edfi.School)
+
 --go
 
 
