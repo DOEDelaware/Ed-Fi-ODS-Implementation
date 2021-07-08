@@ -75,3 +75,10 @@ GO
 --Person security
 	update ResourceClaims set ParentResourceClaimId=(select ResourceClaimId from ResourceClaims where ClaimName='http://ed-fi.org/ods/identity/claims/domains/people') where ClaimName='http://ed-fi.org/ods/identity/claims/person'
 go
+--fix 6/8 sk
+insert into ResourceClaimAuthorizationMetadatas (Action_ActionId,AuthorizationStrategy_AuthorizationStrategyId,ResourceClaim_ResourceClaimId)
+select 1,1, ResourceClaimId from ResourceClaims where ClaimName='http://ed-fi.org/ods/identity/claims/person'
+go
+insert into ResourceClaimAuthorizationMetadatas (Action_ActionId,AuthorizationStrategy_AuthorizationStrategyId,ResourceClaim_ResourceClaimId)
+select 3,1, ResourceClaimId from ResourceClaims where ClaimName='http://ed-fi.org/ods/identity/claims/person'
+go
