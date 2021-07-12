@@ -454,7 +454,6 @@ insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description,
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate)   values ('uri://ed-fi.org/LanguageDescriptor','ngo','Ngoni','Ngoni','Jul  9 2021','Jul  9 2021')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate)   values ('uri://ed-fi.org/LanguageDescriptor','smo','Samoan','Samoan','Jul  9 2021','Jul  9 2021')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate)   values ('uri://ed-fi.org/LanguageDescriptor','ibb','Ibibio','Ibibio','Jul  9 2021','Jul  9 2021')
-NULL
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate)   values ('uri://ed-fi.org/LanguageDescriptor','sin','Sinhala','Sinhala','Jul  9 2021','Jul  9 2021')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate)   values ('uri://ed-fi.org/LanguageDescriptor','nep','Nepali','Nepali','Jul  9 2021','Jul  9 2021')
 insert into edfi.Descriptor (NameSpace, CodeValue,ShortDescription, Description, CreateDate, LastModifiedDate)   values ('uri://ed-fi.org/LanguageDescriptor','sna','Shona','Shona','Jul  9 2021','Jul  9 2021')
