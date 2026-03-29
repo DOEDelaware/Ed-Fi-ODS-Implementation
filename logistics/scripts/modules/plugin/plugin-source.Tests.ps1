@@ -30,9 +30,9 @@ Describe 'Get-PluginScriptsFromSettings' {
 
     It "Gets plugin scripts without tpdm if standard version is 6.0 or higher"{
         $settings = Get-EdFiDeveloperPluginSettings
-        $settings.ApiSettings = @{ StandardVersion = "6.0.0" }
+        $settings.ApiSettings = @{ StandardVersion = "6.1.0" }
         $pScripts = Get-PluginScriptsFromSettings $settings
-        
+
         $pScripts.Contains('tpdm') | Should -Be $false
     }
 
@@ -40,7 +40,7 @@ Describe 'Get-PluginScriptsFromSettings' {
         $settings = Get-EdFiDeveloperPluginSettings
         $settings.ApiSettings = @{ StandardVersion = "5.9.9" }
         $pScripts = Get-PluginScriptsFromSettings $settings
-        
+
         $pScripts.Contains('tpdm') | Should -Be $true
     }
 }

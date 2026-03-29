@@ -193,7 +193,7 @@ if ($ImageName -eq "ods-api-db-admin") {
 }
 elseif ($ImageName -eq "ods-api-db-ods-minimal") {
   if ($Path.EndsWith("mssql")) {
-    $BuildArgs = "--build-arg ODS_VERSION=$MSSQL_MinimalVersion --build-arg TPDM_VERSION=$MSSQL_TpdmMinimalVersion --build-arg STANDARD_VERSION=$StandardVersion --build-arg EXTENSION_VERSION=$ExtensionVersion"  
+    $BuildArgs = "--build-arg ODS_VERSION=$MSSQL_MinimalVersion --build-arg TPDM_VERSION=$MSSQL_TpdmMinimalVersion --build-arg STANDARD_VERSION=$StandardVersion --build-arg EXTENSION_VERSION=$ExtensionVersion"
   }
   else {
     $BuildArgs = "--build-arg ODS_VERSION=$MinimalVersion --build-arg TPDM_VERSION=$TpdmMinimalVersion --build-arg STANDARD_VERSION=$StandardVersion --build-arg EXTENSION_VERSION=$ExtensionVersion"
@@ -201,7 +201,7 @@ elseif ($ImageName -eq "ods-api-db-ods-minimal") {
 }
 elseif ($ImageName -eq "ods-api-db-ods-sandbox") {
   if ($Path.EndsWith("mssql")) {
-    $BuildArgs = "--build-arg ODS_MINIMAL_VERSION=$MSSQL_MinimalVersion --build-arg ODS_POPULATED_VERSION=$MSSQL_PopulatedVersion --build-arg TPDM_MINIMAL_VERSION=$MSSQL_TpdmMinimalVersion --build-arg TPDM_POPULATED_VERSION=$MSSQL_TpdmPopulatedVersion --build-arg STANDARD_VERSION=$StandardVersion --build-arg EXTENSION_VERSION=$ExtensionVersion"  
+    $BuildArgs = "--build-arg ODS_MINIMAL_VERSION=$MSSQL_MinimalVersion --build-arg ODS_POPULATED_VERSION=$MSSQL_PopulatedVersion --build-arg TPDM_MINIMAL_VERSION=$MSSQL_TpdmMinimalVersion --build-arg TPDM_POPULATED_VERSION=$MSSQL_TpdmPopulatedVersion --build-arg STANDARD_VERSION=$StandardVersion --build-arg EXTENSION_VERSION=$ExtensionVersion"
   }
   else {
     $BuildArgs = "--build-arg ODS_MINIMAL_VERSION=$MinimalVersion --build-arg ODS_POPULATED_VERSION=$PopulatedVersion --build-arg TPDM_MINIMAL_VERSION=$TpdmMinimalVersion --build-arg TPDM_POPULATED_VERSION=$TpdmPopulatedVersion --build-arg STANDARD_VERSION=$StandardVersion --build-arg EXTENSION_VERSION=$ExtensionVersion"
@@ -299,7 +299,7 @@ function Invoke-Build {
 
     Write-Message "Building $ImageName with $BuildArgs"
     Push-Location $ImageName/$Path
-    
+
     try {
         # Split BuildArgs string into an array for direct invocation
         $buildArgList = @()
@@ -309,11 +309,11 @@ function Invoke-Build {
 
         if ($IsMultiPlatform) {
             Write-Message "Building multi-platform image for platforms: $Platforms"
-            
+
             # Note: Docker Buildx must be configured at the GitHub Actions level
             if ($Push) {
                 Write-Message "Building and pushing multi-platform $ImageName with all tags"
-                
+
                 $dockerArgs = @("buildx", "build", "--platform", $Platforms, "--push")
                 foreach ($tag in $tagMap.All) {
                     $dockerArgs += "-t"
@@ -323,7 +323,7 @@ function Invoke-Build {
                 $dockerArgs += "."
 
                 & docker $dockerArgs
-                
+
                 if ($LASTEXITCODE -gt 0) {
                     throw "Failed to build and push multi-platform image $ImageName"
                 }
@@ -331,10 +331,10 @@ function Invoke-Build {
         } else {
             # Original single-platform build logic for local development
             Write-Message "Building single-platform image for local development"
-            
+
             # Use SemVer or Pre as the primary tag for building
             $primaryTag = if ($tagMap.SemVer) { $tagMap.SemVer } else { $tagMap.Pre }
-            
+
             $dockerArgs = @("build", "-t", $primaryTag)
             $dockerArgs += $buildArgList
             $dockerArgs += "."
@@ -344,7 +344,7 @@ function Invoke-Build {
             if ($LASTEXITCODE -gt 0) {
                 throw "Failed to build image $ImageName"
             }
-            
+
             # Apply remaining tags (Package, Major, MajorMinor if present)
             foreach ($key in @("Package", "Major", "MajorMinor")) {
                 if ($tagMap.ContainsKey($key)) {

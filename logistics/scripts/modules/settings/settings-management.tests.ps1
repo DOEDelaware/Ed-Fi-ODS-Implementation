@@ -399,7 +399,7 @@ Describe 'Update-DefaultDatabaseTemplate' {
         $settings.ApiSettings.PopulatedTemplateScript | Should -Be 'SomePopulated'
     }
 
-    It "should update template to grandbend when enabling tpdm and data standard is 6.0.0 or higher" {
+    It "should update template to grandbend when enabling tpdm and data standard is 6.1.0 or higher" {
         $settings = Update-DefaultDatabaseTemplate @{
             ApiSettings = @{
                 StandardVersion = '6.0.0'

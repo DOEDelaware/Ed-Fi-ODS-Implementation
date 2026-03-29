@@ -26,7 +26,7 @@ function Get-NuGetPackage {
     .EXAMPLE
         $parameters = @{
             packageName = "EdFi.Suite3.Ods.WebApi"
-            packageVersion = "6.0.0-b11661"
+            packageVersion = "6.1.0-b11661"
         }
         Get-NuGetPackage @parameters
     #>
@@ -57,7 +57,7 @@ function Get-NuGetPackage {
 
     $temporaryProjectDirectory = "$(Get-RepositoryResolvedPath)temporary-project"
     $temporaryProjectName = "temporary-project"
-    
+
     $parameters = @(
         "new", "classlib"
         "--name", $temporaryProjectName
@@ -112,9 +112,9 @@ function Get-NuGetPackage {
     }
 
     if(Test-Path $temporaryProjectDirectory) {
-        Remove-Item -Path $temporaryProjectDirectory -Recurse -Force | Out-Null 
-    } 
-        
+        Remove-Item -Path $temporaryProjectDirectory -Recurse -Force | Out-Null
+    }
+
     return $packageDestinationPath
 }
 

@@ -49,7 +49,7 @@ function Install-EdFiOdsSandboxAdmin {
         PS c:/> Install-EdFiOdsSandboxAdmin @parameters
 
         Use all available default values, connecting to databases on a single SQL Server instance.
-        Connect to the database with integrated security. This will create IIS website "Ed-Fi" 
+        Connect to the database with integrated security. This will create IIS website "Ed-Fi"
         with root c:\inetpub\Ed-Fi, and the application files will be in "c:\inetpub\Ed-Fi\SandboxAdmin".
         Installs the most recent full release of the SandboxAdmin software.
 
@@ -81,7 +81,7 @@ function Install-EdFiOdsSandboxAdmin {
 
         Connect using integrated security with a specific Windows user. If the user does not already
         exist in SQL Server, the installer will create it with "sysadmin" role.
-        After executing the installer, you must ensure that the application pool identity used by 
+        After executing the installer, you must ensure that the application pool identity used by
         SandboxAdmin is the same as the Windows user.
 
     .EXAMPLE
@@ -249,7 +249,7 @@ function Install-EdFiOdsSandboxAdmin {
         [Parameter(Mandatory=$true, ParameterSetName="SeparateCredentials")]
         $SecurityDbConnectionInfo,
 
-        #"EdFi_Admin.OdsInstances" entries will be based on this database connectivity 
+        #"EdFi_Admin.OdsInstances" entries will be based on this database connectivity
         # information.
         #
         # The hashtable must include: Server, Engine (SqlServer or PostgreSQL), and
@@ -270,14 +270,14 @@ function Install-EdFiOdsSandboxAdmin {
         $MasterDbConnectionInfo,
 
         # Whether to create the database server login for the application if they do not already exist
-        # IMPORTANT: Database logins created by the installer will have database server administrator rights. 
+        # IMPORTANT: Database logins created by the installer will have database server administrator rights.
         #            If more restrictive permissions are required, the database login used by the SandboxAdmin should be created manually
         #            before executing the installer.
-        # 
+        #
         # To create a custom login for SQL Server:
         #    If integrated security is not enabled, a username and password must be provided in the database connection information (DbConnectionInfo) parameter(s)
         #    If integrated security is enabled, the username provided must be a valid Windows user, or left blank to use the default application pool identity
-        #       The application pool identity used by SandboxAdmin needs to be manually updated to use the same Windows username 
+        #       The application pool identity used by SandboxAdmin needs to be manually updated to use the same Windows username
         # To create a custom login for Postgres:
         #    If integrated security is not enabled, a username must be provided in the database connection information parameter(s). A password can be optionally specified
         #    If integrated security is enabled, pg_ident.conf map needs to be updated to use the username provided
@@ -287,15 +287,15 @@ function Install-EdFiOdsSandboxAdmin {
         # Optional hashtable containing appSettings override values.
         [hashtable]
         $Settings = @{ OAuthUrl = "https://localhost/EdFiOdsWebApi" },
-        
+
         # Initial client key to load into the appSettings.config file. Default: Random string value.
         [string]
         $PrePopulatedKey,
-        
+
         # Initial client secret to load into the appSettings.config file. Default: Random string value.
         [string]
         $PrePopulatedSecret,
-        
+
         # Set Encrypt=false for all connection strings
         # Not recomended for production environment.
         [switch]
@@ -447,7 +447,7 @@ function Invoke-TransformWebConfigConnectionStrings {
 
     Invoke-Task -Name ($MyInvocation.MyCommand.Name) -Task {
         if ($Config.usingSharedCredentials) {
-            
+
             $Config.AdminDbConnectionInfo = $Config.DbConnectionInfo.Clone()
             $Config.AdminDbConnectionInfo.DatabaseName = $Config.AdminDatabaseName
 
@@ -472,7 +472,7 @@ function Invoke-TransformWebConfigConnectionStrings {
         if ($Config.engine -ieq "PostgreSQL") {
             $Config.MasterDbConnectionInfo.DatabaseName = "postgres"
         }
-        
+
         $webConfigPath = "$($Config.PackageDirectory)/appsettings.json"
         $settings = Get-Content $webConfigPath | ConvertFrom-Json | ConvertTo-Hashtable
 
@@ -501,8 +501,8 @@ function Invoke-TransformWebConfigConnectionStrings {
         $connectionstrings = @{
             ConnectionStrings = @{
                 EdFi_Admin = $adminconnString
-                EdFi_Security = $securityConnString 
-                EdFi_Ods = $odsConnString 
+                EdFi_Security = $securityConnString
+                EdFi_Ods = $odsConnString
                 EdFi_Master = $masterConnString
             }
         }
@@ -517,7 +517,7 @@ function Get-DefaultCredentialSettings {
 
         [string] $PrePopulatedSecret
     )
-    
+
     function Get-RandomString([int] $length = 20) {
         return ([char[]]([char]65..[char]90) + ([char[]]([char]97..[char]122)) + 0..9 | Sort-Object { Get-Random })[0..$length] -join ''
     }
