@@ -1,0 +1,10 @@
+{
+  "extensions": [
+    {
+      "name": "DEIdentityManagement",
+      "apiModelAssembly": "EdFi.Ods.De.Features.IdentityManagement",
+      "identityProviderType": "DEIdentityManagement",
+      "identityProviderAssembly": "EdFi.Ods.De.Features.IdentityManagement"
+    }
+  ]
+}
