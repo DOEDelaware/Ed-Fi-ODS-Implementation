@@ -1,0 +1,10 @@
+  {
+    "beginDate": "2026-02-17",
+    "cohortReference": {
+      "cohortIdentifier": "cohort1",
+      "educationOrganizationId": 33
+    },
+    "staffReference": {
+      "staffUniqueId": 1
+    }
+  }

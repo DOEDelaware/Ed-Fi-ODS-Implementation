@@ -1,0 +1,16 @@
+  {
+    "beginDate": "2025-02-17",
+    "staffClassificationDescriptor": "uri://doe.k12.de.us/StaffClassificationDescriptor#Teacher",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "staffReference": {
+      "staffUniqueId": "1"
+    },
+    "endDate": "2026-02-17",
+    "_ext": {
+      "de": {
+        "active": true
+      }
+    }
+  }

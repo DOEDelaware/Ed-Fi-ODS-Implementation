@@ -1,0 +1,15 @@
+  {
+    "localCourseCode": "localCourseCode1",
+    "courseReference": {
+      "courseCode": "c1",
+      "educationOrganizationId": 330330
+    },
+    "schoolReference": {
+      "schoolId": 330330
+    },
+    "sessionReference": {
+      "schoolId": 330330,
+      "schoolYear": 2026,
+      "sessionName": "session 1"
+    }
+  }

@@ -1,0 +1,13 @@
+ {
+    "courseAttemptResultDescriptor": "uri://doe.k12.de.us/CourseAttemptResultDescriptor#Fail",
+    "courseReference": {
+      "courseCode": "c1",
+      "educationOrganizationId": 330330
+    },
+    "studentAcademicRecordReference": {
+      "educationOrganizationId": 33,
+      "schoolYear": 2026,
+      "studentUniqueId": 1,
+      "termDescriptor": "uri://doe.k12.de.us/TermDescriptor#Fall Semester"
+    }
+  }

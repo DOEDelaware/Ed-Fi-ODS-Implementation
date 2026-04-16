@@ -1,0 +1,66 @@
+https://doesisedfiint.doe.k12.de.us/Delaware-Api/data/v3/2021/ed-fi-xassessment-roster/StudentAssessmentRegistrations
+
+StudentAssessmentRegistration
+{
+  "studentEducationOrganizationAssociationReference": {
+    "educationOrganizationId": 10,
+    "studentUniqueId": "123"
+    },
+  "assessmentAdministrationReference": {
+    "administrationIdentifier": "100",
+    "assessmentIdentifier": "100",
+    "assigningEducationOrganizationId": 95,
+    "namespace": "uri://doe.k12.de.us/AsessmentRoster"
+    }
+}
+
+
+{
+  "id": "string",
+  "assessmentAdministrationReference": {
+    "administrationIdentifier": "string",
+    "assessmentIdentifier": "string",
+    "assigningEducationOrganizationId": 95,
+    "namespace": "string",
+    "link": {
+      "rel": "string",
+      "href": "string"
+    }
+  },
+  "reportingEducationOrganizationReference": {
+    "educationOrganizationId": 0,
+    "link": {
+      "rel": "string",
+      "href": "string"
+    }
+  },
+  "studentEducationOrganizationAssociationReference": {
+    "educationOrganizationId": 0,
+    "studentUniqueId": "string",
+    "link": {
+      "rel": "string",
+      "href": "string"
+    }
+  },
+  "testingEducationOrganizationReference": {
+    "educationOrganizationId": 0,
+    "link": {
+      "rel": "string",
+      "href": "string"
+    }
+  },
+  "administrationEnvironmentDescriptor": "string",
+  "assessmentCustomizations": [
+    {
+      "identificationCode": "string",
+      "customizationValue": "string"
+    }
+  ],
+  "reportingDisabilityDescriptor": "string",
+  "reportingEconomicDisadvantaged": true,
+  "reportingHispanicLatinoEthnicity": true,
+  "reportingLimitedEnglishProficiencyDescriptor": "string",
+  "reportingRaceDescriptor": "string",
+  "reportingSexDescriptor": "string",
+  "_etag": "string"
+}

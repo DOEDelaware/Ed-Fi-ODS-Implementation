@@ -1,0 +1,16 @@
+  {
+    "contactUniqueId": "1",
+    "addresses": [
+      {
+        "addressTypeDescriptor": "uri://doe.k12.de.us/AddressTypeDescriptor#M",
+        "stateAbbreviationDescriptor": "uri://doe.k12.de.us/StateAbbreviationDescriptor#DE",
+        "city": "Wilimington",
+        "postalCode": "19808",
+        "streetNumberName": "2020 Whitman Drive"
+      }
+    ],
+    "firstName": "Digory",
+    "lastSurname": "Smith",
+    "loginId": "ds@ds.com",
+    "sexDescriptor": "uri://doe.k12.de.us/sexDescriptor#M"
+  }

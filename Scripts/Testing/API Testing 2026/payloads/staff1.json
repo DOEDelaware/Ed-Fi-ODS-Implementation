@@ -1,0 +1,14 @@
+ {
+    "staffUniqueId": "1",
+    "birthDate": "2000-02-17",
+    "firstName": "Maria",
+    "hispanicLatinoEthnicity": true,
+    "lastSurname": "Gonzolez",
+    "loginId": "mg@csd.k12.de.us",
+    "races": [
+      {
+        "raceDescriptor": "uri://doe.k12.de.us/RaceDescriptor#5"
+      }
+    ],
+    "sexDescriptor": "uri://doe.k12.de.us/sexDescriptor#F"
+  }

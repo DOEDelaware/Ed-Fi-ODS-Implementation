@@ -1,0 +1,20 @@
+ {
+    "gradeTypeDescriptor": "uri://doe.k12.de.us/GradeTypeDescriptor#MP",
+    "gradingPeriodReference": {
+      "gradingPeriodDescriptor": "uri://doe.k12.de.us/gradingPeriodDescriptor#MP1",
+      "gradingPeriodName": "Marking Period 1",
+      "schoolId": 330330,
+      "schoolYear": 2026
+    },
+    "studentSectionAssociationReference": {
+      "beginDate": "2026-02-17",		
+      "localCourseCode": "localCourseCode1",
+      "schoolId": 330330,
+      "schoolYear": 2026,
+      "sectionIdentifier": "section1",
+      "sessionName": "session 1",
+      "studentUniqueId": "1"	  
+    },
+    "letterGradeEarned": "A",
+    "numericGradeEarned": 9999999.99
+  }

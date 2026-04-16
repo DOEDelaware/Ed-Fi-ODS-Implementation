@@ -1,0 +1,9 @@
+  {
+    "questionCode": "STR 1",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-33"
+    },
+    "questionText": "with the consent of the parent or Student (who has reached the age of majority), was an invitation of meeting provided to a participating agency likely to be responsible or paying for transition",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  }

@@ -1,0 +1,9 @@
+{
+  "questionCode": "Student Status",
+  "surveyReference": {
+    "namespace": "uri://doe.k12.de.us",
+    "surveyIdentifier": "Indicator13-255901001"
+  },
+  "questionText": "What is the student's status in your district or charter?",
+  "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Dropdown"
+}
