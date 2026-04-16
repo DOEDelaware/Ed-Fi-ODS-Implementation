@@ -1,0 +1,76 @@
+delete de.PersonMedicalAlert
+go
+delete de.MedicalAlert
+go
+
+insert into de.MedicalAlert (MedicalAlertCategoryDescriptorId, Sensitive)
+select MedicalAlertCategoryDescriptorId,0 from de.MedicalAlertCategoryDescriptor
+go
+
+Update de.MedicalAlert set Sensitive=1 where MedicalAlertCategoryDescriptorId in
+(select descriptorId from edfi.descriptor where Namespace='uri://doe.k12.de.us/MedicalAlertCategoryDescriptor'
+ and CodeValue in (
+ 'CD',
+'CDP',
+'FAMP',
+'GEN',
+'GENDP',
+'GENED',
+'GENET',
+'GENTP',
+'GI',
+'GIP',
+'GUR',
+'GURP',
+'GYN',
+'GYNP',
+'GYNST',
+'GYNTP',
+'HIS',
+'HISP',
+'IM',
+'IMC',
+'IMCP',
+'IMP',
+'IZ',
+'MED',
+'MEDP',
+'MN',
+'NP',
+'NSB',
+'NSBP',
+'O',
+'OO',
+'PAR',
+'PSDPR',
+'PSOCP',
+'PSODP',
+'PSSMP',
+'PSY',
+'PSYA',
+'PSYAP',
+'PSYD',
+'PSYHD',
+'PSYOC',
+'PSYOD',
+'PSYP',
+'PSYPP',
+'PSYPR',
+'PSYSM',
+'PSYX',
+'PSYXP',
+'R',
+'RP',
+'RPPR',
+'RPR',
+'SUGP',
+'SURGG',
+'TP',
+'C19MR',
+'C19P',
+'C19PI',
+'EC19V',
+'PSYGD',
+'PSYTC',
+'VC19'
+ ))

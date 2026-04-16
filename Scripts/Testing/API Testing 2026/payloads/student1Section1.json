@@ -1,0 +1,14 @@
+ {
+    "beginDate": "2026-02-17",
+    "sectionReference": {
+      "localCourseCode": "localCourseCode1",
+      "schoolId": 330330,
+      "schoolYear": 2026,
+      "sectionIdentifier": "section1",
+      "sessionName": "session 1"
+    },
+    "studentReference": {
+      "studentUniqueId": 1
+    },
+    "homeroomIndicator": true
+  }

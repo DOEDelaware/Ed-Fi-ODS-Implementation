@@ -1,0 +1,18 @@
+ {
+    "beginDate": "2026-02-17",
+    "specialEducationFundings": [
+      {
+        "specialEducationFundingDescriptor": "uri://doe.k12.de.us/SpecialEducationFundingDescriptor#10"
+      }
+    ],
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "programReference": {
+      "educationOrganizationId": 33,
+      "programName": "Early Childhood",
+      "programTypeDescriptor": "uri://doe.k12.de.us/ProgramTypeDescriptor#Early Education"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"    }
+  }

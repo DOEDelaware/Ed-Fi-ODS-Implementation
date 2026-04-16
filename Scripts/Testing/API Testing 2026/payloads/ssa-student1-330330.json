@@ -1,0 +1,26 @@
+ {
+    "entryDate": "2026-02-16",
+    "calendarReference": {
+      "calendarCode": "calendar1",
+      "schoolId": 330330,
+      "schoolYear": 2026
+    },
+    "schoolReference": {
+      "schoolId": 330330
+    },
+    "schoolYearTypeReference": {
+      "schoolYear": 2026
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "entryGradeLevelDescriptor": "uri://doe.k12.de.us/GradeLevelDescriptor#01",
+	"SchoolChoice": true,
+	"schoolChoiceBasisDescriptor":"uri://doe.k12.de.us/SchoolChoiceBasisDescriptor#1",
+	"enrollmentTypeDescriptor":"uri://doe.k12.de.us/EnrollmentTypeDescriptor#C",
+	"nextYearGradeLevelDesciptor":"uri://doe.k12.de.us/GradeLevelDescriptor#01",
+	"nextYearSchoolReference": {
+      "schoolId": 330330
+    }
+	
+  }

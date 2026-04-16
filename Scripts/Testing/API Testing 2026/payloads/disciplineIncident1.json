@@ -1,0 +1,19 @@
+ {
+    "incidentIdentifier": "di1",
+    "schoolReference": {
+      "schoolId": 330330
+    },
+    "behaviors": [
+      {
+        "behaviorDescriptor": "uri://doe.k12.de.us/BehaviorDescriptor#C0102",
+        "behaviorDetailedDescription": "string"
+      }
+    ],
+    "caseNumber": "string",
+    "incidentDate": "2026-02-19",
+    "incidentDescription": "string",
+    "incidentLocationDescriptor": "uri://doe.k12.de.us/IncidentLocationDescriptor#01",
+    "reportedToLawEnforcement": true,
+    "reporterDescriptionDescriptor": "uri://doe.k12.de.us/ReporterDescriptionDescriptor#N",
+    "reporterName": "string"
+  }

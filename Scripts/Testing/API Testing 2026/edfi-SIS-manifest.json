@@ -1,0 +1,731 @@
+{
+  "items": [
+    {
+      "name": "Location - test location 330330",
+      "resourcePath": "ed-fi/locations",
+      "payloadFiles": [
+        "payloads/location-330330.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "schoolReference.schoolId": 330330,
+          "classroomIdentificationCode": "TEST-LOC-1"
+        }
+      }
+    },
+    {
+      "name": "class periods - Period 1 330330",
+      "resourcePath": "ed-fi/classperiods",
+      "payloadFiles": [
+        "payloads/classperiod-330330.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "schoolReference.schoolId": 330330,
+          "classPeriodName": "period 1",
+		  "_ext.de.attendancePeriodOrder": 2
+        }
+      }
+    },
+    {
+      "name": "course - Course1 330330",
+      "resourcePath": "ed-fi/courses",
+      "payloadFiles": [
+        "payloads/Course1-330330.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "educationOrganizationReference.educationOrganizationId": 330330,
+		  "courseTitle": "Course1"
+        }
+      }
+    },
+    {
+      "name": "calendar - calendar1 330330",
+      "resourcePath": "ed-fi/calendars",
+      "payloadFiles": [
+        "payloads/calendar1-330330.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "schoolReference.schoolId": 330330,
+		  "calendarCode": "calendar1"
+        }
+      }
+    },
+    {
+      "name": "calendardates - calendardate01_01 330330",
+      "resourcePath": "ed-fi/calendarDates",
+      "payloadFiles": [
+        "payloads/calendardates01_01-330330.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "calendarReference.schoolId": 330330,
+		  "calendarReference.calendarCode": "calendar1",
+		  "date": "2026-01-01"
+        }
+      }
+    },
+	  {
+		  "name": "gradingPeriod - MP1 330330",
+		  "resourcePath": "ed-fi/gradingPeriods",
+		  "payloadFiles": [
+			"payloads/gradingPeriod-MP1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "schoolReference.schoolId": 330330,
+			  "gradingPeriodName": "Marking Period 1",
+			  "gradingPeriodDescriptor": "uri://doe.k12.de.us/gradingPeriodDescriptor#MP1"
+			}
+		  }
+		},
+	  {
+		  "name": "sessions - session1 330330",
+		  "resourcePath": "ed-fi/sessions",
+		  "payloadFiles": [
+			"payloads/sessions-session1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "sessionName": "session 1",
+			  "beginDate": "2026-02-16"
+			}
+		  }
+		},
+	  {
+		  "name": "courseOffering - CourseOffering1 330330",
+		  "resourcePath": "ed-fi/courseOfferings",
+		  "payloadFiles": [
+			"payloads/CourseOffereing-CourseOffereing1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "localCourseCode": "localCourseCode1"
+			}
+		  }
+		}	,
+	  {
+		  "name": "sections - section1 330330",
+		  "resourcePath": "ed-fi/sections",
+		  "payloadFiles": [
+			"payloads/sections-section1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "sectionIdentifier": "section1"
+			}
+		  }
+		},
+		{
+		  "name": "people - student1 330330",
+		  "resourcePath": "ed-fi/people",
+		  "payloadFiles": [
+			"payloads/people-student1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "personId": "Person1"
+			}
+		  }
+		},
+	 
+
+
+	 {
+		  "name": "student - student1 330330",
+		  "resourcePath": "ed-fi/students",
+		  "payloadFiles": [
+			"payloads/student-student1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {
+			  "personReference.personId": "Person1",
+			  "studentUniqueId":"student1"
+			  
+			}
+		  }
+		},
+	  {
+		  "name": "studentSchoolAssoc - student1 330330",
+		  "resourcePath": "ed-fi/studentSchoolAssociations",
+		  "payloadFiles": [
+			"payloads/ssa-student1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "schoolReference.schoolId": 330330,
+			  "studentReference.studentUniqueId":"1",
+			  "entryDate": "2026-02-16"			  
+			}
+		  }
+		},
+	  {
+		  "name": "SEOA - student1 330330",
+		  "resourcePath": "ed-fi/studentEducationOrganizationAssociations",
+		  "payloadFiles": [
+			"payloads/SEOA-student1-330330.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "educationOrganizationReference.educationOrganizationId": 33,
+			  "studentReference.studentUniqueId":"1"	  
+			}
+		  }
+		},
+  	  {
+		  "name": "contact1",
+		  "resourcePath": "ed-fi/contacts",
+		  "payloadFiles": [
+			"payloads/contact1.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {
+
+			}
+		  }
+		},
+		  	  {
+		  "name": "student1contact1",
+		  "resourcePath": "ed-fi/studentContactAssociations",
+		  "payloadFiles": [
+			"payloads/student1contact1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			"contactReference.contactUniqueId": 1,
+			"studentReference.studentUniqueId": 1,
+			"contactPriority": 1
+					}
+		  }
+		},
+  	  {
+		  "name": "student1Section1",
+		  "resourcePath": "ed-fi/studentSectionAssociations",
+		  "payloadFiles": [
+			"payloads/student1Section1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			  "sectionReference.sectionIdentifier": "section1",
+			  "studentReference.studentUniqueId": 1,	  				
+			  "homeroomIndicator": true
+			}
+		  }
+		},
+  	  {
+		  "name": "staff1",
+		  "resourcePath": "ed-fi/staffs",
+		  "payloadFiles": [
+			"payloads/staff1.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {
+			
+		}
+		  }
+		},
+  	  {
+		  "name": "staffEOAssignAssoc1",
+		  "resourcePath": "ed-fi/staffEducationOrganizationAssignmentAssociations",
+		  "payloadFiles": [
+			"payloads/staffEOAssignAssoc1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"beginDate": "2025-02-17",
+				"staffClassificationDescriptor": "uri://doe.k12.de.us/StaffClassificationDescriptor#Teacher",
+				"educationOrganizationReference.educationOrganizationId": 33,
+				"staffReference.staffUniqueId": "1",
+				"endDate": "2026-02-17"		
+				}
+		  }
+		},
+  	  {
+		  "name": "staffSchoolAssociations1",
+		  "resourcePath": "ed-fi/staffSchoolAssociations",
+		  "payloadFiles": [
+			"payloads/staffSchoolAssociations1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"programAssignmentDescriptor": "uri://doe.k12.de.us/ProgramAssignmentDescriptor#Regular Education",
+				"calendarReference.calendarCode": "calendar1",
+				"schoolReference.schoolId": 330330,
+				"schoolYearTypeReference.schoolYear": 2026,
+				"staffReference.staffUniqueId": 1
+				}
+		  }
+		},
+  	  {
+		  "name": "staff1Section1",
+		  "resourcePath": "ed-fi/staffSectionAssociations",
+		  "payloadFiles": [
+			"payloads/staff1Section1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+			   "sectionReference.sectionIdentifier": "section1",
+				"staffReference.staffUniqueId": 1
+				}
+		  }
+		},
+  	  {
+		  "name": "student1504ProgramAssoc",
+		  "resourcePath": "ed-fi/studentSection504ProgramAssociations",
+		  "payloadFiles": [
+			"payloads/student1504ProgramAssoc.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"beginDate": "2026-02-17",
+				"educationOrganizationReference.educationOrganizationId": 33,
+				"programReference.programName": "504 Plan",
+				"studentReference.studentUniqueId": "1",
+				"_ext.de.initialDNQDate": "2026-02-17"
+			}
+		  }
+	  }		,
+	    {
+		  "name": "student1HomelessProgramAssociation",
+		  "resourcePath": "ed-fi/studentHomelessProgramAssociations",
+		  "payloadFiles": [
+			"payloads/student1HomelessProgramAssociation.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				    "homelessPrimaryNighttimeResidenceDescriptor": "uri://doe.k12.de.us/HomelessPrimaryNighttimeResidenceDescriptor#D"
+		  }
+	  }
+	  },
+	   {
+		  "name": "student1LanguageInstructionProgramAssoc",
+		  "resourcePath": "ed-fi/studentLanguageInstructionProgramAssociations",
+		  "payloadFiles": [
+			"payloads/student1LanguageInstructionProgramAssoc.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				    "programReference.programName": "Language Immersion"
+		  }
+	  }
+	  },
+	   {
+		  "name": "cohorts1",
+		  "resourcePath": "ed-fi/cohorts",
+		  "payloadFiles": [
+			"payloads/cohorts1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"cohortIdentifier": "cohort1",
+				"educationOrganizationReference.educationOrganizationId": 33
+				}
+		  }
+	  },
+	   {
+		  "name": "student1cohort1assoc",
+		  "resourcePath": "ed-fi/studentCohortAssociations",
+		  "payloadFiles": [
+			"payloads/student1cohort1assoc.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"beginDate": "2026-02-17",
+					"cohortReference.cohortIdentifier": "cohort1",
+					 "cohortReference.educationOrganizationId": 33,
+					"studentReference.studentUniqueId": 1
+		  }
+	  }
+	  },
+	   {
+		  "name": "staff1cohort1assoc",
+		  "resourcePath": "ed-fi/staffCohortAssociations",
+		  "payloadFiles": [
+			"payloads/staff1cohort1assoc.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"beginDate": "2026-02-17",
+					"cohortReference.cohortIdentifier": "cohort1",
+					 "cohortReference.educationOrganizationId": 33,
+					"staffReference.staffUniqueId": 1
+		  }
+	  }
+	  },
+	    	  {
+		  "name": "student1SchoolAttendanceEvents",
+		  "resourcePath": "ed-fi/studentSchoolAttendanceEvents",
+		  "payloadFiles": [
+			"payloads/student1SchoolAttendanceEvents.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"attendanceEventCategoryDescriptor": "uri://doe.k12.de.us/AttendanceEventCategoryDescriptor#SGE",
+					"eventDate": "2026-02-17",
+					"schoolReference.schoolId": 330330,
+					"sessionReference.sessionName": "session 1",
+					"studentReference.studentUniqueId": "1"
+			}
+			}
+	  },
+	  {
+		  "name": "student1SectionAttendanceEvents",
+		  "resourcePath": "ed-fi/studentSectionAttendanceEvents
+",
+		  "payloadFiles": [
+			"payloads/student1SectionAttendanceEvents.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"attendanceEventCategoryDescriptor": "uri://doe.k12.de.us/AttendanceEventCategoryDescriptor#SGE",
+					"eventDate": "2026-02-17"
+			}
+		  }
+	  },
+	    	  {
+		  "name": "student1grade",
+		  "resourcePath": "ed-fi/grades",
+		  "payloadFiles": [
+			"payloads/student1grade.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"gradeTypeDescriptor": "uri://doe.k12.de.us/GradeTypeDescriptor#MP",
+					"gradingPeriodReference.gradingPeriodDescriptor": "uri://doe.k12.de.us/gradingPeriodDescriptor#MP1",
+					"studentSectionAssociationReference.localCourseCode": "localCourseCode1",
+					"letterGradeEarned": "A",
+					"numericGradeEarned": 9999999.99
+			}
+		  }
+	  },
+	    	  {
+		  "name": "student1AcademicRecord",
+		  "resourcePath": "ed-fi/studentAcademicRecords",
+		  "payloadFiles": [
+			"payloads/student1AcademicRecord.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				   "cumulativeAttemptedCreditConversion": 9999999.99,
+					"cumulativeAttemptedCredits": 999999.999,
+					"cumulativeAttemptedCreditTypeDescriptor": "uri://doe.k12.de.us/CreditTypeDescriptor#AB",
+					"cumulativeEarnedCreditConversion": 9999999.99,
+					"cumulativeEarnedCredits": 999999.999,
+					"cumulativeEarnedCreditTypeDescriptor": "uri://doe.k12.de.us/CreditTypeDescriptor#AB"
+			}
+		  }
+	  },
+	    	  {
+		  "name": "student1CourseTranscripts",
+		  "resourcePath": "ed-fi/courseTranscripts",
+		  "payloadFiles": [
+			"payloads/student1CourseTranscripts.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"courseAttemptResultDescriptor": "uri://doe.k12.de.us/CourseAttemptResultDescriptor#Fail",
+					"courseReference.courseCode": "c1",
+					"studentAcademicRecordReference.termDescriptor": "uri://doe.k12.de.us/TermDescriptor#Fall Semester"
+			}
+		  }
+	  },
+  	  {
+		  "name": "student1AssessmentRegistration",
+		  "resourcePath": "ed-fi/studentassessmentRegistrations",
+		  "payloadFiles": [
+			"payloads/student1AssessmentRegistration.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"studentSchoolAssociationReference.studentUniqueId": 1,
+					"testingEducationOrganizationReference.educationOrganizationId": 330330
+			}
+		  }
+	  },
+  	  {
+		  "name": "publicationStatusDescriptors1",
+		  "resourcePath": "ed-fi/publicationStatusDescriptors",
+		  "payloadFiles": [
+			"payloads/publicationStatusDescriptors1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"codeValue": "01"
+			}
+		  }
+	  },
+  	  {
+		  "name": "LearningStandards1",
+		  "resourcePath": "ed-fi/LearningStandards",
+		  "payloadFiles": [
+			"payloads/LearningStandards1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"learningStandardId": "1"
+			}
+		  }
+	  },
+  	  {
+		  "name": "competencyObjective1",
+		  "resourcePath": "ed-fi/competencyObjectives",
+		  "payloadFiles": [
+			"payloads/competencyObjective1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"objective": "obj1",
+					"ObjectiveGradeLevelDescriptor": "uri://doe.k12.de.us/GradeLevelDescriptor#10"
+			}
+		  }
+	  },
+	  {
+		  "name": "bellSchedules1",
+		  "resourcePath": "ed-fi/bellSchedules",
+		  "payloadFiles": [
+			"payloads/bellSchedules1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"startTime": "01:00:00"
+			}
+		  }
+	  },
+	    	  {
+		  "name": "StaffEOContactAssoc1",
+		  "resourcePath": "ed-fi/staffEducationOrganizationContactAssociations",
+		  "payloadFiles": [
+			"payloads/StaffEOContactAssoc1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"contactTypeDescriptor": "uri://doe.k12.de.us/ContactTypeDescriptor#C",
+					"electronicMailAddress": "test@csd.com"
+			}
+		  }
+	  },
+	    	  {
+		  "name": "student1ProgramAssocition",
+		  "resourcePath": "ed-fi/studentProgramAssociations",
+		  "payloadFiles": [
+			"payloads/student1ProgramAssociation.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"endDate": "2026-02-18"
+			}
+		  }
+	  },
+	   {
+		  "name": "student1CTEProgram",
+		  "resourcePath": "ed-fi/studentCTEProgramAssociations",
+		  "payloadFiles": [
+			"payloads/student1CTEProgram.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"beginDate": "2026-02-17",
+				"educationOrganizationReference.educationOrganizationId": 33,
+				"programReference.programName": "CTE",
+				"studentReference.studentUniqueId": "1"
+			}
+		  }
+	  },
+	  {
+		  "name": "student1SpecEd",
+		  "resourcePath": "ed-fi/studentSpecialEducationProgramAssociations",
+		  "payloadFiles": [
+			"payloads/student1SpecEd.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"specialEducationSettingDescriptor": "uri://doe.k12.de.us/SpecialEducationSettingDescriptor#A",
+					"_ext.de.alternateCalendarProgramDescriptor": "uri://doe.k12.de.us/AlternateCalendarProgramDescriptor#1",
+					"_ext.de.alternateCalendarProgramDescriptor": "uri://doe.k12.de.us/AlternateCalendarProgramDescriptor#1",
+					"_ext.de.birthMandateDescriptor": "uri://doe.k12.de.us/BirthMandateDescriptor#01",
+					"_ext.de.diplomaCertificateCategoryDescriptor": "uri://doe.k12.de.us/DiplomaCertificateCategoryDescriptor#Diploma",
+					"_ext.de.fundingNeedsCategoryDescriptor": "uri://doe.k12.de.us/FundingNeedsCategoryDescriptor#Basic",
+					"_ext.de.iepImplementationAfterThirdBirthdayReasonDescriptor": "uri://doe.k12.de.us/IepImplementationAfterThirdBirthdayReasonDescriptor#01",
+					"_ext.de.outOfTimelineReasonDescriptor": "uri://doe.k12.de.us/OutOfTimelineReasonDescriptor#01",
+					"_ext.de.dstpAccommodation": true,
+					"_ext.de.eligbleNotReceivingService": true,
+					"_ext.de.evaluatedNoDisability": true,
+					"_ext.de.iepPartB619ServicesImplementationDate": "2026-02-19",
+					"_ext.de.initialConsentToEvaluateDate": "2026-02-19",
+					"_ext.de.initialEvaluationDate": "2026-02-19",
+					"_ext.de.lastSpecialistEvaluationDate": "2026-02-19",
+					"_ext.de.partB619Eligible": true,
+					"_ext.de.partCEligibilityDate": "2026-02-19",
+					"_ext.de.partCEligibilityWithin90DaysOfThirdBirthday": true,
+					"_ext.de.pppsispInitiationDate": "2026-02-19",
+					"_ext.de.pppsMeetingDate": "2026-02-19",
+					"_ext.de.referraltoPartB619Date": "2026-02-19",
+					"_ext.de.referraltoPartCDate": "2026-02-19",
+					"_ext.de.referralToPartCWithin90DaysOfThirdBirthday": true,
+					"_ext.de.specialEducationFundingCountException": true,
+					"_ext.de.transitionConferenceDate": "2026-02-19"					
+			}
+		  }
+	  },
+	    	  {
+		  "name": "disciplineIncident1",
+		  "resourcePath": "ed-fi/disciplineIncidents",
+		  "payloadFiles": [
+			"payloads/disciplineIncident1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"incidentDate": "2026-02-19",
+					"incidentDescription": "string"
+			}
+		  }
+	  },
+	  {
+		  "name": "student1DiscIncBehAssoc",
+		  "resourcePath": "ed-fi/studentDisciplineIncidentBehaviorAssociations",
+		  "payloadFiles": [
+			"payloads/student1DiscIncBehAssoc.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+
+			"_ext.de.arrestInformationDescriptor": "uri://doe.k12.de.us/ArrestInformationDescriptor#00",
+			"behaviorDescriptor": "uri://doe.k12.de.us/BehaviorDescriptor#C0102",
+			"disciplineIncidentReference.incidentIdentifier": "di1"
+		
+			}
+		  }
+	  },
+  	  {
+		  "name": "disciplineAction1",
+		  "resourcePath": "ed-fi/disciplineActions",
+		  "payloadFiles": [
+			"payloads/disciplineAction1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"_ext.de.disciplineActionPlacementTypeDescriptor": "uri://doe.k12.de.us/DisciplineActionPlacementTypeDescriptor#01",
+				"disciplineActionIdentifier": "da1",
+				"disciplineDate": "2026-02-19"
+			}
+		  }
+	  },
+	   {
+		  "name": "stu1DiscInNonOffAssociations",
+		  "resourcePath": "ed-fi/studentDisciplineIncidentNonOffenderAssociations",
+		  "payloadFiles": [
+			"payloads/stu1DiscInNonOffAssociations.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"disciplineIncidentReference.incidentIdentifier": "di1",
+				"_ext.de.reasonIncidentRelatedToDescriptor": "uri://doe.k12.de.us/IncidentRelatedToDescriptor#Age"
+			}
+		  }
+	  },
+  	  {
+		  "name": "student1EarlyChildhood",
+		  "resourcePath": "de/studentEarlyChildhoodProgramAssociations",
+		  "payloadFiles": [
+			"payloads/student1EarlyChildhood.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"beginDate": "2026-02-17",
+				"educationOrganizationReference.educationOrganizationId": 33,
+				"programReference.programName": "Early Childhood",
+				"studentReference.studentUniqueId": "1"
+			}
+		  }
+	  }	 ,
+  	  {
+		  "name": "healthAlert1",
+		  "resourcePath": "de/studentHealthAlerts",
+		  "payloadFiles": [
+			"payloads/healthAlert1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"healthAlertCategoryDescriptor": "uri://doe.k12.de.us/HealthAlertCategoryDescriptor#ALL",
+					"startDate": "2026-02-17"
+			}
+		  }
+	  },
+  	  {
+		  "name": "surveyResponse1",
+		  "resourcePath": "ed-fi/surveyResponses",
+		  "payloadFiles": [
+			"payloads/surveyResponse1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				  "surveyResponseIdentifier": "sri1"
+			}
+		  }
+	  },
+  	  {
+		  "name": "surveyQuestionResponse1",
+		  "resourcePath": "ed-fi/surveyQuestionResponses",
+		  "payloadFiles": [
+			"payloads/surveyQuestionResponse1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				  "surveyQuestionReference.questionCode": "STR 1"
+			}
+		  }
+	  }	  
+
+	  
+  ]
+}

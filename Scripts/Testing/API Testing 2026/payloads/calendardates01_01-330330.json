@@ -1,0 +1,13 @@
+ {
+    "calendarEvents": [
+      {
+        "calendarEventDescriptor": "uri://doe.k12.de.us/CalendarEventDescriptor#MEM"
+      }
+    ],
+    "date": "2026-01-01",
+    "calendarReference": {
+      "calendarCode": "calendar1",
+      "schoolId": 330330,
+      "schoolYear": 2026
+    }
+}

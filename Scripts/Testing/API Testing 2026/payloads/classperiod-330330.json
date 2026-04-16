@@ -1,0 +1,19 @@
+  {
+    "classPeriodName": "period 1",
+    "schoolReference": {
+      "schoolId": 330330
+    },
+    "meetingTimes": [
+      {
+        "endTime": "01:00",
+        "startTime": "02:00"
+      }
+    ],
+    "officialAttendancePeriod": true,
+    "_ext": {
+      "de": {
+        "attendancePeriodOrder": 2,
+        "description": "test description"
+      }
+    }
+  }

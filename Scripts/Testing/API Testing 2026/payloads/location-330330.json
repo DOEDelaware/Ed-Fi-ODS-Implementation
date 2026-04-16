@@ -1,0 +1,9 @@
+{
+	"schoolReference": {
+	  "schoolId": 330330
+	},
+	"classroomIdentificationCode": "TEST-LOC-1",
+	"maximumNumberOfSeats": 30,
+	"optimalNumberOfSeats": 28,
+	"locationTypeDescriptor": "uri://ed-fi.org/LocationTypeDescriptor#Classroom"
+  }

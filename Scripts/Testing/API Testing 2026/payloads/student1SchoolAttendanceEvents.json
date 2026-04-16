@@ -1,0 +1,15 @@
+ {
+    "attendanceEventCategoryDescriptor": "uri://doe.k12.de.us/AttendanceEventCategoryDescriptor#SGE",
+    "eventDate": "2026-02-17",
+    "schoolReference": {
+      "schoolId": 330330
+    },
+    "sessionReference": {
+      "schoolId": 330330,
+      "schoolYear": 2026,
+      "sessionName": "session 1"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    }
+  }

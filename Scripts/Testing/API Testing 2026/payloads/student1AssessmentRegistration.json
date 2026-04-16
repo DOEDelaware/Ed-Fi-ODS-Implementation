@@ -1,0 +1,20 @@
+ {
+    "assessmentAdministrationReference": {
+      "administrationIdentifier": "120",
+      "assessmentIdentifier": "120",
+      "assigningEducationOrganizationId": 95,
+	  "namespace": "uri://doe.k12.de.us/AssessmentRoster"
+    },
+    "studentEducationOrganizationAssociationReference": {
+      "educationOrganizationId": 33,
+      "studentUniqueId": 1
+    },
+    "studentSchoolAssociationReference": {
+      "entryDate": "2026-02-16",
+      "schoolId": 330330,
+      "studentUniqueId": 1
+    },
+    "testingEducationOrganizationReference": {
+      "educationOrganizationId": 330330
+    }
+  }

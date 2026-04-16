@@ -1,0 +1,9 @@
+  {
+    "questionCode": "STR 10",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-33"
+    },
+    "questionText": "For a Student of transition age who is, or may be, participating in a career and technical education program: was a career technical education teacher of the Student, or a career technical coordinator, attended the IEP meeting?",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  }

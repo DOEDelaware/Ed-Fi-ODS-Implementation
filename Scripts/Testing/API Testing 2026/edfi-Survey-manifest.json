@@ -1,0 +1,172 @@
+ {
+  "items": [   
+	  {
+		  "name": "Survey",
+		  "resourcePath": "ed-fi/Surveys",
+		  "payloadFiles": [
+			"SurveyMetaData/Survey.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},
+	{
+		  "name": "SurveyStudentStatus",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_StudentStatus.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR1",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR1.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR10",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR10.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR2",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR2.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR4a",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR4a.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR4b",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR4b.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR4c",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR4c.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR5",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR5.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR6",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR6.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR7",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR7.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR8",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR8.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR9a",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR9b.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		},	
+	{
+		  "name": "SurveyQuestionSTR9c",
+		  "resourcePath": "ed-fi/SurveyQuestions",
+		  "payloadFiles": [
+			"SurveyMetaData/SurveyQuestion_STR9c.json"
+		  ],
+		  "verify": {
+			"enabled": false,
+			"expect": {  
+			}
+		  }
+		}		
+	]
+}

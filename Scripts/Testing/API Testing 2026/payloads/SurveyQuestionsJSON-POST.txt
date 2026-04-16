@@ -1,0 +1,128 @@
+[
+  {
+    "questionCode": "STR 1",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "with the consent of the parent or Student (who has reached the age of majority), was an invitation of meeting provided to a participating agency likely to be responsible or paying for transition",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 10",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "For a Student of transition age who is, or may be, participating in a career and technical education program: was a career technical education teacher of the Student, or a career technical coordinator, attended the IEP meeting?",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 2",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Was the student invited to the IEP meeting? If entering a comment, please check the \"Comment\" box.Select at least 1",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 4a",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Were age appropriate transition assessments conducted annually related to: EMPLOYMENT? If entering a comment, please check the \"Comment\" box.Select at least 1",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 4b",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Were age appropriate transition assessments conducted annually related to: EDUCATION/TRAINING? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 4c",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Were age appropriate transition assessments conducted annually related to: INDEPENDENT LIVING? If entering a comment, please check the \"Comment\" box.Select at least 1",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 5",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Does the IEP contain an appropriate measurable post secondary goal(s) based upon age appropriate transition assessments related to EMPLOYMENT after high school? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 6",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Does the IEP contain an appropriate measurable post secondary goal(s) based upon age appropriate transition assessments related to EDUCATION/TRAINING after high school? If entering a comment, please check the \"Comment\" box.Select at least 1",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 7",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Does the IEP contain an appropriate measurable post secondary goal(s) based upon age appropriate transition assessments related to INDEPENDENT LIVING after high school? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 8",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Does the IEP contain courses of study to assist the Student in reaching their postsecondary goals? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 9a",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Does the IEP contain transition activities and services to assist Student in reaching their postsecondary EMPLOYMENT goal(s)? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 9b",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Does the IEP contain transition activities and services to assist Student in reaching their postsecondary EDUCATION/TRAINING goal(s)? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "STR 9c",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "Does the IEP contain transition activities and services to assist Student in reaching their postsecondary INDEPENDENT LIVING goal(s)? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  },
+  {
+    "questionCode": "Student Status",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-255901001"
+    },
+    "questionText": "What is the student's status in your district or charter?",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Dropdown"
+  }
+]

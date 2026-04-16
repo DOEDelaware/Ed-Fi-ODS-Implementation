@@ -1,0 +1,21 @@
+ {
+    "behaviorDescriptor": "uri://doe.k12.de.us/BehaviorDescriptor#C0102",
+    "disciplineIncidentReference": {
+      "incidentIdentifier": "di1",
+      "schoolId": 330330
+    },
+    "studentReference": {
+      "studentUniqueId": 1
+    },
+    "behaviorDetailedDescription": "string",
+    "disciplineIncidentParticipationCodes": [
+      {
+        "disciplineIncidentParticipationCodeDescriptor": "uri://doe.k12.de.us/DisciplineIncidentParticipationCodeDescriptor#O"
+      }
+    ],
+    "_ext": {
+      "de": {
+        "arrestInformationDescriptor": "uri://doe.k12.de.us/ArrestInformationDescriptor#00"
+      }
+    }
+  }

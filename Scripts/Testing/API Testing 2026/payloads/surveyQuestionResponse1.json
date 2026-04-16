@@ -1,0 +1,19 @@
+ {
+    "surveyQuestionReference": {
+            "namespace": "uri://doe.k12.de.us",
+      "questionCode": "STR 1",
+      "surveyIdentifier": "Indicator13-33" 
+    },
+    "surveyResponseReference": {
+            "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-33",
+      "surveyResponseIdentifier": "sri1"
+    },
+    "comment": "string",
+    "values": [
+      {
+       "surveyQuestionResponseValueIdentifier": 1,
+        "textResponse": "Yes"
+      }
+    ]
+  }

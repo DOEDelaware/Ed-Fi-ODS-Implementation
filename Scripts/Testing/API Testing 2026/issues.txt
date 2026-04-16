@@ -1,0 +1,48 @@
+
+
+ {
+  "items": [   
+  	  {
+		  "name": "stu1healthalert",
+		  "resourcePath": "de/studentHealthAlerts",
+		  "payloadFiles": [
+			"payloads/stu1DiscInNonOffAssociations.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+				"disciplineIncidentReference.incidentIdentifier": "di1",
+				"_ext.de.reasonIncidentRelatedToDescriptor": "uri://doe.k12.de.us/IncidentRelatedToDescriptor#Age"
+			}
+		  }
+	  }
+	]
+}
+
+ {
+  "items": [   
+  	  {
+		  "name": "disciplineAction1",
+		  "resourcePath": "ed-fi/disciplineActions",
+		  "payloadFiles": [
+			"payloads/disciplineAction1.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"incidentDate": "2026-02-19",
+					"incidentDescription": "string"
+			}
+		  }
+	  }
+	]
+}
+
+
+
+
+
+todo:
+full run- course issue and discipline issue
+
+

@@ -1,0 +1,55 @@
+{
+  "studentReference": {
+    "studentUniqueId": "604822"
+  },
+  "schoolReference": {
+    "schoolId": "255901001"
+  },
+  "schoolYearTypeReference": {
+    "schoolyear": 2023
+  },
+  "entryGradeLevelDescriptor": "uri://ed-fi.org/GradeLevelDescriptor#Ninth grade",
+  "entryDate": "2021-08-23",
+  "entryTypeDescriptor": "uri://ed-fi.org/EntryTypeDescriptor#Next year school",
+  "_ext": {
+    "De": {
+      	"choiceBasisDescriptor": "uri://doe.k12.de.us/choiceBasisDescriptor#3",
+        "nextYearGradeLevelDescriptor": "uri://ed-fi.org/GradeLevelDescriptor#Tenth grade",
+        "nextYearSchoolReference": {
+	   "schoolId": "255901001"
+	}
+
+    }
+  }
+}
+
+
+
+{
+  "educationOrganizationReference": {
+    "educationOrganizationId": "33"
+  },
+  "programReference": {
+    "educationOrganizationId": "330330",
+    "programTypeDescriptor": "uri://ed-fi.org/ProgramTypeDescriptor#Career and Technical Education",
+    "programName": "Career and Technical Education"
+  },
+  "studentReference": {
+    "studentUniqueId": "123"
+  },
+  "beginDate": "2022-07-01",
+  "ctePrograms": [
+    {
+      "careerPathwayDescriptor": "uri://doe.k12.de.us/CareerPathwayDescriptor#01.02607",
+      "cteProgramCompletionIndicator": false,
+      "primaryCTEProgramIndicator": false,
+      "_ext": {
+        "De": {
+	      "certificationDescriptor": "uri://doe.k12.de.us/certificationDescriptor#01",
+		  "localArticulation": true,
+          "pathwayConcentrator": true
+        }
+      }
+    }
+  ]
+}
