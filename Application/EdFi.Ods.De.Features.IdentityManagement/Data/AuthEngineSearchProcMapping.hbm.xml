@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"  assembly="EdFi.Ods.De.Features.IdentityManagement">
+  <class name="EdFi.Ods.De.Features.IdentityManagement.AuthEngineSearchResult, EdFi.Ods.De.Features.IdentityManagement" table="result">
+    <id name="UniqueId" type="Int32"/>
+    <property name="Score" type="Int32"/>
+    <property name="LastSurname" type="String"/>
+    <property name="FirstName" type="String"/>
+    <property name="MiddleName" type="String"/>
+    <property name="BirthDate" type="DateTime"/>
+    <property name="CurrentDistrictCode" type="Int32"/>
+    <property name="CurrentSchoolCode" type="Int32"/>
+  </class>
+  <sql-query name="IC_StaffSearch_Sel">
+    <return class="EdFi.Ods.De.Features.IdentityManagement.AuthEngineSearchResult">
+      <return-property column="UniqueId" name="UniqueId"/>
+      <return-property column="Score" name="Score"/>
+      <return-property column="LastSurname" name="LastSurname"/>            
+      <return-property column="FirstName" name="FirstName"/>
+      <return-property column="MiddleName" name="MiddleName"/>
+      <return-property column="BirthDate" name="BirthDate"/>
+      <return-property column="CurrentDistrictCode" name="CurrentDistrictCode"/>
+      <return-property column="CurrentSchoolCode" name="CurrentSchoolCode"/>
+    </return>
+
+    exec IC_StaffSearch_Sel :LastSurname, :FirstName, :MiddleName,  :BirthDate, :UniqueId
+  </sql-query>
+</hibernate-mapping>

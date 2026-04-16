@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"  assembly="EdFi.Ods.De.Features.IdentityManagement">
+  <class name="EdFi.Ods.De.Features.IdentityManagement.DELSISCreateIDResult, EdFi.Ods.De.Features.IdentityManagement" table="result">
+    <id name="UniqueId" type="Int32"/>
+    <property name="LastSurname" type="String"/>
+    <property name="FirstName" type="String"/>
+  </class>
+  <sql-query name="NS_RequestID_API">
+    <return class="EdFi.Ods.De.Features.IdentityManagement.DELSISCreateIDResult">
+      <return-property column="UniqueId" name="UniqueId"/>
+      <return-property column="LastSurname" name="LastSurname"/>            
+      <return-property column="FirstName" name="FirstName"/>
+    </return>
+    exec NS_RequestID_API :LastSurname, :FirstName, :MiddleName,  :BirthDate, :RequestingEducationOrganizationId
+  </sql-query>
+</hibernate-mapping>
