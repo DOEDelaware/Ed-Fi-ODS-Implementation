@@ -1,0 +1,4 @@
+Association EdFi.StudentDisciplineIncidentBehaviorAssociation additions
+    descriptor ArrestInformation
+        documentation "Arrest information"
+        is optional 

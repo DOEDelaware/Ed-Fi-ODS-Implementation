@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11626.88 stable
+VisualStudioVersion = 18.4.11620.152
 MinimumVisualStudioVersion = 15.0.28307.852
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdFi.Ods.Common", "..\..\Ed-Fi-ODS\Application\EdFi.Ods.Common\EdFi.Ods.Common.csproj", "{8D7CB143-8818-47A8-89E8-702D485E8DA0}"
 EndProject
@@ -71,7 +71,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_ProjectInformation", "_ProjectInformation", "{AF062E8B-178C-4ABE-B9E8-214B1DD4EC3A}"
 	ProjectSection(SolutionItems) = preProject
 		..\CONTRIBUTORS.md = ..\CONTRIBUTORS.md
-		jwt.http = jwt.http
 		..\NOTICES.md = ..\NOTICES.md
 		..\README.md = ..\README.md
 	EndProjectSection
@@ -107,6 +106,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Admin.DataAccess.IntegrationTests", "..\..\Ed-Fi-ODS\tests\EdFi.Admin.DataAccess.IntegrationTests\EdFi.Admin.DataAccess.IntegrationTests.csproj", "{CD96F0B8-C57D-4533-87D6-27C3E55AF8F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Security.DataAccess.IntegrationTests", "..\..\Ed-Fi-ODS\tests\EdFi.Security.DataAccess.IntegrationTests\EdFi.Security.DataAccess.IntegrationTests.csproj", "{CE4C9C15-EA14-4A1E-8B8C-09A60C71D3A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.De.Features.IdentityManagement", "EdFi.Ods.De.Features.IdentityManagement\EdFi.Ods.De.Features.IdentityManagement.csproj", "{0C5C2128-86A4-C71B-77FC-023D80181F1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.De", "EdFi.Ods.Extensions.De\EdFi.Ods.Extensions.De.csproj", "{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -242,6 +245,14 @@ Global
 		{CE4C9C15-EA14-4A1E-8B8C-09A60C71D3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE4C9C15-EA14-4A1E-8B8C-09A60C71D3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE4C9C15-EA14-4A1E-8B8C-09A60C71D3A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C5C2128-86A4-C71B-77FC-023D80181F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C5C2128-86A4-C71B-77FC-023D80181F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C5C2128-86A4-C71B-77FC-023D80181F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C5C2128-86A4-C71B-77FC-023D80181F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -281,6 +292,8 @@ Global
 		{01815E05-73FB-4AF0-BB6C-B5F8F69756B7} = {DC40CF8E-5A05-454E-8D56-6157F3A25C82}
 		{CD96F0B8-C57D-4533-87D6-27C3E55AF8F0} = {3AD03A98-4A2C-42F1-997D-2468A0CCB77D}
 		{CE4C9C15-EA14-4A1E-8B8C-09A60C71D3A0} = {3AD03A98-4A2C-42F1-997D-2468A0CCB77D}
+		{0C5C2128-86A4-C71B-77FC-023D80181F1C} = {E214F607-B637-4AF5-9A68-61CB86507E4A}
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5} = {F25ED154-FB97-4F39-933B-808D1B3B6D3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91F27EA2-CFF0-4054-A019-B8AA23AF9319}

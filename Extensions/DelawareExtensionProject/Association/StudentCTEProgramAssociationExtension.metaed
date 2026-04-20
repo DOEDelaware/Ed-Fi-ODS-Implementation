@@ -1,0 +1,7 @@
+Association EdFi.StudentCTEProgramAssociation additions
+    common extension EdFi.CTEProgramService
+        documentation "The career cluster representing the career path of the Vocational/Career Tech concentrator."
+        is optional collection
+    descriptor CTECertification
+        documentation "Defines the codes that identify the type of career pathway certification acheived."
+        is optional collection

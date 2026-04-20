@@ -1,0 +1,28 @@
+Domain Entity StudentHealthAlert
+    documentation "Defines the codes that describe a person's known medical conditions."
+    domain entity EdFi.Student
+        documentation "The person receiving the medical screening."
+        is part of identity
+    domain entity EdFi.EducationOrganization
+        documentation "The educational organization accountable for a student's health information."
+        is part of identity
+    descriptor HealthAlertCategory
+        documentation "Identifies the medical alert code."
+        is part of identity
+    date StartDate
+        documentation "Identifies the start date of a medical alert."
+        is part of identity
+    date EndDate
+        documentation "Identifies the end date for a medical alert."
+        is optional
+    shared integer Sequence
+        documentation "The sequence number for prioritizing medical alerts."
+        is optional
+    shared string EdFi.Comment
+        documentation "Additional information provided by the responder about the question in the survey."
+        is optional
+    string Instructions
+        documentation "Alert instructions."
+        is optional
+        min length 1
+        max length 255

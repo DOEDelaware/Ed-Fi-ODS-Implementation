@@ -1,0 +1,6 @@
+Common LanguageImmersion
+    documentation "Identifies students participating in a language immersion program."
+    descriptor EdFi.Language
+        documentation "Indicates the language student is taking/took to participate in language immersion program."
+        is part of identity
+        role name Immersion

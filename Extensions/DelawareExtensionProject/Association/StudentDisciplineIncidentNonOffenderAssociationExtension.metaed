@@ -1,0 +1,18 @@
+Association EdFi.StudentDisciplineIncidentNonOffenderAssociation additions
+    descriptor IncidentRelatedTo
+        documentation "Indicates the reason for the alleged bullying incident."
+        is required
+        role name Reason
+    date ReportDate
+        documentation "Indicates the date on which the alleged bullying incident was reported."
+        is required
+    domain entity EdFi.Staff
+        documentation "Identifies the staff who reported."
+        is optional
+    shared string Detail
+        documentation "The details of the alleged bullying victim incident."
+        is optional
+        role name BullyingVictimIncident
+    descriptor BullyingCategory
+        documentation "Indicates the type of bullying."
+        is optional collection
