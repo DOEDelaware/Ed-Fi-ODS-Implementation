@@ -1,0 +1,7 @@
+Association EdFi.StudentSection504ProgramAssociation additions
+    date InitialDNQDate
+        documentation "Indicates the initial DNQ date."
+        is optional
+    date LastEvaluationDate
+        documentation "Indicates the last evaluation date."
+        is optional

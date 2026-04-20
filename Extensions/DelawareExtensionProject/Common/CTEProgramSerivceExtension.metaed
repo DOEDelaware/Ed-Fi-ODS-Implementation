@@ -1,0 +1,10 @@
+Common EdFi.CTEProgramService additions
+    bool PathwayConcentrator
+        documentation "Indicates if this pathway is the concentrator."
+        is optional
+    bool LocalArticulation
+        documentation "Local Articualtion agreement indicator"
+        is optional
+    bool CTEProgramCompletionIndicator
+        documentation "A boolean indicator of whether this CTE program is the student's primary CTE program."
+        is optional

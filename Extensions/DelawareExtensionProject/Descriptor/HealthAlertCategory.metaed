@@ -1,0 +1,2 @@
+Descriptor HealthAlertCategory
+    documentation "Defines the codes that describe a person's known medical conditions."

@@ -1,0 +1,4 @@
+Association EdFi.StudentContactAssociation additions
+    domain entity EdFi.LocalEducationAgency
+        documentation "Indicates the district reference for Parent."
+        is optional
