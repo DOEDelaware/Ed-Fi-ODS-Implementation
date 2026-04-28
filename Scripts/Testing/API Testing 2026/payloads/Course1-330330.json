@@ -1,0 +1,20 @@
+{
+    "courseCode": "c1",
+    "identificationCodes": [
+      {
+        "courseIdentificationSystemDescriptor": "uri://doe.k12.de.us/CourseIdentificationSystemDescriptor#School course code",
+        "assigningOrganizationIdentificationCode": "33",
+        "identificationCode": "c1"
+      }
+    ],
+    "educationOrganizationReference": {
+      "educationOrganizationId": 330330
+    },
+    "courseTitle": "Course1",
+    "offeredGradeLevels": [
+      {
+        "gradeLevelDescriptor": "uri://doe.k12.de.us/GradeLevelDescriptor#01"
+      }
+    ],
+	 "numberOfParts": 1
+  }

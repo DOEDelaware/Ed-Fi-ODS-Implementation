@@ -3,6 +3,18 @@
 # The Ed-Fi Alliance licenses this file to you under the Apache License, Version 2.0.
 # See the LICENSE and NOTICES files in the project root for more information.
 
+
+# sk
+function Test-TeamCityVersion {
+    # Detect TeamCity environment
+    return $env:TEAMCITY_VERSION -or 
+           $env:TEAMCITY_BUILD_ID -or 
+           $env:BUILD_NUMBER -or 
+           $env:TEAMCITY_PROJECT_NAME
+}
+# /sk
+
+
 & "$PSScriptRoot/modules/load-path-resolver.ps1"
 Import-Module -Force -Scope Global (Get-RepositoryResolvedPath "logistics/scripts/modules/utility/cross-platform.psm1")
 

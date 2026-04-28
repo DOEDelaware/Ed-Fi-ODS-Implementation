@@ -1,0 +1,21 @@
+ {
+    "beginDate": "2026-02-18",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "programReference": {
+      "educationOrganizationId": 33,
+      "programName": "21st Century Participant",
+      "programTypeDescriptor": "uri://doe.k12.de.us/programTypeDescriptor#21st Century Participant"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "endDate": "2026-02-18",
+    "programParticipationStatuses": [
+      {
+        "participationStatusDescriptor": "uri://doe.k12.de.us/ParticipationStatusDescriptor#B",
+		"statusBeginDate": "2026-02-18"
+		}
+    ]
+  }

@@ -1,0 +1,9 @@
+  {
+    "questionCode": "STR 7",
+    "surveyReference": {
+      "namespace": "uri://doe.k12.de.us",
+      "surveyIdentifier": "Indicator13-33"
+    },
+    "questionText": "Does the IEP contain an appropriate measurable post secondary goal(s) based upon age appropriate transition assessments related to INDEPENDENT LIVING after high school? If entering a comment, please check the \"Comment\" box.Select at least 1 and no more than 0",
+    "questionFormDescriptor": "uri://ed-fi.org/QuestionFormDescriptor#Checkbox"
+  }

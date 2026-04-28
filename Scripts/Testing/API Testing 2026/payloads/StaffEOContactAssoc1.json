@@ -1,0 +1,11 @@
+  {
+    "contactTitle": "test",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "staffReference": {
+      "staffUniqueId": "1"
+    },
+    "contactTypeDescriptor": "uri://doe.k12.de.us/ContactTypeDescriptor#C",
+    "electronicMailAddress": "test@csd.com"
+  }

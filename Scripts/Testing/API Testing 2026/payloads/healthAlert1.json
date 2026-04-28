@@ -1,0 +1,14 @@
+  {
+    "healthAlertCategoryDescriptor": "uri://doe.k12.de.us/HealthAlertCategoryDescriptor#ALL",
+    "startDate": "2026-02-17",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "studentReference": {
+      "studentUniqueId": 1
+    },
+    "comment": "string",
+    "endDate": "2026-02-17",
+    "instructions": "string",
+    "sequence": 1
+  }

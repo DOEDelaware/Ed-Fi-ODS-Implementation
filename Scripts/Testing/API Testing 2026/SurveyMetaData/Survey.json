@@ -1,0 +1,11 @@
+{
+  "namespace": "uri://doe.k12.de.us",
+  "surveyIdentifier": "Indicator13-33",
+  "educationOrganizationReference": {
+    "educationOrganizationId": 33
+  },
+  "schoolYearTypeReference": {
+    "schoolYear": 2026
+  },
+  "surveyTitle": "Indicator 13 Self Assessment"
+}

@@ -1,0 +1,175 @@
+DB Script for Prep:
+
+delete edfi.StudentAssessment where AssessmentIdentifier='TestAssessmentIdentifier'
+go
+delete edfi.Assessment where AssessmentIdentifier='TestAssessmentIdentifier'
+go
+delete edfi.AccommodationDescriptor where AccommodationDescriptorId in
+	(select DescriptorId from edfi.Descriptor where ShortDescription='TestingDescriptor')
+go
+delete edfi.AssessmentReportingMethodDescriptor where AssessmentReportingMethodDescriptorId in
+	(select DescriptorId from edfi.Descriptor where ShortDescription='TestingDescriptor')
+go
+delete edfi.Descriptor where ShortDescription='TestingDescriptor'
+go
+--insert descriptors to test vendor cannot delete
+insert into edfi.Descriptor (Namespace, CodeValue, ShortDescription,Description)
+values  ('uri://Pearson.com/AccommodationDescriptor','xx','TestingDescriptor','xx')
+go
+insert into edfi.AccommodationDescriptor select descriptorId from edfi.Descriptor where Namespace='uri://Pearson.com/AccommodationDescriptor'
+go
+insert into edfi.Descriptor (Namespace, CodeValue, ShortDescription,Description)
+values  ('uri://Pearson.com/AssessmentReportingMethodDescriptor','xx','TestingDescriptor','xx')
+go
+insert into edfi.AssessmentReportingMethodDescriptor select descriptorId from edfi.Descriptor where Namespace='uri://Pearson.com/AssessmentReportingMethodDescriptor'
+go
+
+
+insert into edfi.Assessment (AssessmentIdentifier,Namespace,AssessmentTitle)
+values ('TestAssessmentIdentifier','uri://Pearson.com','TestAssessmentIdentifier')
+go
+insert into edfi.StudentAssessment (StudentAssessmentIdentifier,AssessmentIdentifier,Namespace,SchoolYear,StudentUSI,AdministrationDate)
+values ('TestAssessmentIdentifier','TestAssessmentIdentifier','uri://Pearson.com',2022,1,'01-DEC-2022')
+go
+
+
+
+
+
+AccomodationDescriptor *******************************
+
+ Succeed ****************
+ 
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/accommodationDescriptors" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"codeValue\": \"test\", \"description\": \"test\", \"effectiveBeginDate\": \"2022-01-10\", \"effectiveEndDate\": \"2022-01-12\", \"namespace\": \"uri://Pearson.com/accommodationDescriptor\", \"shortDescription\": \"short desc\"}"
+
+
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/accommodationDescriptors" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+--valid pearson accomodation for xxx:
+
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/accommodationDescriptors/74d1e002d536403d9252b51595f9be70" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+ fail ****************
+ 
+
+ 
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/accommodationDescriptors" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"codeValue\": \"test\", \"description\": \"test\", \"effectiveBeginDate\": \"2022-01-10\", \"effectiveEndDate\": \"2022-01-12\", \"namespace\": \"uri://Pearson.com/accommodationDescriptor\", \"shortDescription\": \"TestingDescriptor\"}"
+
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/accommodationDescriptors?accommodationDescriptorId=6956" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+-invalid pearson accomodation for xxx
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/accommodationDescriptors/c7c72961912e4ce186696d6490fbae54" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+
+
+
+AssessmentReportingMethodDescriptor  *******************************
+
+
+
+
+ Succeed ****************
+ 
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/AssessmentReportingMethodDescriptors" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"codeValue\": \"test\", \"description\": \"test\", \"effectiveBeginDate\": \"2022-01-10\", \"effectiveEndDate\": \"2022-01-12\", \"namespace\": \"uri://Pearson.com/AssessmentReportingMethodDescriptor\", \"shortDescription\": \"short desc\"}"
+
+
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/AssessmentReportingMethodDescriptors" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+--valid pearson AssessmentReportingMethodDescriptor for xxx:
+
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/AssessmentReportingMethodDescriptors/34746b5e52b4488d94bfefdbc4de80e2" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/AssessmentReportingMethodDescriptors?AssessmentReportingMethodDescriptorId=6960" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+ fail ****************
+ 
+ 
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/AssessmentReportingMethodDescriptors" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"codeValue\": \"test\", \"description\": \"test\", \"effectiveBeginDate\": \"2022-01-10\", \"effectiveEndDate\": \"2022-01-12\", \"namespace\": \"uri://Pearson.com/AssessmentReportingMethodDescriptor\", \"shortDescription\": \"TestingDescriptor\"}"
+
+
+
+
+-invalid pearson AssessmentReportingMethodDescriptor for xxx
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/AssessmentReportingMethodDescriptors?AssessmentReportingMethodDescriptorId=6957" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/AssessmentReportingMethodDescriptors/ba231d15b3c84b9bb4a6da1765c1964f" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+
+Assessement *******************************
+
+ Succeed ****************
+
+
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"assessmentIdentifier\": \"TestAssessmentIdentifier\", \"namespace\": \"uri://Pearson.com\", \"assessmentTitle\": \"test title1\", \"academicSubjects\": [ { \"academicSubjectDescriptor\": \"uri://doe.k12.de.us/AcademicSubjectDescriptor#MAT\" } ] }"
+
+
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"assessmentIdentifier\": \"TestAssessmentIdentifier\", \"namespace\": \"uri://Pearson.com\", \"assessmentTitle\": \"test title1\", \"academicSubjects\": [ { \"academicSubjectDescriptor\": \"uri://doe.k12.de.us/AcademicSubjectDescriptor#MAT\" } ] }"
+
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments/686cbd0bf254461c8f676e633c87ace1" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+TestAssessmentID
+fail ****************
+
+
+--used SIS key to get all ids
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments" -H "accept: application/json" -H "authorization: Bearer 6d94f0e3a1874db091a720d967a9306b"
+
+
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"assessmentIdentifier\": \"TestAssessmentID\", \"namespace\": \"uri://doe.com\", \"assessmentTitle\": \"test title1\", \"academicSubjects\": [ { \"academicSubjectDescriptor\": \"URI://doe.k12.de.us/AcademicSubjectDescriptor#MAT\" } ] }"
+
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments/bdb418ea13c14ae28b9bc1e630975352" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+StudentAssessment *******************************
+
+suceed *******************************
+
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/StudentAssessments" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+{
+  "studentAssessmentIdentifier": "TestStudentAssessment1",
+  "assessmentReference": {
+    "assessmentIdentifier": "TestAssessmentID",
+    "namespace": "uri://Pearson.com"
+  },
+  "schoolYearTypeReference": {
+    "schoolYear": "2022"
+  },
+  "studentReference": {
+    "studentUniqueId": "123"
+  },
+  "administrationDate": "2022-01-11T18:42:56.413Z"
+ 
+}
+
+
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/StudentAssessments" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"studentAssessmentIdentifier\": \"TestStudentAssessment1\", \"assessmentReference\": { \"assessmentIdentifier\": \"TestAssessmentID\", \"namespace\": \"uri://Pearson.com\" }, \"schoolYearTypeReference\": { \"schoolYear\": \"2022\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"administrationDate\": \"2022-01-11T18:42:56.413Z\"}"
+
+
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/StudentAssessments/ddd42b2023b64ccab56e4f00f0a7ea67" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+
+--fail ***************
+--used SIS key to get all ids
+curl -X GET "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/Assessments" -H "accept: application/json" -H "authorization: Bearer b3ec5171b9914be89660660a09e2a933"
+
+curl -X POST "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/StudentAssessments" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db" -H "Content-Type: application/json" -d "{ \"studentAssessmentIdentifier\": \"TestStudentAssessment1\", \"assessmentReference\": { \"assessmentIdentifier\": \"TestAssessmentID\", \"namespace\": \"uri://Pearson.com\" }, \"schoolYearTypeReference\": { \"schoolYear\": \"2022\" }, \"studentReference\": { \"studentUniqueId\": \"123\" }, \"administrationDate\": \"2022-01-11T18:42:56.413Z\"}"
+
+curl -X DELETE "https://doesisedfiintne.doe.k12.de.us/Delaware-Api/data/v3/2024/ed-fi/StudentAssessments/b692eff4c40647ea99772138d4fe31ca" -H "accept: application/json" -H "authorization: Bearer 1ddcced9c61d4ef6a18d15a086aa12db"
+
+

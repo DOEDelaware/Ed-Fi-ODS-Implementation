@@ -1,0 +1,21 @@
+ {
+    "beginDate": "2026-02-17",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "programReference": {
+      "educationOrganizationId": 33,
+      "programName": "504 Plan",
+      "programTypeDescriptor": "uri://doe.k12.de.us/ProgramTypeDescriptor#Section 504 Placement"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+	"section504Eligibility": true,
+    "_ext": {
+      "de": {
+        "initialDNQDate": "2026-02-17",
+        "lastEvaluationDate": "2026-02-17"
+      }
+    }
+  }

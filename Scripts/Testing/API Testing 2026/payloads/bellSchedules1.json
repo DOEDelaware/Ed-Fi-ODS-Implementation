@@ -1,0 +1,28 @@
+  {
+    "bellScheduleName": "bellSchedule1",
+    "classPeriods": [
+      {
+        "classPeriodReference": {
+          "classPeriodName": "period 1",
+          "schoolId": 330330
+        }
+      }
+    ],
+    "schoolReference": {
+      "schoolId": 330330
+    },
+    "alternateDayName": "string",
+    "dates": [
+      {
+        "date": "2026-02-18"
+      }
+    ],
+    "endTime": "02:00:00",
+    "gradeLevels": [
+      {
+        "gradeLevelDescriptor": "uri://doe.k12.de.us/GradeLevelDescriptor#10"
+      }
+    ],
+    "startTime": "01:00:00",
+    "totalInstructionalTime": 1
+  }

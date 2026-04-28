@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "name": "Location - test location 330330",
+      "resourcePath": "ed-fi/locations",
+      "payloadFiles": [
+        "payloads/location-330330.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "schoolReference.schoolId": 330330,
+          "classroomIdentificationCode": "TEST-LOC-1"
+        }
+      }
+    },
+    {
+      "name": "class periods - Period 1 330330",
+      "resourcePath": "ed-fi/classperiods",
+      "payloadFiles": [
+        "payloads/classperiod-330330.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "schoolReference.schoolId": 330330,
+          "classPeriodName": "period 1"
+        }
+      }
+    }	
+  ]
+}

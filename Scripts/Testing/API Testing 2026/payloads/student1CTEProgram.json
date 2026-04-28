@@ -1,0 +1,44 @@
+  {
+    "beginDate": "2026-02-17",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "programReference": {
+      "educationOrganizationId": 33,
+      "programName": "CTE",
+      "programTypeDescriptor": "uri://doe.k12.de.us/ProgramTypeDescriptor#Career and Technical Education"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "cteProgramServices": [
+      {
+        "cteProgramServiceDescriptor": "uri://doe.k12.de.us/CteProgramServiceDescriptor#01.00300",
+        "cipCode": "string",
+        "primaryIndicator": true,
+        "serviceBeginDate": "2026-02-17",
+        "serviceEndDate": "2026-02-17",
+        "_ext": {
+          "de": {
+            "cteProgramCompletionIndicator": true,
+            "localArticulation": true,
+            "pathwayConcentrator": true
+          }
+        }
+      }
+    ],
+    "endDate": "2026-02-17",
+    "nonTraditionalGenderStatus": true,
+    "privateCTEProgram": true,
+
+
+    "_ext": {
+      "de": {
+        "cteCertifications": [
+          {
+            "cteCertificationDescriptor": "uri://doe.k12.de.us/CteCertificationDescriptor#01.00000002"
+          }
+        ]
+      }
+    }
+  }

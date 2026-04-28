@@ -1,0 +1,25 @@
+ {
+    "beginDate": "2026-02-17",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "programReference": {
+      "educationOrganizationId": 33,
+      "programName": "Language Immersion",
+      "programTypeDescriptor": "uri://doe.k12.de.us/ProgramTypeDescriptor#Language Immersion"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "_etag": "string",
+    "_lastModifiedDate": "2026-02-17T19:04:52.854Z",
+    "_ext": {
+      "de": {
+        "languageImmersions": [
+          {
+            "immersionLanguageDescriptor": "uri://doe.k12.de.us/LanguageDescriptor#aar"
+          }
+        ]
+      }
+    }
+  }
