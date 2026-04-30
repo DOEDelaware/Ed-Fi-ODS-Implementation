@@ -1,0 +1,2521 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/5.2.0" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/5.2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="Ed-Fi-Core.xsd" />
+  <xs:annotation>
+    <xs:documentation>===== Ed-Fi 5.2.0 Extensions =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Domain Entities =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-ClassPeriodExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ClassPeriod">
+        <xs:sequence>
+          <xs:element name="AttendancePeriodOrder" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Number indicating the order that the period should be listed.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Description" type="Description" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Description of the attendance period.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ContactExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="EXTENSION-ContactRestriction">
+        <xs:sequence>
+          <xs:element name="Address" type="EXTENSION-AddressExtension" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Indicates some of the address characteristics like Primary, validated etc..</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ContactRestriction">
+    <xs:annotation>
+      <xs:documentation>Restriction to Contact for replacement of common type with common type extension</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="Contact">
+        <xs:sequence>
+          <xs:element name="ContactUniqueId" type="UniqueId">
+            <xs:annotation>
+              <xs:documentation>A unique alphanumeric code assigned to a contact.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Name" type="Name">
+            <xs:annotation>
+              <xs:documentation>Full legal name of the person.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="OtherName" type="OtherName" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Other names (e.g., alias, nickname, previous legal name) associated with a person.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sex" type="SexDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A person's birth sex.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>SexDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GenderIdentity" type="GenderIdentity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The gender the contact identifies themselves as.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InternationalAddress" type="InternationalAddress" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The set of elements that describes an international address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Telephone" type="Telephone" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The 10-digit telephone number, including the area code, for the person.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ElectronicMail" type="ElectronicMail" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LoginId" type="IdentificationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The login ID for the user; used for security access control interface.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Language" type="Language" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-2 language codes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PersonReference" type="PersonReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Relates the contact to a generic person.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HighestCompletedLevelOfEducation" type="LevelOfEducationDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received).</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LevelOfEducationDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-DisciplineActionExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DisciplineAction">
+        <xs:sequence>
+          <xs:element name="DisciplineActionPlacementType" type="EXTENSION-DisciplineActionPlacementTypeDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>aditional discipline action information</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-DisciplineActionPlacementTypeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-RestraintEventExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="RestraintEvent">
+        <xs:sequence>
+          <xs:element name="AdditionalDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the additional detail regrading the restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BehaviorDuringRestraintDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the detail regrading the behaviour during the restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ChangeDescription" type="Description" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the description of changes for the restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ConsecutiveRestraintCount" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the number of times a restraint secluson event occurred in a day.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DeescalationTechnique" type="EXTENSION-DeescalationTechniqueDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>Indicates the detail of the de-escalation technique used in the restraint seclusion event.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-DeescalationTechniqueDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EventTime" type="xs:time">
+            <xs:annotation>
+              <xs:documentation>An indication of the time of day the event occurred.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IncidentLocation" type="IncidentLocationDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies where the restraint seclusion event occurred.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>IncidentLocationDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NonViolentTechnique" type="EXTENSION-NonViolentTechniqueDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the non violent technique detail regrading the restraint seclusion event.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-NonViolentTechniqueDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NotificationMethod" type="EXTENSION-NotificationMethodDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the method of notification used for notifying parent or guardian about the restraint secluson event.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-NotificationMethodDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ParentGuardianNotified" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if the parent or guradian was notified about the restarint secluson event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ParentGuardianNotifiedDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the date on which the parent or guardian was notified.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ParentGuardianNotifiedTime" type="xs:time" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the time of day the parent or guardian was notified about the restarint secluson event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PolicyChangeDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the policy Change detail regrading the restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PriorToEventDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the event details prior to the restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RestraintDuration" type="TimeInterval" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the length in minutes of the restarint secluson event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RestraintEventCategory" type="EXTENSION-RestraintEventCategoryDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>Indicates the type of the restraint or seclusion performed.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-RestraintEventCategoryDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RestraintReportDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the date on which the restraint secluson event was reported.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StaffTrainingDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the traing detail for staff involved in restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentInjured" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if student was injured during the restarint secluson event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentInterviewDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the student interview detail regrading the restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentTreatment" type="EXTENSION-TreatmentDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the treatment provided to student injured during restarint secluson event.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-TreatmentDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SupportPlanChange" type="EXTENSION-SupportPlanChangeDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the type of support plan change.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-SupportPlanChangeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UsedCrisisResponseTeam" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if crisis response team was used during the restarint secluson event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="WitnessInterviewDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the witness interview detail regrading the restraint seclusion event.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StaffParticipation" type="EXTENSION-StaffParticipation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Identifies the staff responsible for providing restarint.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-SectionExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Section">
+        <xs:sequence>
+          <xs:element name="AveragePassTimeMinutesPerWeek" type="EXTENSION-AveragePassTimeMinutesPerWeek" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the number of times allowed in the hall per week for the course.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FractionOfYearOffered" type="EXTENSION-FractionOfYearOffered" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The fraction of a year for the Coop or DO student (i.e. 1.0 for full year, .50 for half year).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MinutesPerWeekAverage" type="EXTENSION-MinutesPerWeekAverage" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the minutes per week the course meets.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UnitCountExceptionSchoolReference" type="SchoolReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifes school with a unit count exception.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentHealthAlert">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describe a person's known medical conditions.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="StudentReference" type="StudentReferenceType">
+            <xs:annotation>
+              <xs:documentation>The person receiving the medical screening.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
+            <xs:annotation>
+              <xs:documentation>The educational organization accountable for a student's health information.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HealthAlertCategory" type="EXTENSION-HealthAlertCategoryDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>Identifies the medical alert code.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-HealthAlertCategoryDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StartDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Identifies the start date of a medical alert.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the end date for a medical alert.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sequence" type="EXTENSION-Sequence" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The sequence number for prioritizing medical alerts.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Comment" type="Comment" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Additional information provided by the responder about the question in the survey.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Instructions" type="EXTENSION-Instructions" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Alert instructions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Descriptors =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-AddressCharacteristicDescriptor">
+    <xs:annotation>
+      <xs:documentation>Reflects important characteristics of address. example, state Validated , primary etc..</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-AlternateCalendarProgramDescriptor">
+    <xs:annotation>
+      <xs:documentation>Available alternate special ed  claendar program details.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ArrestInformationDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates information about possible arrest associated with discipline incident</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-BirthMandateDescriptor">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines a student's impairment at birth.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-BullyingCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the type of bullying.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ChoiceBasisDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the type of Choise option.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CTECertificationDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the type of career pathway certification acheived.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-DeescalationTechniqueDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines techniques for de-escalation of student situaion.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-DiplomaCertificateCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates whether special education student is persuing a diploma or certificate.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-DisciplineActionPlacementTypeDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the alternative placement made as a result of a discipline action.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-FerpaOptOutDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the type of opt out for FERPA.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-FollowupCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the code for the follow-up after medical exam or visit.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-FundingNeedsCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the categories for the funding need.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-HealthAlertCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describe a person's known medical conditions.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-IEPImplementationAfterThirdBirthdayReasonDescriptor">
+    <xs:annotation>
+      <xs:documentation> List for reason for IEP implimentations after 3rd birthday</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-IncidentRelatedToDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify what the incident is related to.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-LocationDescriptor">
+    <xs:annotation>
+      <xs:documentation>Gives the description of event Location.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-MultiliteracyCertificateCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the type of certificate achieved.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-NonViolentTechniqueDescriptor">
+    <xs:annotation>
+      <xs:documentation>Defines Non-Violent Techniques to restrain student.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-NotificationMethodDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the method of notification.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-OutOfTimelineReasonDescriptor">
+    <xs:annotation>
+      <xs:documentation>List the Explanation for ESR Being out of timeline</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ReasonForLateIEPDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates reason for Late IEP.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-RestraintEventCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the category of the restraint event.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-SpecialEducationFundingDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the funding type for the program</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-SupportPlanChangeDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the types of changes for the support plan.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-TreatmentDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates the level of treatment provided.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Associations =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-StaffEducationOrganizationAssignmentAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StaffEducationOrganizationAssignmentAssociation">
+        <xs:sequence>
+          <xs:element name="Active" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the availability of staff member for maintaining student attendance and scheduling courses.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentContactAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentContactAssociation">
+        <xs:sequence>
+          <xs:element name="LocalEducationAgencyReference" type="LocalEducationAgencyReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the district reference for Parent.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentCTEProgramAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="EXTENSION-StudentCTEProgramAssociationRestriction">
+        <xs:sequence>
+          <xs:element name="CTEProgramService" type="EXTENSION-CTEProgramServiceExtension" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The career cluster representing the career path of the Vocational/Career Tech concentrator.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CTECertification" type="EXTENSION-CTECertificationDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Defines the codes that identify the type of career pathway certification acheived.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-CTECertificationDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentCTEProgramAssociationRestriction">
+    <xs:annotation>
+      <xs:documentation>Restriction to Student Cte Program Association for replacement of common type with common type extension</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="StudentCTEProgramAssociation">
+        <xs:sequence>
+          <xs:element name="StudentReference" type="StudentReferenceType">
+            <xs:annotation>
+              <xs:documentation>The student associated with the program.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ProgramReference" type="ProgramReferenceType">
+            <xs:annotation>
+              <xs:documentation>The program associated with the student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BeginDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReasonExited" type="ReasonExitedDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The reason the student left the program within a school or district.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>ReasonExitedDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
+            <xs:annotation>
+              <xs:documentation>The education organization where the student is participating in or receiving the program services.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ServedOutsideOfRegularSession" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates whether the student received services during the summer session or between sessions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ProgramParticipationStatus" type="ProgramParticipationStatus" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The status of the student's program participation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NonTraditionalGenderStatus" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PrivateCTEProgram" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TechnicalSkillsAssessment" type="TechnicalSkillsAssessmentDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Results of technical skills assessment aligned with industry recognized standards.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>TechnicalSkillsAssessmentDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentDisciplineIncidentBehaviorAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentDisciplineIncidentBehaviorAssociation">
+        <xs:sequence>
+          <xs:element name="ArrestInformation" type="EXTENSION-ArrestInformationDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Arrest information</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ArrestInformationDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentDisciplineIncidentNonOffenderAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentDisciplineIncidentNonOffenderAssociation">
+        <xs:sequence>
+          <xs:element name="ReasonIncidentRelatedTo" type="EXTENSION-IncidentRelatedToDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>Indicates the reason for the alleged bullying incident.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-IncidentRelatedToDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Indicates the date on which the alleged bullying incident was reported.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StaffReference" type="StaffReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the staff who reported.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BullyingVictimIncidentDetail" type="EXTENSION-Detail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The details of the alleged bullying victim incident.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BullyingCategory" type="EXTENSION-BullyingCategoryDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Indicates the type of bullying.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-BullyingCategoryDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentEarlyChildhoodProgramAssociation">
+    <xs:annotation>
+      <xs:documentation>This association represents the early childhood program(S) that a student participates in or receives services from.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="GeneralStudentProgramAssociation">
+        <xs:sequence>
+          <xs:element name="SpecialEducationFunding" type="EXTENSION-SpecialEducationFundingDescriptorReferenceType" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation> Funding type for the program</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-SpecialEducationFundingDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentEducationOrganizationAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="EXTENSION-StudentEducationOrganizationAssociationRestriction">
+        <xs:sequence>
+          <xs:element name="Multiliteracy" type="EXTENSION-Multiliteracy" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Indicates if the student received a multiliteracy award.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SchoolYear" type="SchoolYearType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The identifier for the school year associated with the Calendar.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PriorId" type="EXTENSION-PriorId" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A unique prior alphanumeric code assigned to a student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Address" type="EXTENSION-AddressExtension" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Collection of address characteristics</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentEducationOrganizationAssociationRestriction">
+    <xs:annotation>
+      <xs:documentation>Restriction to Student Education Organization Association for replacement of common type with common type extension</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="StudentEducationOrganizationAssociation">
+        <xs:sequence>
+          <xs:element name="StudentReference" type="StudentReferenceType">
+            <xs:annotation>
+              <xs:documentation>A reference to the student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
+            <xs:annotation>
+              <xs:documentation>A reference to the education organization representing the context of the student information.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentIdentificationCode" type="StudentIdentificationCode" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Sex" type="SexDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The student's birth sex as reported to the education organization.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>SexDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GenderIdentity" type="GenderIdentity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The student's gender as last reported to the education organization.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InternationalAddress" type="InternationalAddress" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The set of elements that describes an international address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Telephone" type="Telephone" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The 10-digit telephone number, including the area code, for the person.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ElectronicMail" type="ElectronicMail" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ProfileThumbnail" type="ProfileThumbnail" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Locator reference for the student photo. The specification for that reference is left to local definition.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HispanicLatinoEthnicity" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race, as last reported to the education organization. The term, "Spanish origin," can be used in addition to "Hispanic or Latino."</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Race" type="RaceDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies as last reported to the education organization. The data model allows for multiple entries so that each individual can specify all appropriate races.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>RaceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TribalAffiliation" type="TribalAffiliationDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>An American Indian tribe with which the student is affiliated as last reported to the education organization.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>TribalAffiliationDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentCharacteristic" type="StudentCharacteristic" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Reflects important characteristics of a student. If a student has a characteristic present, that characteristic is considered true or active for that student. If a characteristic is not present, no assumption is made as to the applicability of the characteristic, but local policy may dictate otherwise.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LimitedEnglishProficiency" type="LimitedEnglishProficiencyDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LimitedEnglishProficiencyDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Language" type="Language" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-3 language codes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Disability" type="Disability" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The disability condition(s) that best describes an individual's impairment, as determined by evaluation(s) conducted by the education organization.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CohortYear" type="CohortYear" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The type and year of a cohort (e.g., 9th grade) the student belongs to as determined by the year that student entered a specific grade.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentIndicator" type="StudentIndicator" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>An indicator or metric computed for the student (e.g., at risk).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LoginId" type="IdentificationCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The login ID for the user; used for security access control interface.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AncestryEthnicOrigin" type="AncestryEthnicOriginDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The original peoples or cultures with which the individual identifies.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>AncestryEthnicOriginDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PrimaryLearningDeviceAwayFromSchool" type="PrimaryLearningDeviceAwayFromSchoolDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The type of device the student uses most often to complete learning activities away from school.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>PrimaryLearningDeviceAwayFromSchoolDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PrimaryLearningDeviceAccess" type="PrimaryLearningDeviceAccessDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether the primary learning device is shared or not shared with another individual.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>PrimaryLearningDeviceAccessDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PrimaryLearningDeviceProvider" type="PrimaryLearningDeviceProviderDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The provider of the primary learning device.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>PrimaryLearningDeviceProviderDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InternetAccessInResidence" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether the student is able to access the internet in their primary place of residence.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BarrierToInternetAccessInResidence" type="BarrierToInternetAccessInResidenceDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of the barrier to having internet access in the student’s primary place of residence.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>BarrierToInternetAccessInResidenceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InternetAccessTypeInResidence" type="InternetAccessTypeInResidenceDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The primary type of internet service used in the student’s primary place of residence.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>InternetAccessTypeInResidenceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InternetPerformanceInResidence" type="InternetPerformanceInResidenceDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether the student can complete the full range of learning activities, including video streaming and assignment upload, without interruptions caused by poor internet performance in their primary place of residence.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>InternetPerformanceInResidenceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SupporterMilitaryConnection" type="SupporterMilitaryConnectionDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Military connection of the person/people whom the student is a dependent of.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>SupporterMilitaryConnectionDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DisplacedStudent" type="DisplacedStudent" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Information about student who was enrolled, or eligible for enrollment, but has temporarily or permanently enrolled in another school or district because of a crisis-related disruption in educational services.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentLanguageInstructionProgramAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentLanguageInstructionProgramAssociation">
+        <xs:sequence>
+          <xs:element name="LanguageImmersion" type="EXTENSION-LanguageImmersion" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Identifies students participating in a language immersion program.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentMedicaidProgramAssociation">
+    <xs:annotation>
+      <xs:documentation>This association represents the Medicaid program(S) that a student participates in or receives services from.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="GeneralStudentProgramAssociation">
+        <xs:sequence>
+          <xs:element name="EligibilityStatus" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Indicates if student receives an Medicaid program.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentMCINumber" type="EXTENSION-StudentMCINumber">
+            <xs:annotation>
+              <xs:documentation> Master client index from DHSS</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentSection504ProgramAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentSection504ProgramAssociation">
+        <xs:sequence>
+          <xs:element name="InitialDNQDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the initial DNQ date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LastEvaluationDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the last evaluation date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentSpecialEducationProgramAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentSpecialEducationProgramAssociation">
+        <xs:sequence>
+          <xs:element name="DiplomaCertificateCategory" type="EXTENSION-DiplomaCertificateCategoryDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates whether student is working towards a diploma or certificate.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-DiplomaCertificateCategoryDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SpecialEducationFundingCountException" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates whether student is not counted for December 1.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DSTPAccommodation" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates whether student receives special education DSTP accomodation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EligbleNotReceivingService" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if student is eligible for special education, but is not receiving services.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EvaluatedNoDisability" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if student was evaluated for special education disability, but has no disability.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FundingNeedsCategory" type="EXTENSION-FundingNeedsCategoryDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the category of the funding need.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-FundingNeedsCategoryDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InitialConsentToEvaluateDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the date when the initail consent was given to evaluate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InitialEvaluationDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the date of the initial evaluation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LastSpecialistEvaluationDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the last date a specialist evelauation was done.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PPPSISPInitiationDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the initiation date for PPPS ISp.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PPPSMeetingDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the PPPS meeeting date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReferraltoPartCDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the PartC referral date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReferralToPartCWithin90DaysOfThirdBirthday" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if student was refered to Part C within 90 days of his 3rd birthday.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PartCEligibilityDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the PartC eligible date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PartCEligibilityWithin90DaysOfThirdBirthday" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if student was eligible for Part C within 90 days of his 3rd birthday.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReferraltoPartB619Date" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the Part B 619 referral date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TransitionConferenceDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the Transition Conference Date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PartB619Eligible" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if student was eligible for Part B 619.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IEPPartB619ServicesImplementationDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates the Part B 619 services implimentation date.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BirthMandate" type="EXTENSION-BirthMandateDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This descriptor defines a student's impairment at birth.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-BirthMandateDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IEPImplementationAfterThirdBirthdayReason" type="EXTENSION-IEPImplementationAfterThirdBirthdayReasonDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation> List for reason for IEP implimentations after 3rd birthday</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-IEPImplementationAfterThirdBirthdayReasonDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AlternateCalendarProgram" type="EXTENSION-AlternateCalendarProgramDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Available alternate special ed  claendar program details.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-AlternateCalendarProgramDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="OutOfTimelineReason" type="EXTENSION-OutOfTimelineReasonDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>List the Explanation for ESR Being out of timeline</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-OutOfTimelineReasonDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-StudentEarlyChildhoodProgramAssociationIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a StudentEarlyChildhoodProgramAssociation.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StudentReference" type="StudentReferenceType">
+        <xs:annotation>
+          <xs:documentation>The student associated with the program.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProgramReference" type="ProgramReferenceType">
+        <xs:annotation>
+          <xs:documentation>The program associated with the student.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BeginDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
+        <xs:annotation>
+          <xs:documentation>The education organization where the student is participating in or receiving the program services.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentEarlyChildhoodProgramAssociationReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a StudentEarlyChildhoodProgramAssociation. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="StudentEarlyChildhoodProgramAssociationIdentity" type="EXTENSION-StudentEarlyChildhoodProgramAssociationIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a StudentEarlyChildhoodProgramAssociation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentHealthAlertIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a StudentHealthAlert.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StudentReference" type="StudentReferenceType">
+        <xs:annotation>
+          <xs:documentation>The person receiving the medical screening.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
+        <xs:annotation>
+          <xs:documentation>The educational organization accountable for a student's health information.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HealthAlertCategory" type="EXTENSION-HealthAlertCategoryDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Identifies the medical alert code.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-HealthAlertCategoryDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Identifies the start date of a medical alert.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentHealthAlertReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a StudentHealthAlert. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="StudentHealthAlertIdentity" type="EXTENSION-StudentHealthAlertIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a StudentHealthAlert.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentMedicaidProgramAssociationIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a StudentMedicaidProgramAssociation.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StudentReference" type="StudentReferenceType">
+        <xs:annotation>
+          <xs:documentation>The student associated with the program.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProgramReference" type="ProgramReferenceType">
+        <xs:annotation>
+          <xs:documentation>The program associated with the student.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BeginDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
+        <xs:annotation>
+          <xs:documentation>The education organization where the student is participating in or receiving the program services.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentMedicaidProgramAssociationReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a StudentMedicaidProgramAssociation. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="StudentMedicaidProgramAssociationIdentity" type="EXTENSION-StudentMedicaidProgramAssociationIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a StudentMedicaidProgramAssociation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-AddressCharacteristicDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Reflects important characteristics of address. example, state Validated , primary etc..</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-AlternateCalendarProgramDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Available alternate special ed  claendar program details.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ArrestInformationDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates information about possible arrest associated with discipline incident</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-BirthMandateDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines a student's impairment at birth.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-BullyingCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the type of bullying.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ChoiceBasisDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the type of Choise option.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CTECertificationDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the type of career pathway certification acheived.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DeescalationTechniqueDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines techniques for de-escalation of student situaion.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DiplomaCertificateCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates whether special education student is persuing a diploma or certificate.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DisciplineActionPlacementTypeDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the alternative placement made as a result of a discipline action.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-FerpaOptOutDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the type of opt out for FERPA.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-FollowupCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the code for the follow-up after medical exam or visit.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-FundingNeedsCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify the categories for the funding need.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-HealthAlertCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describe a person's known medical conditions.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-IEPImplementationAfterThirdBirthdayReasonDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation> List for reason for IEP implimentations after 3rd birthday</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-IncidentRelatedToDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that identify what the incident is related to.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-LocationDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Gives the description of event Location.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-MultiliteracyCertificateCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the type of certificate achieved.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-NonViolentTechniqueDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Defines Non-Violent Techniques to restrain student.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-NotificationMethodDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the method of notification.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-OutOfTimelineReasonDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>List the Explanation for ESR Being out of timeline</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ReasonForLateIEPDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates reason for Late IEP.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-RestraintEventCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the category of the restraint event.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SpecialEducationFundingDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the funding type for the program</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SupportPlanChangeDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the types of changes for the support plan.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-TreatmentDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates the level of treatment provided.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Common Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-AddressExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Address">
+        <xs:sequence>
+          <xs:element name="AddressCharacteristic" type="EXTENSION-AddressCharacteristicDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Indicates some of the address characteristics like Primary, validated etc..</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-AddressCharacteristicDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CTEProgramServiceExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CTEProgramService">
+        <xs:sequence>
+          <xs:element name="PathwayConcentrator" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if this pathway is the concentrator.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LocalArticulation" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Local Articualtion agreement indicator</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CTEProgramCompletionIndicator" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A boolean indicator of whether this CTE program is the student's primary CTE program.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-Ethnicity">
+    <xs:annotation>
+      <xs:documentation>Defines the codes that describes the race of an individual.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Race" type="RaceDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Indicates the code for the race</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>RaceDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RaceOrder" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Order in which a individual's race is identified.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RacePercentage" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The percentage that the individual identifies self with a race.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FederalRace" type="RaceDescriptorReferenceType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates the equivalent federal code for the race/ethnicity of an individual.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>RaceDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EthnicityLastModifiedDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date and time the table row was last changed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-Institution">
+    <xs:annotation>
+      <xs:documentation>This represents the post secondary instituion information when student applies to college.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PostSecondaryInstitutionReference" type="PostSecondaryInstitutionReferenceType">
+        <xs:annotation>
+          <xs:documentation>Identifies the post secondary instituion student applied to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateTranscriptMailed" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>indicates the date the student transcript was mailed to the post secondary instituion.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlansToAttend" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates if student plans to attend the post secondary institution.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-Issue">
+    <xs:annotation>
+      <xs:documentation>Date medicine is issued.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IssueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Date issued.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-LanguageImmersion">
+    <xs:annotation>
+      <xs:documentation>Identifies students participating in a language immersion program.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ImmersionLanguage" type="LanguageDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Indicates the language student is taking/took to participate in language immersion program.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>LanguageDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-MarkingPeriod">
+    <xs:annotation>
+      <xs:documentation>Defines the marking periods that the class meets.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="GradingPeriod" type="GradingPeriodDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The code for a marking period when the class meets.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>GradingPeriodDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UsedSeat" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The number of seats used for the session in the specified marking period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-Multiliteracy">
+    <xs:annotation>
+      <xs:documentation>Indicates the multiliteracy award achieved.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Language" type="LanguageDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Indicates the language associated with the multiliteracy award.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>LanguageDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AssessmentTitle" type="AssessmentTitle">
+        <xs:annotation>
+          <xs:documentation>Indicates the name of the assessment taken to receive the multiliteracy award.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MultiliteracyCertificateCategory" type="EXTENSION-MultiliteracyCertificateCategoryDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Indicates the type of certificate received with the multiliteracy award.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-MultiliteracyCertificateCategoryDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CertificateIssueConfirm" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates if the certificate issued was confirmed by the DOE.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateEarned" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates the Date certificate is earned</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CertificateReviewDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates the date the certificate is reviewed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-OffenderBehavior">
+    <xs:annotation>
+      <xs:documentation>Describes the offender behavior by category and provides a detailed description..</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Behavior" type="BehaviorDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Indicates the type of behavior committed by the offender.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>BehaviorDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BehaviorDetailDescription" type="Description" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Description of the offense or incident.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OffenseNumber" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Offense number that corresponds to the incident.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-Related">
+    <xs:annotation>
+      <xs:documentation>This represents related issues.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RelatedIssueIdentifier" type="EXTENSION-IssueIdentifier">
+        <xs:annotation>
+          <xs:documentation>The identifier of the related issue.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RelatedLastModifiedDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date and time the table row was last changed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-Scholarship">
+    <xs:annotation>
+      <xs:documentation>Indicates the scholarship information for students receiving scholarships.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ScholarshipName" type="EXTENSION-ScholarshipName">
+        <xs:annotation>
+          <xs:documentation>The name of the scholarship.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ScholarshipAmount" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>The amount received for the scholarship</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StaffParticipation">
+    <xs:annotation>
+      <xs:documentation>This represents the staff that provided the restraint.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StaffReference" type="StaffReferenceType">
+        <xs:annotation>
+          <xs:documentation>Staff reference .</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TrainedActionTechnique" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates if the staff providing restraint utilized a trained action technique.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StaffInjured" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates if staff was injured during the restarint secluson event.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StaffTreatment" type="EXTENSION-TreatmentDescriptorReferenceType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates the treatment provided to staff injured during restraint secluson event.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-TreatmentDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StaffProvidingRestraint">
+    <xs:annotation>
+      <xs:documentation>This represents the staff that provided the restraint.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StaffOrdinal" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Relates the staff providing the restaint.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TrainedActionTechnique" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates if the staff providing restraint utilized a trained action technique.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-SubjectArea">
+    <xs:annotation>
+      <xs:documentation>Subject areas that the course meets as part of graduation requirements.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AcademicSubject" type="AcademicSubjectDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The code of the subject area the course meets.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>AcademicSubjectDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubjectOrder" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The order of the subject area.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubjectAreaLastModifiedDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The date and time the table row was last changed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-Transfer">
+    <xs:annotation>
+      <xs:documentation>The information associated with a student transfer.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ExternalEducationOrganizationName" type="EXTENSION-ExternalEducationOrganizationName">
+        <xs:annotation>
+          <xs:documentation>Indicates the name of the education organization student transferred from.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates the GradeLevel when student transferred.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>GradeLevelDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Enumerations and Enumerated Collections =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== String Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-AverageDaysPerWeek">
+    <xs:annotation>
+      <xs:documentation>Indicates the average days per week.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-AverageHoursPerDay">
+    <xs:annotation>
+      <xs:documentation>Indicates the average hours per day.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-AveragePassTimeMinutesPerWeek">
+    <xs:annotation>
+      <xs:documentation>Indicates the number of times allowed in the hall per week for the course..</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ChangeUID">
+    <xs:annotation>
+      <xs:documentation>Indicates the person who last changed the table row.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CourseName">
+    <xs:annotation>
+      <xs:documentation>Indicates the name of the course.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CreationUID">
+    <xs:annotation>
+      <xs:documentation>Indicates the person who created the table row.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-Detail">
+    <xs:annotation>
+      <xs:documentation>Provides detail information.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ExternalEducationOrganizationName">
+    <xs:annotation>
+      <xs:documentation>This is documentation.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="75" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-FractionOfYearOffered">
+    <xs:annotation>
+      <xs:documentation>The fraction of a year for the Coop or DO student (i.e. 1.0 for full year, .50 for half year).</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-Instructions">
+    <xs:annotation>
+      <xs:documentation>Alert instructions.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-LawEnforcementDepartment">
+    <xs:annotation>
+      <xs:documentation>Indicates the police department to which the incident was reported.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-LawEnforcementOfficerName">
+    <xs:annotation>
+      <xs:documentation>Name of officer who responded to the complaint.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-Mark">
+    <xs:annotation>
+      <xs:documentation>Indicates the mark that can be achieved.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-MedicationCode">
+    <xs:annotation>
+      <xs:documentation>This represents the code for the medication.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-MinutesPerWeekAverage">
+    <xs:annotation>
+      <xs:documentation>Indicates the minutes per week the course meets.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-NonStudentLocalId">
+    <xs:annotation>
+      <xs:documentation>This is the local identifier for non-students.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="60" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-Number">
+    <xs:annotation>
+      <xs:documentation>This represents the number.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PersonId">
+    <xs:annotation>
+      <xs:documentation>The unique identifier for a person.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="60" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PriorId">
+    <xs:annotation>
+      <xs:documentation>A unique alphanumeric code assigned by a system managing unique identifiers.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="32" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ReportCardPrintValue">
+    <xs:annotation>
+      <xs:documentation>Indicates the value that is printed on the report card for the mark.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ReportedBy">
+    <xs:annotation>
+      <xs:documentation>Identifies the person who reported the incident.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ScholarshipName">
+    <xs:annotation>
+      <xs:documentation>Indicates the name of the scholarship.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="60" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ShuttleStop">
+    <xs:annotation>
+      <xs:documentation>This represents the shuttle stop for students using the bus as a mode of transportion.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="6" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-StudentMCINumber">
+    <xs:annotation>
+      <xs:documentation> Master client index from DHSS</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="60" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-TranscriptPrintValue">
+    <xs:annotation>
+      <xs:documentation>Indicates the value that is printed on the transcript for the mark.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Numeric Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-ActionDuration">
+    <xs:annotation>
+      <xs:documentation>Indicates the duration fo the action.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="5" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-IssueIdentifier">
+    <xs:annotation>
+      <xs:documentation>This is a unique number that identifies the issue.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-MembershipDayValue">
+    <xs:annotation>
+      <xs:documentation>Indicates the value of membership for the day.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="100" />
+      <xs:totalDigits value="4" />
+      <xs:fractionDigits value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PercentOutOfRegularClass">
+    <xs:annotation>
+      <xs:documentation>Indicates the percentage of time spent out of regular class.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="5" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-PointValue">
+    <xs:annotation>
+      <xs:documentation>Indicates the point value for the mark.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="7" />
+      <xs:fractionDigits value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-Sequence">
+    <xs:annotation>
+      <xs:documentation>This allows multiple inserts.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+</xs:schema>

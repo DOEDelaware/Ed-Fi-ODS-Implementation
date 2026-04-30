@@ -1,0 +1,2 @@
+Descriptor AddressCharacteristic
+    documentation "Reflects important characteristics of address. example, state Validated , primary etc.."

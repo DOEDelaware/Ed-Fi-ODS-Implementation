@@ -1,0 +1,4 @@
+Domain Entity EdFi.DisciplineAction additions
+    descriptor DisciplineActionPlacementType
+        documentation "aditional discipline action information"
+        is optional

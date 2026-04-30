@@ -109,6 +109,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Security.DataAccess.In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.De.Features.IdentityManagement", "EdFi.Ods.De.Features.IdentityManagement\EdFi.Ods.De.Features.IdentityManagement.csproj", "{0C5C2128-86A4-C71B-77FC-023D80181F1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdFi.Ods.Extensions.De", "EdFi.Ods.Extensions.De\EdFi.Ods.Extensions.De.csproj", "{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -247,6 +249,10 @@ Global
 		{0C5C2128-86A4-C71B-77FC-023D80181F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C5C2128-86A4-C71B-77FC-023D80181F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C5C2128-86A4-C71B-77FC-023D80181F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -287,6 +293,7 @@ Global
 		{CD96F0B8-C57D-4533-87D6-27C3E55AF8F0} = {3AD03A98-4A2C-42F1-997D-2468A0CCB77D}
 		{CE4C9C15-EA14-4A1E-8B8C-09A60C71D3A0} = {3AD03A98-4A2C-42F1-997D-2468A0CCB77D}
 		{0C5C2128-86A4-C71B-77FC-023D80181F1C} = {E214F607-B637-4AF5-9A68-61CB86507E4A}
+		{0DF7FA7F-18DC-4272-BCAF-6F77FF2E41F5} = {F25ED154-FB97-4F39-933B-808D1B3B6D3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {91F27EA2-CFF0-4054-A019-B8AA23AF9319}

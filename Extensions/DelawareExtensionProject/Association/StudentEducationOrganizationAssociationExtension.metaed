@@ -1,0 +1,13 @@
+Association EdFi.StudentEducationOrganizationAssociation additions
+    common Multiliteracy
+        documentation "Indicates if the student received a multiliteracy award."
+        is optional collection
+    enumeration EdFi.SchoolYear
+         documentation "The identifier for the school year associated with the Calendar."
+        is optional
+    shared string PriorId 
+        documentation "A unique prior alphanumeric code assigned to a student."
+        is optional collection
+    common extension EdFi.Address
+        documentation "Collection of address characteristics"
+        is optional collection

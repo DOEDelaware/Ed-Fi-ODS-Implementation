@@ -1,0 +1,70 @@
+Association EdFi.StudentSpecialEducationProgramAssociation additions
+    descriptor DiplomaCertificateCategory
+        documentation "Indicates whether student is working towards a diploma or certificate."
+        is optional
+    bool SpecialEducationFundingCountException
+        documentation "Indicates whether student is not counted for December 1."
+        is optional
+    bool DSTPAccommodation
+        documentation "Indicates whether student receives special education DSTP accomodation."
+        is optional
+    bool EligbleNotReceivingService
+        documentation "Indicates if student is eligible for special education, but is not receiving services."
+        is optional
+    bool EvaluatedNoDisability
+        documentation "Indicates if student was evaluated for special education disability, but has no disability."
+        is optional
+    descriptor FundingNeedsCategory
+        documentation "Indicates the category of the funding need."
+        is optional
+    date InitialConsentToEvaluateDate
+        documentation "Indicates the date when the initail consent was given to evaluate."
+        is optional
+    date InitialEvaluationDate
+        documentation "Indicates the date of the initial evaluation."
+        is optional
+    date LastSpecialistEvaluationDate
+        documentation "Indicates the last date a specialist evelauation was done."
+        is optional
+    date PPPSISPInitiationDate
+        documentation "Indicates the initiation date for PPPS ISp."
+        is optional
+    date PPPSMeetingDate
+        documentation "Indicates the PPPS meeeting date."
+        is optional
+    date ReferraltoPartCDate
+        documentation "Indicates the PartC referral date."
+        is optional
+    bool ReferralToPartCWithin90DaysOfThirdBirthday
+        documentation "Indicates if student was refered to Part C within 90 days of his 3rd birthday."
+        is optional
+    date PartCEligibilityDate
+        documentation "Indicates the PartC eligible date."
+        is optional
+    bool PartCEligibilityWithin90DaysOfThirdBirthday
+        documentation "Indicates if student was eligible for Part C within 90 days of his 3rd birthday."
+        is optional
+    date ReferraltoPartB619Date
+        documentation "Indicates the Part B 619 referral date."
+        is optional
+    date TransitionConferenceDate
+        documentation "Indicates the Transition Conference Date."
+        is optional
+    bool PartB619Eligible
+        documentation "Indicates if student was eligible for Part B 619."
+        is optional
+    date IEPPartB619ServicesImplementationDate
+        documentation "Indicates the Part B 619 services implimentation date."
+        is optional
+    descriptor BirthMandate
+        documentation "This descriptor defines a student's impairment at birth."
+        is optional 
+    descriptor IEPImplementationAfterThirdBirthdayReason
+        documentation " List for reason for IEP implimentations after 3rd birthday" 
+        is optional
+    descriptor AlternateCalendarProgram
+        documentation  "Available alternate special ed  claendar program details."
+        is optional 
+    descriptor OutOfTimelineReason
+        documentation "List the Explanation for ESR Being out of timeline"
+        is optional 

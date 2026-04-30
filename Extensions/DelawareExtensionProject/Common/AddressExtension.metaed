@@ -1,0 +1,4 @@
+Common EdFi.Address additions
+    descriptor AddressCharacteristic
+        documentation "Indicates some of the address characteristics like Primary, validated etc.."
+        is optional collection

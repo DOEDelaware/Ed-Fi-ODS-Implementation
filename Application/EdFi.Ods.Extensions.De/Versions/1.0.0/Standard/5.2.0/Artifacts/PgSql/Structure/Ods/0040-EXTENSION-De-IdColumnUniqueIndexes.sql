@@ -1,0 +1,2 @@
+CREATE UNIQUE INDEX IF NOT EXISTS UX_0e02e0_Id ON de.StudentHealthAlert(Id);
+

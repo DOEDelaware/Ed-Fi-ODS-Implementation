@@ -1,0 +1,5 @@
+Association StudentEarlyChildhoodProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents the early childhood program(S) that a student participates in or receives services from."
+    descriptor SpecialEducationFunding
+        documentation " Funding type for the program"
+        is required collection

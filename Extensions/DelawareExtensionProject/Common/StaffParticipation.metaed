@@ -1,0 +1,15 @@
+Common StaffParticipation
+    documentation "This represents the staff that provided the restraint."
+    domain entity EdFi.Staff
+        documentation "Staff reference ."
+        is part of identity
+    bool TrainedActionTechnique
+        documentation "Indicates if the staff providing restraint utilized a trained action technique."
+        is optional
+    bool StaffInjured
+        documentation "Indicates if staff was injured during the restarint secluson event."
+        is optional
+    descriptor Treatment
+        documentation "Indicates the treatment provided to staff injured during restraint secluson event."
+        is optional
+        role name Staff
