@@ -1,29 +1,18 @@
  {
   "items": [   
-	  
-		{
-		  "name": "SurveyHeader1",
-		  "resourcePath": "ed-fi/SurveyQuestions",
+  	  {
+		  "name": "student1AssessmentRegistration",
+		  "resourcePath": "ed-fi/studentassessmentRegistrations",
 		  "payloadFiles": [
-			"payloads/SurveyQuestion_header1.json"
+			"payloads/student1AssessmentRegistration.json"
 		  ],
 		  "verify": {
-			"enabled": false,
-			"expect": {  
+			"enabled": true,
+			"expect": {
+					"studentSchoolAssociationReference.studentUniqueId": 1,
+					"testingEducationOrganizationReference.educationOrganizationId": 330330
 			}
 		  }
-		},
-	{
-		  "name": "SurveyHeader2",
-		  "resourcePath": "ed-fi/SurveyQuestions",
-		  "payloadFiles": [
-			"payloads/SurveyQuestion_header2.json"
-		  ],
-		  "verify": {
-			"enabled": false,
-			"expect": {  
-			}
-		  }
-		}
-	]
+	  }
+]
 }
