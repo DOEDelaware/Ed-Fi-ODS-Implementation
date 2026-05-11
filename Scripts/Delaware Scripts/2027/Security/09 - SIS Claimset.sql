@@ -99,7 +99,51 @@ INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId)
 INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='NonViolentTechniqueDescriptor'),2
 INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='reasonForLateIEPDescriptor'),2
 
+
+
+-- Learning standards can write descriptor
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='publicationStatusDescriptor'),1
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='publicationStatusDescriptor'),2
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='publicationStatusDescriptor'),3
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='publicationStatusDescriptor'),4
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='publicationStatusDescriptor'),5
+insert into [dbo].[ClaimSetResourceClaimActionAuthorizationStrategyOverrides] (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
+select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='NoFurtherAuthorizationRequired' )   from ClaimSetResourceClaimActions 
+where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName in ('publicationStatusDescriptor')) 
+and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='DESIS')
+
+--Learning Standard
+
+
+--Survey 
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='Survey'),2
+
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='SurveyQuestion'),2
+
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyResponse'),1
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyResponse'),2
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyResponse'),3
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyResponse'),4
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyResponse'),5
+
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyQuestionResponse'),1
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyQuestionResponse'),2
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyQuestionResponse'),3
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyQuestionResponse'),4
+INSERT INTO ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId) select (select ClaimSetId from ClaimSets where  ClaimSetName='DESIS'), (select ResourceClaimId from ResourceClaims where ResourceName='surveyQuestionResponse'),5
+
  
+ select * from ResourceClaims where ResourceName like 'learning%'
+
+ select * from ResourceClaims where ResourceClaimId=9
+ select * from ClaimSetResourceClaimActions  where ResourceClaimId=9  and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='DESIS')
+
+
+ 
+ select * from AuthorizationStrategies
+
+ select * from ClaimSets
+
 
 --Responsibility schools
 --insert into [dbo].[ClaimSetResourceClaimActionAuthorizationStrategyOverrides] (ClaimSetResourceClaimActionId, AuthorizationStrategyId)

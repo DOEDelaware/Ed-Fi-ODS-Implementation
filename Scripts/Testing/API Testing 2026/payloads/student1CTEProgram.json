@@ -13,7 +13,7 @@
     },
     "cteProgramServices": [
       {
-        "cteProgramServiceDescriptor": "uri://doe.k12.de.us/CteProgramServiceDescriptor#01.00300",
+        "cteProgramServiceDescriptor": "uri://doe.k12.de.us/CteProgramServiceDescriptor#04.03406",
         "cipCode": "string",
         "primaryIndicator": true,
         "serviceBeginDate": "2026-02-17",
@@ -36,7 +36,7 @@
       "de": {
         "cteCertifications": [
           {
-            "cteCertificationDescriptor": "uri://doe.k12.de.us/CteCertificationDescriptor#01.00000002"
+            "cteCertificationDescriptor": "uri://doe.k12.de.us/CteCertificationDescriptor#06.0421252601"
           }
         ]
       }
