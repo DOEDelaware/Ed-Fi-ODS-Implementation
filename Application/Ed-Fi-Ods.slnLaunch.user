@@ -1,6 +1,14 @@
 [
   {
+<<<<<<< HEAD
     "Name": "New Profile",
+=======
+<<<<<<< HEAD
+    "Name": "Sandbox",
+=======
+    "Name": "New Profile",
+>>>>>>> 67c4b71 (adding 26-27 extension files to API 732 version)
+>>>>>>> 732rel
     "Projects": [
       {
         "Path": "EdFi.Ods.SwaggerUI\\EdFi.Ods.SwaggerUI.csproj",
