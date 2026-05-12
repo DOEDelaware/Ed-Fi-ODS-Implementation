@@ -88,7 +88,15 @@ from (values
     ('SurveyQuestion', 2),
     ('SurveyQuestion', 3),
     ('SurveyQuestion', 4),
-    ('SurveyQuestion', 5)
+    ('SurveyQuestion', 5),
+    ('programEvaluationElement', 1),
+    ('programEvaluationElement', 2),
+    ('programEvaluationElement', 3),
+    ('programEvaluationElement', 4),
+    ('programEvaluationObjective', 1),
+    ('programEvaluationObjective', 2),
+    ('programEvaluationObjective', 3),
+    ('programEvaluationObjective', 4)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
 go
 
