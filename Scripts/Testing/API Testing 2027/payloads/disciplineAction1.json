@@ -1,0 +1,42 @@
+ {
+    "disciplineActionIdentifier": "da1",
+    "disciplineDate": "2026-02-19",
+    "disciplines": [
+      {
+        "disciplineDescriptor": "uri://doe.k12.de.us/DisciplineDescriptor#03"
+      }
+    ],
+    "responsibilitySchoolReference": {
+      "schoolId": 330330
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "actualDisciplineActionLength": 999.99,
+    "disciplineActionLength": 999.99,
+    "disciplineActionLengthDifferenceReasonDescriptor": "uri://doe.k12.de.us/DisciplineActionLengthDifferenceReasonDescriptor#01",
+    "iepPlacementMeetingIndicator": true,
+    "relatedToZeroTolerancePolicy": true,
+    "staffs": [
+      {
+        "staffReference": {
+          "staffUniqueId": "1"
+        }
+      }
+    ],
+    "studentDisciplineIncidentBehaviorAssociations": [
+      {
+        "studentDisciplineIncidentBehaviorAssociationReference": {
+          "behaviorDescriptor": "uri://doe.k12.de.us/BehaviorDescriptor#C0102",
+          "incidentIdentifier": "di1",
+          "schoolId": 330330,
+          "studentUniqueId": "1"
+		}
+      }
+    ],
+    "_ext": {
+      "de": {
+        "disciplineActionPlacementTypeDescriptor": "uri://doe.k12.de.us/DisciplineActionPlacementTypeDescriptor#01"
+      }
+    }
+  }

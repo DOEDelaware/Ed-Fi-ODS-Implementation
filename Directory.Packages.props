@@ -7,9 +7,9 @@
     <!-- Database Packages -->
     <PackageVersion Include="dbup-postgresql" Version="6.1.5" />
     <PackageVersion Include="dbup-sqlserver" Version="6.0.16" />
-    <PackageVersion Include="EdFi.Suite3.Ods.Extensions.TPDM.Core.1.1.0.Standard.5.2.0" Version="7.3.20018" />
-    <PackageVersion Include="EdFi.Suite3.Ods.Minimal.Template.TPDM.Core.1.1.0.Standard.5.2.0" Version="7.3.20139" />
-    <PackageVersion Include="EdFi.Suite3.Ods.Populated.Template.TPDM.Core.1.1.0.Standard.5.2.0" Version="7.3.20017" />
+    <PackageVersion Include="EdFi.Suite3.Ods.Extensions.TPDM.Core.1.1.0.Standard.5.2.0" Version="7.3.20033" />
+    <PackageVersion Include="EdFi.Suite3.Ods.Minimal.Template.TPDM.Core.1.1.0.Standard.5.2.0" Version="7.3.20157" />
+    <PackageVersion Include="EdFi.Suite3.Ods.Populated.Template.TPDM.Core.1.1.0.Standard.5.2.0" Version="7.3.20035" />
     <PackageVersion Include="EdFi.Suite3.ProjectTemplates.Installer" Version="7.3.20097" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.2" />

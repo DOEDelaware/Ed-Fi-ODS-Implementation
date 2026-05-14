@@ -1,0 +1,24 @@
+ {
+    "beginDate": "2026-02-17",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "programReference": {
+      "educationOrganizationId": 33,
+      "programName": "Homeless",
+      "programTypeDescriptor": "uri://doe.k12.de.us/ProgramTypeDescriptor#Homeless"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "homelessPrimaryNighttimeResidenceDescriptor": "uri://doe.k12.de.us/HomelessPrimaryNighttimeResidenceDescriptor#D",
+    "homelessProgramServices": [
+      {
+        "homelessProgramServiceDescriptor": "uri://doe.k12.de.us/HomelessProgramServiceDescriptor#1",
+        "primaryIndicator": true,
+        "serviceBeginDate": "2026-02-17",
+        "serviceEndDate": "2026-02-17"
+      }
+    ],
+    "homelessUnaccompaniedYouth": true
+  }

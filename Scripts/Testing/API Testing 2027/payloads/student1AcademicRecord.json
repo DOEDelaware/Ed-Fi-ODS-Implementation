@@ -1,0 +1,19 @@
+  {
+    "termDescriptor": "uri://doe.k12.de.us/TermDescriptor#Fall Semester",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "schoolYearTypeReference": {
+      "schoolYear": 2026
+    },
+    "studentReference": {
+      "studentUniqueId": 1
+    },
+      "cumulativeAttemptedCreditConversion": 9999999.99,
+    "cumulativeAttemptedCredits": 999999.999,
+    "cumulativeAttemptedCreditTypeDescriptor": "uri://doe.k12.de.us/CreditTypeDescriptor#AB",
+    "cumulativeEarnedCreditConversion": 9999999.99,
+    "cumulativeEarnedCredits": 999999.999,
+    "cumulativeEarnedCreditTypeDescriptor": "uri://doe.k12.de.us/CreditTypeDescriptor#AB"
+  
+  }

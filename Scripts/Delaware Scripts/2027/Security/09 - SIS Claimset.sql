@@ -5,8 +5,8 @@
   --RosterServer
   --DEAssessments
   --6.1
-Use EdFi_Delaware_Security
-go
+--Use EdFi_Delaware_Security
+--go
 
 --select * from ClaimSets
 

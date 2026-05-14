@@ -1,0 +1,22 @@
+  {
+    "contactReference": {
+      "contactUniqueId": "1"
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "contactPriority": 1,
+    "contactRestrictions": "string",
+    "emergencyContactStatus": true,
+    "legalGuardian": true,
+    "livesWith": true,
+    "primaryContactStatus": true,
+    "relationDescriptor": "uri://doe.k12.de.us/RelationDescriptor#F",
+    "_ext": {
+      "de": {
+        "localEducationAgencyReference": {
+          "localEducationAgencyId": 33
+          }
+        }
+      }
+  }

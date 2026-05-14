@@ -1,0 +1,35 @@
+  {
+    "academicSubjects": [
+      {
+        "academicSubjectDescriptor": "uri://doe.k12.de.us/AcademicSubjectDescriptor#ELA"
+      }
+    ],
+    "gradeLevels": [
+      {
+        "gradeLevelDescriptor": "uri://doe.k12.de.us/GradeLevelDescriptor#10"
+      }
+    ],
+    "learningStandardId": "1",
+	"namespace": "uri://infinitecampus.com",
+	"description": "string",
+	"contentStandard": {
+      "publicationStatusDescriptor": "uri://doe.k12.de.us/publicationStatusDescriptor#01",
+      "beginDate": "2026-02-18",
+      "endDate": "2026-02-18",
+      "publicationDate": "2026-02-18",
+      "publicationYear": 2026,
+      "title": "string",
+      "uri": "string",
+      "version": "string",
+      "mandatingEducationOrganizationReference": {
+        "educationOrganizationId": 33
+      },
+      "authors": [
+        {
+          "author": "string"
+        }
+      ]
+    }
+  }
+  
+  

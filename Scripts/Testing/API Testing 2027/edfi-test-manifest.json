@@ -1,0 +1,18 @@
+ {
+  "items": [   
+  	  {
+		  "name": "student1AssessmentRegistration",
+		  "resourcePath": "ed-fi/studentassessmentRegistrations",
+		  "payloadFiles": [
+			"payloads/student1AssessmentRegistration.json"
+		  ],
+		  "verify": {
+			"enabled": true,
+			"expect": {
+					"studentSchoolAssociationReference.studentUniqueId": 1,
+					"testingEducationOrganizationReference.educationOrganizationId": 330330
+			}
+		  }
+	  }
+]
+}

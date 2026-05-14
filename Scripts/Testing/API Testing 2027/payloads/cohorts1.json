@@ -1,0 +1,7 @@
+  {
+    "cohortIdentifier": "cohort1",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+	 "cohortTypeDescriptor": "uri://doe.k12.de.us/CohortTypeDescriptor#ST"
+  }

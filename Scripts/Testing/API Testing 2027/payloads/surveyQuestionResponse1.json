@@ -1,0 +1,19 @@
+ {
+    "surveyQuestionReference": {
+            "namespace": "uri://infinitecampus.com",
+      "questionCode": "STR 1",
+      "surveyIdentifier": "Indicator13-33" 
+    },
+    "surveyResponseReference": {
+            "namespace": "uri://infinitecampus.com",
+      "surveyIdentifier": "Indicator13-33",
+      "surveyResponseIdentifier": "sri1"
+    },
+    "comment": "string",
+    "values": [
+      {
+       "surveyQuestionResponseValueIdentifier": 1,
+        "textResponse": "Yes"
+      }
+    ]
+  }

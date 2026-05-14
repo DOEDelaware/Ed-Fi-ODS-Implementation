@@ -1,0 +1,12 @@
+{
+    "surveyResponseIdentifier": "sri1",
+    "studentReference": {
+      "studentUniqueId": "1"
+    },
+    "surveyReference": {
+      "namespace": "uri://infinitecampus.com",
+      "surveyIdentifier": "Indicator13-33"
+    },
+
+    "responseDate": "2026-02-19"
+  }

@@ -1,0 +1,11 @@
+- Generated Claimsets off of Documentation
+- Need to put overrides in SIS and DCD
+- Query below specificies all endpoints for a claimset
+    - use to generate test manifests
+    - can ask codex is can do dependency, but probably have to modify
+- Update DESIS manually for overrides, run on new fresh security
+    - create vendor, etc, apiclient
+    - run current test script
+- repeat with DESIS
+    - create test script
+- create all over manifest, fix dependencies
