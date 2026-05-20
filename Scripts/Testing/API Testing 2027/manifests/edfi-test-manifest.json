@@ -4,7 +4,7 @@
 		  "name": "student1AssessmentRegistration",
 		  "resourcePath": "ed-fi/studentassessmentRegistrations",
 		  "payloadFiles": [
-			"payloads/student1AssessmentRegistration.json"
+			"../payloads/student1AssessmentRegistration.json"
 		  ],
 		  "verify": {
 			"enabled": true,

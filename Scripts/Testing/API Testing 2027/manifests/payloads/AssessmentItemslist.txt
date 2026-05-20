@@ -1,0 +1,240 @@
+[
+    {
+        "id": "6ed9e7203a4748b688bff2381a5a5921",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-20569",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379259599506",
+        "_lastModifiedDate": "2025-10-22T13:21:23.2211602Z"
+    },
+    {
+        "id": "7051eea9ee8d4d638d1b5f5fd7a35eb2",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-29321",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379260008770",
+        "_lastModifiedDate": "2025-10-22T13:21:23.2620866Z"
+    },
+    {
+        "id": "c94267c592f14c0a94f5d5c88acf5c76",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-32196",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379260344077",
+        "_lastModifiedDate": "2025-10-22T13:21:23.2956173Z"
+    },
+    {
+        "id": "2981cfa249034b4cbd66c66f6878b465",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-32214",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379260688206",
+        "_lastModifiedDate": "2025-10-22T13:21:23.3300302Z"
+    },
+    {
+        "id": "92b52562adc94263a61c06d5e88a815a",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-32254",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379261174316",
+        "_lastModifiedDate": "2025-10-22T13:21:23.3786412Z"
+    },
+    {
+        "id": "485f1de3d081463eb78924e06ade3261",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-33293",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379261578337",
+        "_lastModifiedDate": "2025-10-22T13:21:23.4190433Z"
+    },
+    {
+        "id": "3c929d6d216d42d1a1ffb62b5f46826c",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-33703",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379261938808",
+        "_lastModifiedDate": "2025-10-22T13:21:23.4550904Z"
+    },
+    {
+        "id": "adce1041e0ef43d3b0952388bfae4229",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-35109",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379262308037",
+        "_lastModifiedDate": "2025-10-22T13:21:23.4920133Z"
+    },
+    {
+        "id": "7843dd6159664113a6a867ad70034c81",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-36357",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379262645060",
+        "_lastModifiedDate": "2025-10-22T13:21:23.5257156Z"
+    },
+    {
+        "id": "f697164b4a524868b8da25668f9bad32",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-36361",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379263297467",
+        "_lastModifiedDate": "2025-10-22T13:21:23.5909563Z"
+    },
+    {
+        "id": "b8ce90971a53446495afd5dedb58c5f9",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-37123",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379263635415",
+        "_lastModifiedDate": "2025-10-22T13:21:23.6247511Z"
+    },
+    {
+        "id": "78ba28134e3b43ac91abdb24e113d1a3",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-45960",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379264033763",
+        "_lastModifiedDate": "2025-10-22T13:21:23.6645859Z"
+    },
+    {
+        "id": "d950a8c814254011ac9bd94e34129698",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-45966",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379264410301",
+        "_lastModifiedDate": "2025-10-22T13:21:23.7022397Z"
+    },
+    {
+        "id": "e315bf2bbf4346c59b8d04485c33fb7a",
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "identificationCode": "10200-58639",
+        "maxRawScore": 1.00000,
+        "learningStandards": [],
+        "possibleResponses": [],
+        "_etag": "5250653379264837927",
+        "_lastModifiedDate": "2025-10-22T13:21:23.7450023Z"
+    }
+]

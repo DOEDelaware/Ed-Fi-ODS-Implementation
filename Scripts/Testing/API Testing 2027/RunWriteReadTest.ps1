@@ -265,7 +265,7 @@ foreach ($item in $manifest.items) {
                             $verified = $false
                             $notes += "Mismatch $k (expected=$expected actual=$actual); "
                         }
-                    }
+                    }    
                 }
             }
             else #not validating

@@ -1,21 +1,334 @@
 {
   "items": [
-    {
-      "name": "DEAssessments - studentAssessment",
-      "resourcePath": "ed-fi/studentAssessments",
-      "payloadFiles": [			"payloads/studentAssessment.json"],
+
+     {
+      "name": "DEAssessments - AssessmentItemResultDescriptor 0",
+      "resourcePath": "ed-fi/AssessmentItemResultDescriptors",
+      "payloadFiles": [			"payloads/AssessmentItemResultDescriptor1.json"],
       "verify": {
-        "enabled": false,
-        "expect": {}
+        "enabled": true,
+        "expect": {
+          "codeValue": "0"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - AssessmentItemResultDescriptor 1",
+      "resourcePath": "ed-fi/AssessmentItemResultDescriptors",
+      "payloadFiles": [			"payloads/AssessmentItemResultDescriptor2.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "1"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - ResultDatatypeTypeDescriptor string",
+      "resourcePath": "ed-fi/ResultDatatypeTypeDescriptors",
+      "payloadFiles": [			"payloads/ResultDatatypeTypeDescriptor1.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "string"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - ResultDatatypeTypeDescriptor number",
+      "resourcePath": "ed-fi/ResultDatatypeTypeDescriptors",
+      "payloadFiles": [			"payloads/ResultDatatypeTypeDescriptor2.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "number"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - AssessmentReportingMethodDescriptor Attempted",
+      "resourcePath": "ed-fi/AssessmentReportingMethodDescriptors",
+      "payloadFiles": [			"payloads/AssessmentReportingMethodDescriptor1.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "Attempted"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - AssessmentReportingMethodDescriptor ScaleScore",
+      "resourcePath": "ed-fi/AssessmentReportingMethodDescriptors",
+      "payloadFiles": [			"payloads/AssessmentReportingMethodDescriptor2.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "ScaleScore"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - AssessmentReportingMethodDescriptor ScaleScore_se",
+      "resourcePath": "ed-fi/AssessmentReportingMethodDescriptors",
+      "payloadFiles": [			"payloads/AssessmentReportingMethodDescriptor3.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "ScaleScore_se"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - AssessmentReportingMethodDescriptor ThetaScore",
+      "resourcePath": "ed-fi/AssessmentReportingMethodDescriptors",
+      "payloadFiles": [			"payloads/AssessmentReportingMethodDescriptor4.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "ThetaScore"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - AssessmentReportingMethodDescriptor ThetaScore_se",
+      "resourcePath": "ed-fi/AssessmentReportingMethodDescriptors",
+      "payloadFiles": [			"payloads/AssessmentReportingMethodDescriptor5.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "ThetaScore_se"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - PerformanceLevelDescriptor 1",
+      "resourcePath": "ed-fi/PerformanceLevelDescriptors",
+      "payloadFiles": [			"payloads/PerformanceLevelDescriptor.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "1"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - AssessmentReportingMethodDescriptor PerformanceLevel",
+      "resourcePath": "ed-fi/AssessmentReportingMethodDescriptors",
+      "payloadFiles": [			"payloads/AssessmentReportingMethodDescriptor6.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "PerformanceLevel"
+        }
+      }
+    },
+     {
+      "name": "DEAssessments - ResponseIndicatorDescriptor",
+      "resourcePath": "ed-fi/ResponseIndicatorDescriptors",
+      "payloadFiles": [			"payloads/ResponseIndicatorDescriptor.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "student responded"
+        }
+      }
+    }, 
+      {
+      "name": "DEAssessments - GradeLevelDescriptor",
+      "resourcePath": "ed-fi/GradeLevelDescriptors",
+      "payloadFiles": [			"payloads/GradeLevelDescriptorforAssessments.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "06"
+        }
+      }
+    }, 
+      {
+      "name": "DEAssessments - AcademicSubjectDescriptor",
+      "resourcePath": "ed-fi/AcademicSubjectDescriptors",
+      "payloadFiles": [			"payloads/AcademicSubjectDescriptorforAssessment.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "codeValue": "ELA"
+        }
+      }
+    },       
+    {
+      "name": "DEAssessments - AssessmentItem 1",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 1.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-20569"
+        }
       }
     },
     {
-      "name": "DEAssessments - StudentAssessmentScoreResult",
-      "resourcePath": "ed-fi/StudentAssessmentScoreResult",
-      "payloadFiles": ["payloads/StudentAssessmentScoreResult.json"],
+      "name": "DEAssessments - AssessmentItem 2",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 2.json"],
       "verify": {
-        "enabled": false,
-        "expect": {}
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-29321"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 3",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 3.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-32196"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 4",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 4.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-32214"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 5",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 5.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-32254"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 6",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 6.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-33293"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 7",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 7.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-33703"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 8",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 8.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-35109"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 9",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 9.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-36357"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 10",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 10.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-36361"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 11",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 11.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-37123"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 12",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 12.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-45960"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 13",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 13.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-45966"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - AssessmentItem 14",
+      "resourcePath": "ed-fi/AssessmentItems",
+      "payloadFiles": [			"payloads/AssessmentItem 14.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "identificationCode": "10200-58639"
+        }
+      }
+    },
+    {
+      "name": "DEAssessments - assessment",
+      "resourcePath": "ed-fi/assessments",
+      "payloadFiles": [			"payloads/Assessements1.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164"
+        }
+      }
+    },    
+    {
+      "name": "DEAssessments - studentAssessment",
+      "resourcePath": "ed-fi/studentAssessments",
+      "payloadFiles": [			"payloads/studentAssessments1.json"],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "studentAssessmentIdentifier": "99ba34a0-5a22-4ef3-a84a-69ce1fdcb2d7"
+        }
       }
     }
     ]

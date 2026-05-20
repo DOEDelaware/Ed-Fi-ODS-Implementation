@@ -1,0 +1,27 @@
+    {
+        "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+        "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+        "adaptiveAssessment": false,
+        "assessmentFamily": "SBAC-GEN-INTR-IAB-ELA",
+        "assessmentTitle": "(SBAC)SBAC-GEN-INTR-IAB-ELA-Editing-6-Winter-2025-2026",
+        "assessmentVersion": 85473,
+        "revisionDate": "2025-05-16",
+        "academicSubjects": [
+            {
+                "academicSubjectDescriptor": "uri://cambiumassessment.com/AcademicSubjectDescriptor#ELA"
+            }
+        ],
+        "assessedGradeLevels": [
+            {
+                "gradeLevelDescriptor": "uri://cambiumassessment.com/GradeLevelDescriptor#06"
+            }
+        ],
+        "identificationCodes": [],
+        "languages": [],
+        "performanceLevels": [],
+        "periods": [],
+        "platformTypes": [],
+        "programs": [],
+        "scores": [],
+        "sections": []
+    }

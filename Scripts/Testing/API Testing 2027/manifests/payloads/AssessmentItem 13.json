@@ -1,0 +1,14 @@
+{
+    "assessmentReference": {
+        "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+        "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+        "link": {
+            "rel": "Assessment",
+            "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+        }
+    },
+    "identificationCode": "10200-45966",
+    "maxRawScore": 1.00000,
+    "learningStandards": [],
+    "possibleResponses": []
+}

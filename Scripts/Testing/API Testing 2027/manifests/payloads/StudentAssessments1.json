@@ -1,0 +1,277 @@
+   {
+        "assessmentReference": {
+            "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+            "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+            "link": {
+                "rel": "Assessment",
+                "href": "/ed-fi/assessments/6950ba9a1ac1498d953dec8f7cb5fb40"
+            }
+        },
+        "schoolYearTypeReference": {
+            "schoolYear": 2026,
+            "link": {
+                "rel": "SchoolYearType",
+                "href": "/ed-fi/schoolYearTypes/09202dbd1e5b460abb9dea75214a0277"
+            }
+        },
+        "studentReference": {
+            "studentUniqueId": "1",
+            "link": {
+                "rel": "Student",
+                "href": "/ed-fi/students/94561cdfe5924c1a805ad2d387457e4b"
+            }
+        },
+        "studentAssessmentIdentifier": "99ba34a0-5a22-4ef3-a84a-69ce1fdcb2d7",
+        "administrationDate": "2025-09-23T22:01:14.163Z",
+        "administrationEndDate": "2025-09-23T22:02:29.367Z",
+        "assessedMinutes": 1,
+        "serialNumber": "2010088",
+        "accommodations": [],
+        "items": [
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-32214",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/2981cfa249034b4cbd66c66f6878b465"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 3,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-32254",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/92b52562adc94263a61c06d5e88a815a"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 5,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-33293",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/485f1de3d081463eb78924e06ade3261"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 4,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-33703",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/3c929d6d216d42d1a1ffb62b5f46826c"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#1",
+                "itemNumber": 13,
+                "rawScoreResult": 1.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-35109",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/adce1041e0ef43d3b0952388bfae4229"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 12,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-36357",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/7843dd6159664113a6a867ad70034c81"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 9,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-36361",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/f697164b4a524868b8da25668f9bad32"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#1",
+                "itemNumber": 2,
+                "rawScoreResult": 1.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-37123",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/b8ce90971a53446495afd5dedb58c5f9"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 14,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-45960",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/78ba28134e3b43ac91abdb24e113d1a3"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 1,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-45966",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/d950a8c814254011ac9bd94e34129698"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 6,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-58639",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/e315bf2bbf4346c59b8d04485c33fb7a"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 7,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-32196",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/c94267c592f14c0a94f5d5c88acf5c76"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 11,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-29321",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/7051eea9ee8d4d638d1b5f5fd7a35eb2"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 8,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            },
+            {
+                "assessmentItemReference": {
+                    "assessmentIdentifier": "07f3e9b3-8eeb-4ad0-bbec-a39c5883f164",
+                    "namespace": "uri://cambiumassessment.com/Assessment/Assessment.xml",
+                    "identificationCode": "10200-20569",
+                    "link": {
+                        "rel": "AssessmentItem",
+                        "href": "/ed-fi/assessmentItems/6ed9e7203a4748b688bff2381a5a5921"
+                    }
+                },
+                "assessmentItemResultDescriptor": "uri://cambiumassessment.com/AssessmentItemResultDescriptor#0",
+                "itemNumber": 10,
+                "rawScoreResult": 0.00000,
+                "responseIndicatorDescriptor": "uri://cambiumassessment.com/ResponseIndicatorDescriptor#student responded"
+            }
+        ],
+        "performanceLevels": [
+            {
+                "assessmentReportingMethodDescriptor": "uri://cambiumassessment.com/AssessmentReportingMethodDescriptor#PerformanceLevel",
+                "performanceLevelDescriptor": "uri://cambiumassessment.com/PerformanceLevelDescriptor#1",
+                "performanceLevelIndicatorName": "Overall"
+            }
+        ],
+        "scoreResults": [
+            {
+                "assessmentReportingMethodDescriptor": "uri://cambiumassessment.com/AssessmentReportingMethodDescriptor#Attempted",
+                "result": "Y",
+                "resultDatatypeTypeDescriptor": "uri://cambiumassessment.com/ResultDatatypeTypeDescriptor#string"
+            },
+            {
+                "assessmentReportingMethodDescriptor": "uri://cambiumassessment.com/AssessmentReportingMethodDescriptor#ScaleScore",
+                "result": "2330.17356898397",
+                "resultDatatypeTypeDescriptor": "uri://cambiumassessment.com/ResultDatatypeTypeDescriptor#number"
+            },
+            {
+                "assessmentReportingMethodDescriptor": "uri://cambiumassessment.com/AssessmentReportingMethodDescriptor#ScaleScore_se",
+                "result": "82.03495742694273",
+                "resultDatatypeTypeDescriptor": "uri://cambiumassessment.com/ResultDatatypeTypeDescriptor#number"
+            },
+            {
+                "assessmentReportingMethodDescriptor": "uri://cambiumassessment.com/AssessmentReportingMethodDescriptor#ThetaScore",
+                "result": "-2.0749001283919535",
+                "resultDatatypeTypeDescriptor": "uri://cambiumassessment.com/ResultDatatypeTypeDescriptor#number"
+            },
+            {
+                "assessmentReportingMethodDescriptor": "uri://cambiumassessment.com/AssessmentReportingMethodDescriptor#ThetaScore_se",
+                "result": "0.9561183849294025",
+                "resultDatatypeTypeDescriptor": "uri://cambiumassessment.com/ResultDatatypeTypeDescriptor#number"
+            }
+        ],
+        "studentObjectiveAssessments": []
+    }
