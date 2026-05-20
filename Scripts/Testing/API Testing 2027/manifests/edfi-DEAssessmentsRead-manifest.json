@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "name": "DEAssessments - assessment",
+      "resourcePath": "ed-fi/assessments",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - assessmentAdministration",
+      "resourcePath": "ed-fi/assessmentAdministrations",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - assessmentItem",
+      "resourcePath": "ed-fi/assessmentItems",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - schools",
+      "resourcePath": "ed-fi/schools",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - LEAs",
+      "resourcePath": "ed-fi/LocalEducationAgencies",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },    
+    {
+      "name": "DEAssessments - objectiveAssessment",
+      "resourcePath": "ed-fi/objectiveAssessments",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - students",
+      "resourcePath": "ed-fi/students",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - studentAssessment",
+      "resourcePath": "ed-fi/studentAssessments",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - studentAssessmentRegistration",
+      "resourcePath": "ed-fi/studentAssessmentRegistrations",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - studentEducationOrganizationAssociation",
+      "resourcePath": "ed-fi/studentEducationOrganizationAssociations",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - studentEducationOrganizationResponsibilityAssociation",
+      "resourcePath": "ed-fi/studentEducationOrganizationResponsibilityAssociations",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    }
+  ]
+}

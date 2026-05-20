@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "DEAssessments - studentAssessment",
+      "resourcePath": "ed-fi/studentAssessments",
+      "payloadFiles": [			"payloads/studentAssessment.json"],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "DEAssessments - StudentAssessmentScoreResult",
+      "resourcePath": "ed-fi/StudentAssessmentScoreResult",
+      "payloadFiles": ["payloads/StudentAssessmentScoreResult.json"],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    }
+    ]
+}

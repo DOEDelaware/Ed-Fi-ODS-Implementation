@@ -1,20 +1,20 @@
-insert into Vendors(VendorName) values ('DCD')
+insert into Vendors(VendorName) values ('Cambium Assessments')
 go
 
 insert into VendorNamespacePrefixes (NamespacePrefix,Vendor_VendorId) 
-select 'uri://doe.k12.de.us',VendorId from Vendors where VendorName='DCD'
+select 'uri://CambiumAssessment.com',VendorId from Vendors where VendorName='Cambium Assessments'
 go
 
 insert into Applications (ApplicationName, Vendor_VendorId,ClaimSetName,OperationalContextUri)
-select 'DCD ETLs',VendorId, 'DOEDCDDataPopulation','uri://ed-fi-api-host.org' from Vendors where VendorName='DCD'
+select 'Cambium Assessments',VendorId, 'DEAssessments','uri://ed-fi-api-host.org' from Vendors where VendorName='Cambium Assessments'
 go
 
 insert into Users (Email, FullName, Vendor_VendorId)
-select 'test@test.com', 'DCD', VendorId from Vendors where VendorName='DCD'
+select 'cambium@test.com', 'CAI', VendorId from Vendors where VendorName='Cambium Assessments'
 go
 
 declare @appId int
-select @appId=ApplicationId from Applications where ApplicationName='DCD ETLs'
+select @appId=ApplicationId from Applications where ApplicationName='Cambium Assessments'
 insert into  ApplicationEducationOrganizations(EducationOrganizationId, Application_ApplicationId)
 values (5,@appId),
 (9,@appId),

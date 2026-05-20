@@ -10,8 +10,10 @@
         5 = ReadChanges
 */
 
-Use EdFi_Delaware_Security_73
+Use EdFi_Delaware_Security_7x
 go
+
+
 
 insert into ClaimSets (ClaimSetName, IsEdfiPreset, ForApplicationUseOnly)
 values ('DOEDCDDataPopulation', 0, 1)
