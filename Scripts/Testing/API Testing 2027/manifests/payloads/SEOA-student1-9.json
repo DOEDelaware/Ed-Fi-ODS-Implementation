@@ -1,0 +1,89 @@
+ {
+    "educationOrganizationReference": {
+      "educationOrganizationId": 33
+    },
+    "studentReference": {
+      "studentUniqueId": 6
+    },
+    "addresses": [
+      {
+        "addressTypeDescriptor": "uri://doe.k12.de.us/AddressTypeDescriptor#M",
+        "stateAbbreviationDescriptor": "uri://doe.k12.de.us/StateAbbreviationDescriptor#DE",
+        "city": "Wilimington",
+        "postalCode": "19808",
+        "streetNumberName": "2020 Whitman Drive",
+        "_ext": {
+          "de": {
+            "characteristics": [
+              {
+                "addressCharacteristicDescriptor": "uri://doe.k12.de.us/AddressCharacteristicDescriptor#01"			
+              },
+              {
+                "addressCharacteristicDescriptor": "uri://doe.k12.de.us/AddressCharacteristicDescriptor#02"			
+              }			  
+            ]
+          }
+        }
+      }
+    ],
+    "studentIndicators": [
+      {
+        "indicatorName": "Address",
+        "indicator": "OptOut",
+        "indicatorGroup": "FerpaDataOptOutAreas"
+      },
+      {
+        "indicatorName": "Name",
+        "indicator": "OptOut",
+        "indicatorGroup": "FerpaDataOptOutAreas"
+      },
+      {
+        "indicatorName": "Phone",
+        "indicator": "OptOut",
+        "indicatorGroup": "FerpaDataOptOutAreas"
+      },
+      {
+        "indicatorName": "Photo",
+        "indicator": "OptOut",
+        "indicatorGroup": "FerpaDataOptOutAreas"
+      },
+	  {
+        "indicatorName": "DirectoryInformation",
+        "indicator": "NA",
+        "indicatorGroup": "FerpaGrantQuestions"
+      },
+	  {
+        "indicatorName": "Military",
+        "indicator": "NA",
+        "indicatorGroup": "FerpaGrantQuestions"
+      },
+	  {
+        "indicatorName": "DE College",
+        "indicator": "NA",
+        "indicatorGroup": "FerpaGrantQuestions"
+      }
+    ],	
+    "races": [
+      {
+        "raceDescriptor": "uri://doe.k12.de.us/raceDescriptor#2"
+      }
+    ],
+    "sexDescriptor": "uri://doe.k12.de.us/sexDescriptor#F",
+    "_ext": {
+      "de": {
+        "schoolYearTypeReference": {
+          "schoolYear": 2026
+        },
+        "multiliteracies": [
+          {
+            "languageDescriptor": "uri://doe.k12.de.us/LanguageDescriptor#aar",
+            "multiliteracyCertificateCategoryDescriptor": "uri://doe.k12.de.us/MultiliteracyCertificateCategoryDescriptor#Diamond",
+            "assessmentTitle": "string",
+            "certificateIssueConfirm": true,
+            "certificateReviewDate": "2026-02-20",
+            "dateEarned": "2026-02-20"
+          }
+        ]
+      }
+    }
+  }

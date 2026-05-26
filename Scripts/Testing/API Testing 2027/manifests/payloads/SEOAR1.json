@@ -1,0 +1,10 @@
+  {
+    "beginDate": "2026-05-21",
+    "responsibilityDescriptor": "uri://doe.k12.de.us/ResponsibilityDescriptor#Discipline",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 9
+    },
+    "studentReference": {
+      "studentUniqueId": "1"
+    }
+  }

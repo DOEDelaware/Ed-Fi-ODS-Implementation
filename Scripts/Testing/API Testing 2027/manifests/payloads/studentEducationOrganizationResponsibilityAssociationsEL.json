@@ -1,0 +1,12 @@
+    
+  {
+    "beginDate": "2026-05-14",
+    "responsibilityDescriptor": "uri://doe.k12.de.us/ResponsibilityDescriptor#ProgramEnroll",
+    "educationOrganizationReference": {
+      "educationOrganizationId": 9
+    },
+    "studentReference": {
+      "studentUniqueId": "6"
+    }
+  }	
+ 

@@ -1,0 +1,192 @@
+{
+  "items": [
+    {
+      "name": "RosterServerRead - schools",
+      "resourcePath": "ed-fi/schools",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - localEducationAgencies",
+      "resourcePath": "ed-fi/localEducationAgencies",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - sessions",
+      "resourcePath": "ed-fi/sessions",
+      "payloadFiles": [
+        "payloads/sessions-session1-330330.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - schoolYearTypes",
+      "resourcePath": "ed-fi/schoolYearTypes",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - courseOfferings",
+      "resourcePath": "ed-fi/courseOfferings",
+      "payloadFiles": [
+        "payloads/CourseOffereing-CourseOffereing1-330330.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - courses",
+      "resourcePath": "ed-fi/courses",
+      "payloadFiles": [
+        "payloads/Course1-330330.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - sections",
+      "resourcePath": "ed-fi/sections",
+      "payloadFiles": [
+        "payloads/sections-section1-330330.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - studentSectionAssociations",
+      "resourcePath": "ed-fi/studentSectionAssociations",
+      "payloadFiles": [
+        "payloads/student1Section1.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - studentSchoolAssociations",
+      "resourcePath": "ed-fi/studentSchoolAssociations",
+      "payloadFiles": [
+        "payloads/ssa-student1-330330.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - students",
+      "resourcePath": "ed-fi/students",
+      "payloadFiles": [
+        "payloads/student-student1-330330.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - studentEducationOrganizationAssociations",
+      "resourcePath": "ed-fi/studentEducationOrganizationAssociations",
+      "payloadFiles": [
+        "payloads/SEOA-student1-330330.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - studentContactAssociations",
+      "resourcePath": "ed-fi/studentContactAssociations",
+      "payloadFiles": [
+        "payloads/student1contact1.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - contacts",
+      "resourcePath": "ed-fi/contacts",
+      "payloadFiles": [
+        "payloads/contact1.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - staffs",
+      "resourcePath": "ed-fi/staffs",
+      "payloadFiles": [
+        "payloads/staff1.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - staffEducationOrganizationAssignmentAssociations",
+      "resourcePath": "ed-fi/staffEducationOrganizationAssignmentAssociations",
+      "payloadFiles": [
+        "payloads/staffEOAssignAssoc1.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - staffEducationOrganizationContactAssociations",
+      "resourcePath": "ed-fi/staffEducationOrganizationContactAssociations",
+      "payloadFiles": [
+        "payloads/StaffEOContactAssoc1.json"
+      ],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - sexDescriptors",
+      "resourcePath": "ed-fi/sexDescriptors",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    },
+    {
+      "name": "RosterServerRead - raceDescriptors",
+      "resourcePath": "ed-fi/raceDescriptors",
+      "payloadFiles": [],
+      "verify": {
+        "enabled": false,
+        "expect": {}
+      }
+    }
+  ]
+}

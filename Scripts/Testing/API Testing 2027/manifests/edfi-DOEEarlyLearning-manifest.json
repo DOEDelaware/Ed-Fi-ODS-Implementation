@@ -1,0 +1,66 @@
+{
+  "items": [
+    {
+      "name": "DOEEarlyLearning - student",
+      "resourcePath": "ed-fi/students",
+      "payloadFiles": [
+        "payloads/student-studentEL.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "studentUniqueId": "6",
+          "firstName": "Mark",
+          "lastSurname": "Smith"
+        }
+      }
+    },
+    {
+      "name": "DOEEarlyLearning - studentEducationOrganizationResponsibilityAssociation",
+      "resourcePath": "ed-fi/studentEducationOrganizationResponsibilityAssociations",
+      "payloadFiles": [
+        "payloads/studentEducationOrganizationResponsibilityAssociationsEL.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "beginDate": "2026-05-14",
+          "responsibilityDescriptor": "uri://doe.k12.de.us/ResponsibilityDescriptor#ProgramEnroll",
+          "educationOrganizationReference.educationOrganizationId": 9,
+          "studentReference.studentUniqueId": "6"
+        }
+      }
+    },
+    {
+      "name": "DOEEarlyLearning - studentEarlyChildhoodProgramAssociation",
+      "resourcePath": "de/studentEarlyChildhoodProgramAssociations",
+      "payloadFiles": [
+        "payloads/student1EarlyChildhood-EL.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "beginDate": "2026-02-17",
+          "educationOrganizationReference.educationOrganizationId": 9,
+          "programReference.programName": "Early Childhood",
+          "studentReference.studentUniqueId": "6"
+        }
+      }
+    },
+    {
+      "name": "DOEEarlyLearning - studentEducationOrganizationAssociation",
+      "resourcePath": "ed-fi/studentEducationOrganizationAssociations",
+      "payloadFiles": [
+        "payloads/SEOA-student1-9.json"
+      ],
+      "verify": {
+        "enabled": true,
+        "expect": {
+          "educationOrganizationReference.educationOrganizationId": 33,
+          "studentReference.studentUniqueId": "6",
+          "sexDescriptor": "uri://doe.k12.de.us/sexDescriptor#F"
+        }
+      }
+    }
+  ]
+}
