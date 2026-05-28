@@ -4,7 +4,7 @@
       "name": "Location - test location 330330",
       "resourcePath": "ed-fi/locations",
       "payloadFiles": [
-        "../payloads/location-330330.json"
+        "/payloads/location-330330.json"
       ],
       "verify": {
         "enabled": true,
@@ -18,7 +18,7 @@
       "name": "class periods - Period 1 330330",
       "resourcePath": "ed-fi/classperiods",
       "payloadFiles": [
-        "../payloads/classperiod-330330.json"
+        "/payloads/classperiod-330330.json"
       ],
       "verify": {
         "enabled": true,
@@ -33,7 +33,7 @@
       "name": "course - Course1 330330",
       "resourcePath": "ed-fi/courses",
       "payloadFiles": [
-        "../payloads/Course1-330330.json"
+        "/payloads/Course1-330330.json"
       ],
       "verify": {
         "enabled": true,
@@ -47,7 +47,7 @@
       "name": "calendar - calendar1 330330",
       "resourcePath": "ed-fi/calendars",
       "payloadFiles": [
-        "../payloads/calendar1-330330.json"
+        "/payloads/calendar1-330330.json"
       ],
       "verify": {
         "enabled": true,
@@ -61,7 +61,7 @@
       "name": "calendardates - calendardate01_01 330330",
       "resourcePath": "ed-fi/calendarDates",
       "payloadFiles": [
-        "../payloads/calendardates01_01-330330.json"
+        "/payloads/calendardates01_01-330330.json"
       ],
       "verify": {
         "enabled": true,
@@ -76,7 +76,7 @@
 		  "name": "gradingPeriod - MP1 330330",
 		  "resourcePath": "ed-fi/gradingPeriods",
 		  "payloadFiles": [
-			"../payloads/gradingPeriod-MP1-330330.json"
+			"/payloads/gradingPeriod-MP1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -91,7 +91,7 @@
 		  "name": "sessions - session1 330330",
 		  "resourcePath": "ed-fi/sessions",
 		  "payloadFiles": [
-			"../payloads/sessions-session1-330330.json"
+			"/payloads/sessions-session1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -105,7 +105,7 @@
 		  "name": "courseOffering - CourseOffering1 330330",
 		  "resourcePath": "ed-fi/courseOfferings",
 		  "payloadFiles": [
-			"../payloads/CourseOffereing-CourseOffereing1-330330.json"
+			"/payloads/CourseOffereing-CourseOffereing1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -118,7 +118,7 @@
 		  "name": "sections - section1 330330",
 		  "resourcePath": "ed-fi/sections",
 		  "payloadFiles": [
-			"../payloads/sections-section1-330330.json"
+			"/payloads/sections-section1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -131,7 +131,7 @@
 		  "name": "people - student1 330330",
 		  "resourcePath": "ed-fi/people",
 		  "payloadFiles": [
-			"../payloads/people-student1-330330.json"
+			"/payloads/people-student1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -147,7 +147,7 @@
 		  "name": "student - student1 330330",
 		  "resourcePath": "ed-fi/students",
 		  "payloadFiles": [
-			"../payloads/student-student1-330330.json"
+			"/payloads/student-student1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": false,
@@ -162,7 +162,7 @@
 		  "name": "studentSchoolAssoc - student1 330330",
 		  "resourcePath": "ed-fi/studentSchoolAssociations",
 		  "payloadFiles": [
-			"../payloads/ssa-student1-330330.json"
+			"/payloads/ssa-student1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -177,7 +177,7 @@
 		  "name": "SEOA - student1 330330",
 		  "resourcePath": "ed-fi/studentEducationOrganizationAssociations",
 		  "payloadFiles": [
-			"../payloads/SEOA-student1-330330.json"
+			"/payloads/SEOA-student1-330330.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -191,7 +191,7 @@
 		  "name": "contact1",
 		  "resourcePath": "ed-fi/contacts",
 		  "payloadFiles": [
-			"../payloads/contact1.json"
+			"/payloads/contact1.json"
 		  ],
 		  "verify": {
 			"enabled": false,
@@ -204,7 +204,7 @@
 		  "name": "student1contact1",
 		  "resourcePath": "ed-fi/studentContactAssociations",
 		  "payloadFiles": [
-			"../payloads/student1contact1.json"
+			"/payloads/student1contact1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -219,7 +219,7 @@
 		  "name": "student1Section1",
 		  "resourcePath": "ed-fi/studentSectionAssociations",
 		  "payloadFiles": [
-			"../payloads/student1Section1.json"
+			"/payloads/student1Section1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -234,7 +234,7 @@
 		  "name": "staff1",
 		  "resourcePath": "ed-fi/staffs",
 		  "payloadFiles": [
-			"../payloads/staff1.json"
+			"/payloads/staff1.json"
 		  ],
 		  "verify": {
 			"enabled": false,
@@ -247,7 +247,7 @@
 		  "name": "staffEOAssignAssoc1",
 		  "resourcePath": "ed-fi/staffEducationOrganizationAssignmentAssociations",
 		  "payloadFiles": [
-			"../payloads/staffEOAssignAssoc1.json"
+			"/payloads/staffEOAssignAssoc1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -264,7 +264,7 @@
 		  "name": "staffSchoolAssociations1",
 		  "resourcePath": "ed-fi/staffSchoolAssociations",
 		  "payloadFiles": [
-			"../payloads/staffSchoolAssociations1.json"
+			"/payloads/staffSchoolAssociations1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -281,7 +281,7 @@
 		  "name": "staff1Section1",
 		  "resourcePath": "ed-fi/staffSectionAssociations",
 		  "payloadFiles": [
-			"../payloads/staff1Section1.json"
+			"/payloads/staff1Section1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -295,7 +295,7 @@
 		  "name": "student1504ProgramAssoc",
 		  "resourcePath": "ed-fi/studentSection504ProgramAssociations",
 		  "payloadFiles": [
-			"../payloads/student1504ProgramAssoc.json"
+			"/payloads/student1504ProgramAssoc.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -312,7 +312,7 @@
 		  "name": "student1HomelessProgramAssociation",
 		  "resourcePath": "ed-fi/studentHomelessProgramAssociations",
 		  "payloadFiles": [
-			"../payloads/student1HomelessProgramAssociation.json"
+			"/payloads/student1HomelessProgramAssociation.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -325,7 +325,7 @@
 		  "name": "student1LanguageInstructionProgramAssoc",
 		  "resourcePath": "ed-fi/studentLanguageInstructionProgramAssociations",
 		  "payloadFiles": [
-			"../payloads/student1LanguageInstructionProgramAssoc.json"
+			"/payloads/student1LanguageInstructionProgramAssoc.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -338,7 +338,7 @@
 		  "name": "cohorts1",
 		  "resourcePath": "ed-fi/cohorts",
 		  "payloadFiles": [
-			"../payloads/cohorts1.json"
+			"/payloads/cohorts1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -352,7 +352,7 @@
 		  "name": "student1cohort1assoc",
 		  "resourcePath": "ed-fi/studentCohortAssociations",
 		  "payloadFiles": [
-			"../payloads/student1cohort1assoc.json"
+			"/payloads/student1cohort1assoc.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -368,7 +368,7 @@
 		  "name": "staff1cohort1assoc",
 		  "resourcePath": "ed-fi/staffCohortAssociations",
 		  "payloadFiles": [
-			"../payloads/staff1cohort1assoc.json"
+			"/payloads/staff1cohort1assoc.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -384,7 +384,7 @@
 		  "name": "student1SchoolAttendanceEvents",
 		  "resourcePath": "ed-fi/studentSchoolAttendanceEvents",
 		  "payloadFiles": [
-			"../payloads/student1SchoolAttendanceEvents.json"
+			"/payloads/student1SchoolAttendanceEvents.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -402,7 +402,7 @@
 		  "resourcePath": "ed-fi/studentSectionAttendanceEvents
 ",
 		  "payloadFiles": [
-			"../payloads/student1SectionAttendanceEvents.json"
+			"/payloads/student1SectionAttendanceEvents.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -416,7 +416,7 @@
 		  "name": "student1grade",
 		  "resourcePath": "ed-fi/grades",
 		  "payloadFiles": [
-			"../payloads/student1grade.json"
+			"/payloads/student1grade.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -433,7 +433,7 @@
 		  "name": "student1AcademicRecord",
 		  "resourcePath": "ed-fi/studentAcademicRecords",
 		  "payloadFiles": [
-			"../payloads/student1AcademicRecord.json"
+			"/payloads/student1AcademicRecord.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -451,7 +451,7 @@
 		  "name": "student1CourseTranscripts",
 		  "resourcePath": "ed-fi/courseTranscripts",
 		  "payloadFiles": [
-			"../payloads/student1CourseTranscripts.json"
+			"/payloads/student1CourseTranscripts.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -466,7 +466,7 @@
 		  "name": "student1AssessmentRegistration",
 		  "resourcePath": "ed-fi/studentassessmentRegistrations",
 		  "payloadFiles": [
-			"../payloads/student1AssessmentRegistration.json"
+			"/payloads/student1AssessmentRegistration.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -480,7 +480,7 @@
 		  "name": "publicationStatusDescriptors1",
 		  "resourcePath": "ed-fi/publicationStatusDescriptors",
 		  "payloadFiles": [
-			"../payloads/publicationStatusDescriptors1.json"
+			"/payloads/publicationStatusDescriptors1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -493,7 +493,7 @@
 		  "name": "LearningStandards1",
 		  "resourcePath": "ed-fi/LearningStandards",
 		  "payloadFiles": [
-			"../payloads/LearningStandards1.json"
+			"/payloads/LearningStandards1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -506,7 +506,7 @@
 		  "name": "competencyObjective1",
 		  "resourcePath": "ed-fi/competencyObjectives",
 		  "payloadFiles": [
-			"../payloads/competencyObjective1.json"
+			"/payloads/competencyObjective1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -520,7 +520,7 @@
 		  "name": "bellSchedules1",
 		  "resourcePath": "ed-fi/bellSchedules",
 		  "payloadFiles": [
-			"../payloads/bellSchedules1.json"
+			"/payloads/bellSchedules1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -533,7 +533,7 @@
 		  "name": "StaffEOContactAssoc1",
 		  "resourcePath": "ed-fi/staffEducationOrganizationContactAssociations",
 		  "payloadFiles": [
-			"../payloads/StaffEOContactAssoc1.json"
+			"/payloads/StaffEOContactAssoc1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -547,7 +547,7 @@
 		  "name": "student1ProgramAssocition",
 		  "resourcePath": "ed-fi/studentProgramAssociations",
 		  "payloadFiles": [
-			"../payloads/student1ProgramAssociation.json"
+			"/payloads/student1ProgramAssociation.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -560,7 +560,7 @@
 		  "name": "student1CTEProgram",
 		  "resourcePath": "ed-fi/studentCTEProgramAssociations",
 		  "payloadFiles": [
-			"../payloads/student1CTEProgram.json"
+			"/payloads/student1CTEProgram.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -576,7 +576,7 @@
 		  "name": "student1SpecEd",
 		  "resourcePath": "ed-fi/studentSpecialEducationProgramAssociations",
 		  "payloadFiles": [
-			"../payloads/student1SpecEd.json"
+			"/payloads/student1SpecEd.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -613,7 +613,7 @@
 		  "name": "disciplineIncident1",
 		  "resourcePath": "ed-fi/disciplineIncidents",
 		  "payloadFiles": [
-			"../payloads/disciplineIncident1.json"
+			"/payloads/disciplineIncident1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -627,7 +627,7 @@
 		  "name": "student1DiscIncBehAssoc",
 		  "resourcePath": "ed-fi/studentDisciplineIncidentBehaviorAssociations",
 		  "payloadFiles": [
-			"../payloads/student1DiscIncBehAssoc.json"
+			"/payloads/student1DiscIncBehAssoc.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -644,7 +644,7 @@
 		  "name": "disciplineAction1",
 		  "resourcePath": "ed-fi/disciplineActions",
 		  "payloadFiles": [
-			"../payloads/disciplineAction1.json"
+			"/payloads/disciplineAction1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -659,7 +659,7 @@
 		  "name": "stu1DiscInNonOffAssociations",
 		  "resourcePath": "ed-fi/studentDisciplineIncidentNonOffenderAssociations",
 		  "payloadFiles": [
-			"../payloads/stu1DiscInNonOffAssociations.json"
+			"/payloads/stu1DiscInNonOffAssociations.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -673,7 +673,7 @@
 		  "name": "student1EarlyChildhood",
 		  "resourcePath": "de/studentEarlyChildhoodProgramAssociations",
 		  "payloadFiles": [
-			"../payloads/student1EarlyChildhood.json"
+			"/payloads/student1EarlyChildhood.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -689,7 +689,7 @@
 		  "name": "healthAlert1",
 		  "resourcePath": "de/studentHealthAlerts",
 		  "payloadFiles": [
-			"../payloads/healthAlert1.json"
+			"/payloads/healthAlert1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -703,7 +703,7 @@
 		  "name": "surveyResponse1",
 		  "resourcePath": "ed-fi/surveyResponses",
 		  "payloadFiles": [
-			"../payloads/surveyResponse1.json"
+			"/payloads/surveyResponse1.json"
 		  ],
 		  "verify": {
 			"enabled": true,
@@ -716,7 +716,7 @@
 		  "name": "surveyQuestionResponse1",
 		  "resourcePath": "ed-fi/surveyQuestionResponses",
 		  "payloadFiles": [
-			"../payloads/surveyQuestionResponse1.json"
+			"/payloads/surveyQuestionResponse1.json"
 		  ],
 		  "verify": {
 			"enabled": true,

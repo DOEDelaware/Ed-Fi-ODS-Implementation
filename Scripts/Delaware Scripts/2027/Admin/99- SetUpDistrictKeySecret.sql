@@ -43,7 +43,7 @@ set @ApiClientId=@@IDENTITY
 
  insert into ApiClientOdsInstances (ApiClient_ApiClientId, OdsInstance_OdsInstanceId) select @ApiClientId, OdsInstanceId from OdsInstances where name=@OdsInstanceName
 
-select @ApplicationEducationOrganizationId=ApplicationEducationOrganizationId from ApplicationEducationOrganizations where Application_ApplicationId=@ApplicationId
+select @ApplicationEducationOrganizationId=ApplicationEducationOrganizationId from ApplicationEducationOrganizations where Application_ApplicationId=@ApplicationId and EducationOrganizationId=@districtId
 
 
 insert into ApiClientApplicationEducationOrganizations (ApiClient_ApiClientId,ApplicationEducationOrganization_ApplicationEducationOrganizationId) 

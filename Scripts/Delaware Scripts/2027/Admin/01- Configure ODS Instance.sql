@@ -1,6 +1,8 @@
 DECLARE @OdsInstanceName nvarchar(100) = '2027'
 DECLARE @OdsInstanceType nvarchar(100) = 'SharedInstance'
-DECLARE @OdsInstanceConnectionString nvarchar(500) = 'server=doesisedfiintne;trusted_connection=True;database=EdFi_Delaware_ODS_2027;application name=EdFi.Ods.WebApi;Encrypt=False'
+--DECLARE @OdsInstanceConnectionString nvarchar(500) = 'server=doesisedfiintne;trusted_connection=True;database=EdFi_Delaware_ODS_2027;application name=EdFi.Ods.WebApi;Encrypt=False'
+DECLARE @OdsInstanceConnectionString nvarchar(500) = 'server=edfidbuat02\edfi;trusted_connection=True;database=EdFi_Delaware_ODS_2027;application name=EdFi.Ods.WebApi;Encrypt=False'
+
 
 DECLARE @OdsInstanceId int
 

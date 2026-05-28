@@ -1,4 +1,4 @@
-USE [EdFi_Delaware_Admin_73]
+USE [EdFi_Delaware_Admin_7x]
 GO
 
 /****** Object:  StoredProcedure [dbo].[SetUpDistrictKeySecret]    Script Date: 4/5/2023 7:23:48 AM ******/
@@ -10,7 +10,7 @@ GO
 
 
 
-alter procedure [dbo].[SetUpDistrictKeySecret]  
+create  procedure [dbo].[SetUpDistrictKeySecret]  
 
 (@districtId int,@key varchar(15), @Seed varchar(10), @UserId int, @VendorName varchar(max), @ApplicationName varchar(max), @OdsInstanceName varchar(max)) as 
 
