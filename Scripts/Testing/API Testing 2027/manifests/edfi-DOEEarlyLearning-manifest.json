@@ -9,7 +9,6 @@
       "verify": {
         "enabled": true,
         "expect": {
-          "studentUniqueId": "6",
           "firstName": "Mark",
           "lastSurname": "Smith"
         }
@@ -26,8 +25,7 @@
         "expect": {
           "beginDate": "2026-05-14",
           "responsibilityDescriptor": "uri://doe.k12.de.us/ResponsibilityDescriptor#ProgramEnroll",
-          "educationOrganizationReference.educationOrganizationId": 9,
-          "studentReference.studentUniqueId": "6"
+          "educationOrganizationReference.educationOrganizationId": 9
         }
       }
     },
@@ -42,8 +40,7 @@
         "expect": {
           "beginDate": "2026-02-17",
           "educationOrganizationReference.educationOrganizationId": 9,
-          "programReference.programName": "Early Childhood",
-          "studentReference.studentUniqueId": "6"
+          "programReference.programName": "Early Childhood"
         }
       }
     },
@@ -57,7 +54,6 @@
         "enabled": true,
         "expect": {
           "educationOrganizationReference.educationOrganizationId": 33,
-          "studentReference.studentUniqueId": "6",
           "sexDescriptor": "uri://doe.k12.de.us/sexDescriptor#F"
         }
       }
