@@ -1,5 +1,5 @@
 /*
-    Staff ClaimSet
+    EnglishLearner ClaimSet
     Generated from 2027 claimset Word documentation.
     Source document(s): 1 DSC Security (Multiple Claimsets).docx
 
@@ -15,12 +15,12 @@ Use EdFi_Delaware_Security_7x
 go
 
 insert into ClaimSets (ClaimSetName, IsEdfiPreset, ForApplicationUseOnly)
-values ('Staff', 0, 1)
+values ('EnglishLearner', 0, 1)
 go
 
 insert into ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId)
 select
-    (select ClaimSetId from ClaimSets where ClaimSetName = 'Staff'),
+    (select ClaimSetId from ClaimSets where ClaimSetName = 'EnglishLearner'),
     (select ResourceClaimId from ResourceClaims where ResourceName = ResourceClaimPermissions.ResourceName),
     ResourceClaimPermissions.ActionId
 from (values
@@ -32,20 +32,10 @@ from (values
     ('program', 5),
     ('school', 2),
     ('school', 5),
-    ('staff', 2),
-    ('staff', 5),
-    ('staffCohortAssociation', 2),
-    ('staffCohortAssociation', 5),
-    ('staffEducationOrganizationAssignmentAssociation', 2),
-    ('staffEducationOrganizationAssignmentAssociation', 5),
-    ('staffEducationOrganizationContactAssociation', 2),
-    ('staffEducationOrganizationContactAssociation', 5),
-    ('staffProgramAssociation', 2),
-    ('staffProgramAssociation', 5),
-    ('staffSchoolAssociation', 2),
-    ('staffSchoolAssociation', 5),
-    ('staffSectionAssociation', 2),
-    ('staffSectionAssociation', 5),
+    ('student', 2),
+    ('student', 5),
+    ('studentLanguageInstructionProgramAssociation', 2),
+    ('studentLanguageInstructionProgramAssociation', 5),
     ('systemDescriptors', 2),
     ('systemDescriptors', 5),
     ('types', 2),
