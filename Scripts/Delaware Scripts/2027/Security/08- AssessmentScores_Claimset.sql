@@ -53,8 +53,6 @@ from (values
 ) as ResourceClaimPermissions(ResourceName, ActionId)
 go
 
-use master
-go
 
 --Assessment scores Override permission (normally based on namespace, but the DSC needs to read all)
 INSERT INTO ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)

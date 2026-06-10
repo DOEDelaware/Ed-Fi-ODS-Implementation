@@ -70,9 +70,6 @@ from (values
     ('types', 5)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
 go
-use master 
-go
-
 
 --Learning Standards Override permission (normally based on namespace, but the DSC needs to read all)
 INSERT INTO ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
@@ -86,3 +83,5 @@ where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where Reso
 INSERT INTO ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
 select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='NoFurtherAuthorizationRequired' )   from dbo.ClaimSetResourceClaimActions 
 where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName='studentGradebookEntry') and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='TeachingNLearning')
+
+
