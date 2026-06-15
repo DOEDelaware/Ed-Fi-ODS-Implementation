@@ -49,8 +49,6 @@ from (values
     ('types', 5)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
 go
-use master
-go
 
 --Responsibility schools Authorization
 insert into [dbo].[ClaimSetResourceClaimActionAuthorizationStrategyOverrides] (ClaimSetResourceClaimActionId, AuthorizationStrategyId)

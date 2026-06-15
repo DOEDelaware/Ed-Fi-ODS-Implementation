@@ -44,5 +44,3 @@ from (values
     ('types', 5)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
 go
-use master
-go

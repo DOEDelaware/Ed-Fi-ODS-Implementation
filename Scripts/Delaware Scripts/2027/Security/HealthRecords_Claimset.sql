@@ -26,20 +26,6 @@ select
 from (values
     ('localEducationAgency', 2),
     ('localEducationAgency', 5),
-    --('medicalAlert', 2),
-    --('medicalAlert', 5),
-    --('medicalOfficeVisit', 2),
-    --('medicalOfficeVisit', 5),
-    --('medicalReferralFollowUp', 2),
-    --('medicalReferralFollowUp', 5),
-    --('medicalScreening', 2),
-    --('medicalScreening', 5),
-    --('medicationBox', 2),
-    --('medicationBox', 5),
-    --('person', 2),
-    --('person', 5),
-    --('personImmunization', 2),
-    --('personImmunization', 5),
     ('StudentHealthAlert', 2),
     ('StudentHealthAlert', 5),
     ('school', 2),
@@ -51,6 +37,4 @@ from (values
     ('types', 2),
     ('types', 5)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
-go
-use master
 go

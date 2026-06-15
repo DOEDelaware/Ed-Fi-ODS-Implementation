@@ -4,7 +4,6 @@
 DECLARE @VendorName NVARCHAR(255) = 'DataServiceCenter';
 DECLARE @ApplicationName NVARCHAR(255) = 'DSCHealthRecords';
 DECLARE @ClaimSetName NVARCHAR(255) = 'HealthRecords';
-DECLARE @EducationOrganizationId INT = 33;
 DECLARE @ApiClientKey NVARCHAR(255) = 'DSCHealthRecords';
 DECLARE @ApiClientName NVARCHAR(255) = 'DSC_HealthRecords';
 DECLARE @OdsInstanceName NVARCHAR(255) = '2027';
@@ -16,8 +15,23 @@ DECLARE @VendorId INT;
 DECLARE @ApplicationId INT;
 DECLARE @UserId INT;
 DECLARE @ApiClientId INT;
-DECLARE @ApplicationEducationOrganizationId INT;
 DECLARE @OdsInstanceId INT;
+
+/*=========================================================
+    EDUCATION ORGANIZATIONS
+=========================================================*/
+DECLARE @EducationOrganizations TABLE
+(
+    EducationOrganizationId INT PRIMARY KEY
+);
+
+INSERT INTO @EducationOrganizations (EducationOrganizationId)
+VALUES
+(9),(10),(13),(15),(16),(17),(18),(23),(24),(29),
+(31),(32),(33),(34),(35),(36),(37),(38),(39),(40),
+(69),(70),(71),(72),(74),(76),(77),(79),(80),(82),
+(85),(86),(87),(88),(89),(92),(97),
+(9604),(9605),(9606),(9607),(9611),(9612),(9614),(9615);
 
 /*=========================================================
     VENDOR
@@ -96,33 +110,24 @@ FROM dbo.Users
 WHERE Email = 'test@test.com';
 
 /*=========================================================
-    APPLICATION EDUCATION ORGANIZATION
+    APPLICATION EDUCATION ORGANIZATIONS
 =========================================================*/
-IF NOT EXISTS
+INSERT INTO dbo.ApplicationEducationOrganizations
+(
+    EducationOrganizationId,
+    Application_ApplicationId
+)
+SELECT
+    eo.EducationOrganizationId,
+    @ApplicationId
+FROM @EducationOrganizations eo
+WHERE NOT EXISTS
 (
     SELECT 1
-    FROM dbo.ApplicationEducationOrganizations
-    WHERE EducationOrganizationId = @EducationOrganizationId
-      AND Application_ApplicationId = @ApplicationId
-)
-BEGIN
-    INSERT INTO dbo.ApplicationEducationOrganizations
-    (
-        EducationOrganizationId,
-        Application_ApplicationId
-    )
-    VALUES
-    (
-        @EducationOrganizationId,
-        @ApplicationId
-    );
-END;
-
-SELECT @ApplicationEducationOrganizationId =
-       ApplicationEducationOrganizationId
-FROM dbo.ApplicationEducationOrganizations
-WHERE EducationOrganizationId = @EducationOrganizationId
-  AND Application_ApplicationId = @ApplicationId;
+    FROM dbo.ApplicationEducationOrganizations aeo
+    WHERE aeo.EducationOrganizationId = eo.EducationOrganizationId
+      AND aeo.Application_ApplicationId = @ApplicationId
+);
 
 /*=========================================================
     API CLIENT
@@ -171,28 +176,28 @@ FROM dbo.ApiClients
 WHERE [Key] = @ApiClientKey;
 
 /*=========================================================
-    API CLIENT -> APPLICATION EDORG
+    API CLIENT -> APPLICATION EDORGS
 =========================================================*/
-IF NOT EXISTS
+INSERT INTO dbo.ApiClientApplicationEducationOrganizations
+(
+    ApiClient_ApiClientId,
+    ApplicationEducationOrganization_ApplicationEducationOrganizationId
+)
+SELECT
+    @ApiClientId,
+    aeo.ApplicationEducationOrganizationId
+FROM dbo.ApplicationEducationOrganizations aeo
+INNER JOIN @EducationOrganizations eo
+    ON eo.EducationOrganizationId = aeo.EducationOrganizationId
+WHERE aeo.Application_ApplicationId = @ApplicationId
+  AND NOT EXISTS
 (
     SELECT 1
-    FROM dbo.ApiClientApplicationEducationOrganizations
-    WHERE ApiClient_ApiClientId = @ApiClientId
-      AND ApplicationEducationOrganization_ApplicationEducationOrganizationId =
-          @ApplicationEducationOrganizationId
-)
-BEGIN
-    INSERT INTO dbo.ApiClientApplicationEducationOrganizations
-    (
-        ApiClient_ApiClientId,
-        ApplicationEducationOrganization_ApplicationEducationOrganizationId
-    )
-    VALUES
-    (
-        @ApiClientId,
-        @ApplicationEducationOrganizationId
-    );
-END;
+    FROM dbo.ApiClientApplicationEducationOrganizations acaeo
+    WHERE acaeo.ApiClient_ApiClientId = @ApiClientId
+      AND acaeo.ApplicationEducationOrganization_ApplicationEducationOrganizationId =
+          aeo.ApplicationEducationOrganizationId
+);
 
 /*=========================================================
     API CLIENT -> ODS INSTANCE
@@ -235,7 +240,9 @@ SELECT
     a.ClaimSetName,
     ac.[Key] AS ApiClientKey,
     ac.Name AS ApiClientName,
-    oe.Name AS OdsInstance
+    oe.Name AS OdsInstance,
+    ac.[Secret],
+    aeo.EducationOrganizationId
 FROM dbo.ApiClients ac
 INNER JOIN dbo.Applications a
     ON ac.Application_ApplicationId = a.ApplicationId
@@ -245,4 +252,10 @@ INNER JOIN dbo.ApiClientOdsInstances aco
     ON ac.ApiClientId = aco.ApiClient_ApiClientId
 INNER JOIN dbo.OdsInstances oe
     ON aco.OdsInstance_OdsInstanceId = oe.OdsInstanceId
-WHERE ac.[Key] = @ApiClientKey;
+INNER JOIN dbo.ApiClientApplicationEducationOrganizations acaeo
+    ON ac.ApiClientId = acaeo.ApiClient_ApiClientId
+INNER JOIN dbo.ApplicationEducationOrganizations aeo
+    ON acaeo.ApplicationEducationOrganization_ApplicationEducationOrganizationId =
+       aeo.ApplicationEducationOrganizationId
+WHERE ac.[Key] = @ApiClientKey
+ORDER BY aeo.EducationOrganizationId;

@@ -24,8 +24,6 @@ select --ResourceName,
     (select ResourceClaimId from ResourceClaims where ResourceName = ResourceClaimPermissions.ResourceName),
     ResourceClaimPermissions.ActionId
 from (values
-    --('allegedBullyingVictim', 2),
-    --('allegedBullyingVictim', 5),
     ('disciplineAction', 2),
     ('disciplineAction', 5),
     ('disciplineIncident', 2),
@@ -36,8 +34,6 @@ from (values
     ('person', 5),
     ('restraintEvent', 2),
     ('restraintEvent', 5),
-    --('restraintSeclusion', 2),
-    --('restraintSeclusion', 5),
     ('school', 2),
     ('school', 5),
     ('staff', 2),
@@ -46,8 +42,6 @@ from (values
     ('staffDisciplineIncidentAssociation', 5),
     ('student', 2),
     ('student', 5),
-    --('studentDisciplineIncidentAssociation', 2),
-    --('studentDisciplineIncidentAssociation', 5),
     ('studentDisciplineIncidentBehaviorAssociation', 2),
     ('studentDisciplineIncidentBehaviorAssociation', 5),
     ('studentDisciplineIncidentNonOffenderAssociation', 2),
@@ -57,6 +51,4 @@ from (values
     ('types', 2),
     ('types', 5)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
-go
-use master
 go

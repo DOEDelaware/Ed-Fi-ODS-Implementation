@@ -14,11 +14,11 @@
 Use EdFi_Delaware_Security_7x
 go
 
-insert into ClaimSets (ClaimSetName, IsEdfiPreset, ForApplicationUseOnly)
+INSERT INTO dbo.ClaimSets (ClaimSetName, IsEdfiPreset, ForApplicationUseOnly)
 values ('TeachingNLearning', 0, 1)
 go
 
-insert into ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId)
+INSERT INTO dbo.ClaimSetResourceClaimActions (ClaimSetId, ResourceClaimId, ActionId)
 select
     (select ClaimSetId from ClaimSets where ClaimSetName = 'TeachingNLearning'),
     (select ResourceClaimId from ResourceClaims where ResourceName = ResourceClaimPermissions.ResourceName),
@@ -70,19 +70,16 @@ from (values
     ('types', 5)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
 go
-use master 
-go
-
 
 --Learning Standards Override permission (normally based on namespace, but the DSC needs to read all)
-INSERT INTO ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
+INSERT INTO dbo.ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
 select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='NoFurtherAuthorizationRequired')   from dbo.ClaimSetResourceClaimActions 
 where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName='learningStandard') and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='TeachingNLearning')
 
-INSERT INTO ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
+INSERT INTO dbo.ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
 select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='NoFurtherAuthorizationRequired' )   from dbo.ClaimSetResourceClaimActions 
 where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName='gradebookEntry') and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='TeachingNLearning')
 
-INSERT INTO ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
+INSERT INTO dbo.ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
 select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='NoFurtherAuthorizationRequired' )   from dbo.ClaimSetResourceClaimActions 
 where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName='studentGradebookEntry') and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='TeachingNLearning')

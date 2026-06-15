@@ -30,8 +30,6 @@ from (values
     ('localEducationAgency', 5),
     ('person', 2),
     ('person', 5),
-    --('postSecondaryDetail', 2),
-    --('postSecondaryDetail', 5),
     ('postSecondaryEvent', 2),
     ('postSecondaryEvent', 5),
     ('postSecondaryInstitution', 2),
@@ -49,6 +47,4 @@ from (values
     ('types', 2),
     ('types', 5)
 ) as ResourceClaimPermissions(ResourceName, ActionId)
-go
-use master
 go
