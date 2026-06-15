@@ -83,3 +83,5 @@ where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where Reso
 INSERT INTO dbo.ClaimSetResourceClaimActionAuthorizationStrategyOverrides (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
 select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='NoFurtherAuthorizationRequired' )   from dbo.ClaimSetResourceClaimActions 
 where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName='studentGradebookEntry') and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='TeachingNLearning')
+
+
