@@ -22,6 +22,7 @@
     <PackageReference Include="Hangfire" />
     <PackageReference Include="Hangfire.PostgreSql" />
     <PackageReference Include="log4net" />
+    <PackageReference Include="MessagePack" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" />
     <PackageReference Include="Npgsql" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />

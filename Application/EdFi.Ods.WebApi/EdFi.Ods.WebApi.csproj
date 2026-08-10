@@ -36,6 +36,7 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" />
     <PackageReference Include="log4net" />
+    <PackageReference Include="MessagePack" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" />
     <PackageReference Include="NHibernate" />

@@ -54,6 +54,7 @@
     <PackageReference Include="dbup-postgresql" />
     <PackageReference Include="dbup-sqlserver" />
     <PackageReference Include="log4net" />
+    <PackageReference Include="MessagePack" />
     <PackageReference Include="Npgsql" />
     <PackageReference Include="NHibernate" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />

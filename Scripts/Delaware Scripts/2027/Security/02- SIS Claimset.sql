@@ -177,7 +177,7 @@ where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where Reso
 and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='DESIS')
 
 insert into [dbo].[ClaimSetResourceClaimActionAuthorizationStrategyOverrides] (ClaimSetResourceClaimActionId, AuthorizationStrategyId)
-select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='RelationshipsWithEdOrgsAndPeople' )   from ClaimSetResourceClaimActions 
+select ClaimSetResourceClaimActionId, (select AuthorizationStrategyId from AuthorizationStrategies where AuthorizationStrategyName='NoFurtherAuthorizationRequired' )   from ClaimSetResourceClaimActions 
 where  ResourceClaimId in (select ResourceClaimId from ResourceClaims where ResourceName in ('assessmentAdministration')) 
 and ClaimSetId in (select ClaimsetID from ClaimSets where ClaimSetName='DESIS')
 
