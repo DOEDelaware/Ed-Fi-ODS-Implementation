@@ -21,6 +21,7 @@
   <ItemGroup>
     <PackageReference Include="EdFi.Suite3.ProjectTemplates.Installer" />
     <PackageReference Include="log4net" />
+    <PackageReference Include="Microsoft.OpenApi" />
     <PackageReference Include="Swashbuckle.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
